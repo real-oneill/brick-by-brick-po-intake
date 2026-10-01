@@ -1,0 +1,111 @@
+{
+  "call_metadata": "CALL-ID 29973740 | 2026-09-15 16:24 UTC | inbound +44 20 7946 8000 | ASR engine v3.2 (en-GB)",
+  "language": "en-GB",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.71,
+      "speaker": "AGENT",
+      "text": "Maison Solenne customer orders, Hannah speaking, how can I help?",
+      "confidence": 0.967
+    },
+    {
+      "start": 4.17,
+      "end": 7.38,
+      "speaker": "CALLER",
+      "text": "Hi Hannah, uh, it's Siobhan from Kensington Salons, the Manchester depot.",
+      "confidence": 0.905
+    },
+    {
+      "start": 8.34,
+      "end": 11.51,
+      "speaker": "AGENT",
+      "text": "Lovely, and do you have a PO number for me?",
+      "confidence": 0.837
+    },
+    {
+      "start": 12.58,
+      "end": 15.61,
+      "speaker": "CALLER",
+      "text": "Yeah it's, um, K S S seven five one three.",
+      "confidence": 0.882
+    },
+    {
+      "start": 16.27,
+      "end": 17.48,
+      "speaker": "AGENT",
+      "text": "Okay, go ahead.",
+      "confidence": 0.796
+    },
+    {
+      "start": 17.88,
+      "end": 22.95,
+      "speaker": "CALLER",
+      "text": "Twelve of the sport deodorant stick in the 75 g, uh, actually, make that eighteen.",
+      "confidence": 0.925
+    },
+    {
+      "start": 23.32,
+      "end": 23.73,
+      "speaker": "AGENT",
+      "text": "Yep.",
+      "confidence": 0.923
+    },
+    {
+      "start": 24.91,
+      "end": 28.09,
+      "speaker": "CALLER",
+      "text": "Twelve of the scalp serum serum in the 50 mil.",
+      "confidence": 0.884
+    },
+    {
+      "start": 29.06,
+      "end": 29.48,
+      "speaker": "AGENT",
+      "text": "Okay.",
+      "confidence": 0.92
+    },
+    {
+      "start": 29.69,
+      "end": 32.53,
+      "speaker": "CALLER",
+      "text": "Eighteen of the curl define cream the litres.",
+      "confidence": 0.943
+    },
+    {
+      "start": 33.09,
+      "end": 33.67,
+      "speaker": "AGENT",
+      "text": "Got it.",
+      "confidence": 0.862
+    },
+    {
+      "start": 33.9,
+      "end": 36.59,
+      "speaker": "CALLER",
+      "text": "Twelve of the the hydra conditioner the litres.",
+      "confidence": 0.906
+    },
+    {
+      "start": 37.52,
+      "end": 38.13,
+      "speaker": "AGENT",
+      "text": "Got it.",
+      "confidence": 0.758
+    },
+    {
+      "start": 38.74,
+      "end": 42.39,
+      "speaker": "CALLER",
+      "text": "That's it. Can we get it by Monday the twelve?",
+      "confidence": 0.908
+    },
+    {
+      "start": 42.66,
+      "end": 48.94,
+      "speaker": "AGENT",
+      "text": "I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!",
+      "confidence": 0.798
+    }
+  ]
+}

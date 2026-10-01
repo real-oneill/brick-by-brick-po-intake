@@ -1,0 +1,15 @@
+CALL-ID 55767158 | 2026-09-03 14:08 UTC | inbound +44 20 7946 1680 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Hannah speaking, how can I help?
+[CALLER] Hi Hannah, uh, it's Olu from Kensington Salon Supply, the Park Royal depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] No, not today, just pop it on the account please.
+[AGENT] Okay, go ahead.
+[CALLER] Twenty-four of the the hydra conditioner in the 250 mil.
+[AGENT] Yep.
+[CALLER] Six of the sport deodorant stick in the 75 g.
+[AGENT] Mm-hm, next?
+[CALLER] Six of the post-shave balm in the 75 mil.
+[AGENT] Yep.
+[CALLER] That's it. Can we get it by Thursday the twenty-four?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

@@ -1,0 +1,257 @@
+{
+  "bestellung": {
+    "bestellnummer": "BH-9775171",
+    "kunde": "Beautyhaus.de",
+    "kundennummer_lieferant": "200600",
+    "bestelldatum": "2026-09-27",
+    "lieferadresse": {
+      "lager": "Fulfillment Center Köln",
+      "anschrift": "Industriestraße 40, 50735 Köln",
+      "lagercode": "CGN"
+    },
+    "wunschliefertermin": "26.09.2026",
+    "waehrung": "EUR",
+    "positionen": [
+      {
+        "pos": 1,
+        "artikelnummer": "MS2850139",
+        "bezeichnung": "Kōri Botanicals Sakura Dew Sleeping Mask 100 ml",
+        "menge": 60,
+        "einheit": "ST",
+        "einzelpreis": 24.78
+      },
+      {
+        "pos": 2,
+        "artikelnummer": "MS4010861",
+        "bezeichnung": "Velour Cosmetics Velvet Matte Foundation 30 ml 5N Amber",
+        "menge": 36,
+        "einheit": "ST",
+        "einzelpreis": 17.95
+      },
+      {
+        "pos": 3,
+        "artikelnummer": "MS7030190",
+        "bezeichnung": "Lune Rouge Glow Highlighter Champagne",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 11.94
+      },
+      {
+        "pos": 4,
+        "artikelnummer": "MS5010155",
+        "bezeichnung": "Thornfield Grooming Charcoal Face Wash 150 ml",
+        "menge": 120,
+        "einheit": "ST",
+        "einzelpreis": 22.11
+      },
+      {
+        "pos": 5,
+        "artikelnummer": "MS4010167",
+        "bezeichnung": "Velour Cosmetics Velvet Matte Foundation 30 ml 1W Ivory",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 17.19
+      },
+      {
+        "pos": 6,
+        "artikelnummer": "MS7040117",
+        "bezeichnung": "Lune Rouge Lip Gloss Mirror Pink Pearl",
+        "menge": 120,
+        "einheit": "ST",
+        "einzelpreis": 8.14
+      },
+      {
+        "pos": 7,
+        "artikelnummer": "MS7810115",
+        "bezeichnung": "Lune Rouge Precision Liquid Eyeliner Brown",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 8.42
+      },
+      {
+        "pos": 8,
+        "artikelnummer": "MS2010137",
+        "bezeichnung": "Kōri Botanicals Green Tea Gel Cleanser 200 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 24.25
+      },
+      {
+        "pos": 9,
+        "artikelnummer": "MS6020180",
+        "bezeichnung": "Mistral Hair Bond Rebuild Mask 500 ml Salon",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 48.21
+      },
+      {
+        "pos": 10,
+        "artikelnummer": "MS4810990",
+        "bezeichnung": "Velour Cosmetics Velvet Matte Foundation 30 ml 5W Toffee",
+        "menge": 120,
+        "einheit": "ST",
+        "einzelpreis": 18.76
+      },
+      {
+        "pos": 11,
+        "artikelnummer": "MS2000084",
+        "bezeichnung": "Kōri Botanicals Yuzu Brightening Essence 50 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 22.91
+      },
+      {
+        "pos": 12,
+        "artikelnummer": "MS6050064",
+        "bezeichnung": "Mistral Hair Colour Guard Shampoo 250 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 31.2
+      },
+      {
+        "pos": 13,
+        "artikelnummer": "MS4000134",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 03 Petal",
+        "menge": 36,
+        "einheit": "ST",
+        "einzelpreis": 12.3
+      },
+      {
+        "pos": 14,
+        "artikelnummer": "MS4000716",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 22 Corail",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 12.35
+      },
+      {
+        "pos": 15,
+        "artikelnummer": "MS1840049",
+        "bezeichnung": "Solenne Paris Contour des Yeux Eye Cream 15 ml",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 22.7
+      },
+      {
+        "pos": 16,
+        "artikelnummer": "MS4020252",
+        "bezeichnung": "Velour Cosmetics Soft Focus Blush Mauve",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 15.3
+      },
+      {
+        "pos": 17,
+        "artikelnummer": "MS7010065",
+        "bezeichnung": "Lune Rouge Precision Liquid Eyeliner Black",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 8.71
+      },
+      {
+        "pos": 18,
+        "artikelnummer": "MS6060099",
+        "bezeichnung": "Mistral Hair Scalp Balance Serum 50 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 18.75
+      },
+      {
+        "pos": 19,
+        "artikelnummer": "MS4030143",
+        "bezeichnung": "Velour Cosmetics Brow Sculpt Pencil Taupe",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 9.87
+      },
+      {
+        "pos": 20,
+        "artikelnummer": "MS2050041",
+        "bezeichnung": "Kōri Botanicals Sakura Dew Sleeping Mask 50 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 17.82
+      },
+      {
+        "pos": 21,
+        "artikelnummer": "MS4020362",
+        "bezeichnung": "Velour Cosmetics Soft Focus Blush Apricot",
+        "menge": 96,
+        "einheit": "ST",
+        "einzelpreis": 14.44
+      },
+      {
+        "pos": 22,
+        "artikelnummer": "MS3050040",
+        "bezeichnung": "Atelier Noor Cuir Fumé Extrait de Parfum 50 ml",
+        "menge": 36,
+        "einheit": "ST",
+        "einzelpreis": 110.51
+      },
+      {
+        "pos": 23,
+        "artikelnummer": "MS3010048",
+        "bezeichnung": "Atelier Noor Rose Ambrée Eau de Parfum 30 ml",
+        "menge": 96,
+        "einheit": "ST",
+        "einzelpreis": 54.15
+      },
+      {
+        "pos": 24,
+        "artikelnummer": "MS1850061",
+        "bezeichnung": "Solenne Paris Huile Précieuse Face Oil 30 ml",
+        "menge": 18,
+        "einheit": "ST",
+        "einzelpreis": 36.9
+      },
+      {
+        "pos": 25,
+        "artikelnummer": "MS5030066",
+        "bezeichnung": "Thornfield Grooming Beard Oil 30 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 9.88
+      },
+      {
+        "pos": 26,
+        "artikelnummer": "MS1010278",
+        "bezeichnung": "Solenne Paris Crème Lumière Day Cream 50 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 53.29
+      },
+      {
+        "pos": 27,
+        "artikelnummer": "MS5020046",
+        "bezeichnung": "Thornfield Grooming Daily Moisturiser SPF 20 75 ml",
+        "menge": 120,
+        "einheit": "ST",
+        "einzelpreis": 21.5
+      },
+      {
+        "pos": 28,
+        "artikelnummer": "MS5050057",
+        "bezeichnung": "Thornfield Grooming Sport Deodorant Stick 75 g",
+        "menge": 36,
+        "einheit": "ST",
+        "einzelpreis": 11.47
+      },
+      {
+        "pos": 29,
+        "artikelnummer": "MS3030152",
+        "bezeichnung": "Atelier Noor Néroli Soleil Eau de Toilette 100 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 79.57
+      },
+      {
+        "pos": 30,
+        "artikelnummer": "MS3030052",
+        "bezeichnung": "Atelier Noor Néroli Soleil Eau de Toilette 50 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 51.76
+      }
+    ]
+  }
+}

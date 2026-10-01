@@ -1,0 +1,17 @@
+CALL-ID 20107376 | 2026-09-23 07:40 UTC | inbound +44 20 7946 9211 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Ravi speaking, how can I help?
+[CALLER] Hi Ravi, uh, it's Tariq from Kensington Salon Supplies Ltd, the Park Royal depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] Yeah it's, um, K S S four seven three zero.
+[AGENT] Okay, go ahead.
+[CALLER] Twelve of the bond rebuilder mask in the 200 mil.
+[AGENT] Yep.
+[CALLER] Twenty-four of the curl define cream in the 150 mil.
+[AGENT] Yep.
+[CALLER] Twelve of the sport deodorant stick in the 75 g, uh, actually, make that twenty-four.
+[AGENT] Yep.
+[CALLER] Eighteen of the hydra repair shampoo in the 1 litre.
+[AGENT] Okay.
+[CALLER] That's it. Can we get it by Monday the 19?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

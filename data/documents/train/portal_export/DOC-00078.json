@@ -1,0 +1,41 @@
+{
+  "bestellung": {
+    "bestellnummer": "BH-8649592",
+    "kunde": "BeautyHaus Online",
+    "kundennummer_lieferant": "200600",
+    "bestelldatum": "2026-09-09",
+    "lieferadresse": {
+      "lager": "Fulfillment Center Köln",
+      "anschrift": "Industriestraße 40, 50735 Köln",
+      "lagercode": "CGN"
+    },
+    "wunschliefertermin": "05.09.2026",
+    "waehrung": "EUR",
+    "positionen": [
+      {
+        "pos": 1,
+        "artikelnummer": "MS3050040",
+        "bezeichnung": "Atelier Noor Cuir Fumé Extrait de Parfum 50 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 110.51
+      },
+      {
+        "pos": 2,
+        "artikelnummer": "MS4000699",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 18 Berry Noir",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 12.86
+      },
+      {
+        "pos": 3,
+        "artikelnummer": "MS6000124",
+        "bezeichnung": "Mistral Hair Hydra Repair Shampoo 1 L Salon",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 32.08
+      }
+    ]
+  }
+}

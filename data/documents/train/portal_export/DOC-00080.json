@@ -1,0 +1,137 @@
+{
+  "bestellung": {
+    "bestellnummer": "BH-4914714",
+    "kunde": "BeautyHaus Online",
+    "kundennummer_lieferant": "200600",
+    "bestelldatum": "2026-09-23",
+    "lieferadresse": {
+      "lager": "Fulfillment Center Köln",
+      "anschrift": "Industriestraße 40, 50735 Köln",
+      "lagercode": "CGN"
+    },
+    "wunschliefertermin": "05.10.2026",
+    "waehrung": "EUR",
+    "positionen": [
+      {
+        "pos": 1,
+        "artikelnummer": "MS1070033",
+        "bezeichnung": "Solenne Paris Lotion Essentielle Toner 150 ml",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 45.84
+      },
+      {
+        "pos": 2,
+        "artikelnummer": "MS5030066",
+        "bezeichnung": "Thornfield Grooming Beard Oil 30 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 9.88
+      },
+      {
+        "pos": 3,
+        "artikelnummer": "MS9298410",
+        "bezeichnung": "Holiday Vault Set Exclusive",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 55.79
+      },
+      {
+        "pos": 4,
+        "artikelnummer": "MS9156364",
+        "bezeichnung": "Discovery Coffret 5x10ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 25.92
+      },
+      {
+        "pos": 5,
+        "artikelnummer": "MS2030016",
+        "bezeichnung": "Kōri Botanicals Rice Enzyme Polish 50 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 14.61
+      },
+      {
+        "pos": 6,
+        "artikelnummer": "MS7830190",
+        "bezeichnung": "Lune Rouge Glow Highlighter Champagne",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 11.94
+      },
+      {
+        "pos": 7,
+        "artikelnummer": "MS3020038",
+        "bezeichnung": "Atelier Noor Vétiver Nocturne Eau de Toilette 50 ml",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 59.02
+      },
+      {
+        "pos": 8,
+        "artikelnummer": "MS7030219",
+        "bezeichnung": "Lune Rouge Glow Highlighter Rose Gold",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 10.97
+      },
+      {
+        "pos": 9,
+        "artikelnummer": "MS6050064",
+        "bezeichnung": "Mistral Hair Colour Guard Shampoo 250 ml",
+        "menge": 120,
+        "einheit": "ST",
+        "einzelpreis": 31.2
+      },
+      {
+        "pos": 10,
+        "artikelnummer": "MS6020068",
+        "bezeichnung": "Mistral Hair Bond Rebuild Mask 200 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 39.91
+      },
+      {
+        "pos": 11,
+        "artikelnummer": "MS4011090",
+        "bezeichnung": "Velour Cosmetics Velvet Matte Foundation 30 ml 6N Espresso",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 17.52
+      },
+      {
+        "pos": 12,
+        "artikelnummer": "MS7000533",
+        "bezeichnung": "Lune Rouge Lacquer Nail Colour 123 Mint Chip",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 6.16
+      },
+      {
+        "pos": 13,
+        "artikelnummer": "MS4000238",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 05 Rose Thé",
+        "menge": 120,
+        "einheit": "ST",
+        "einzelpreis": 12.19
+      },
+      {
+        "pos": 14,
+        "artikelnummer": "MS3020181",
+        "bezeichnung": "Atelier Noor Vétiver Nocturne Eau de Toilette 100 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 89.78
+      },
+      {
+        "pos": 15,
+        "artikelnummer": "MS1020161",
+        "bezeichnung": "Solenne Paris Baume Nuit Night Balm 50 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 57.63
+      }
+    ]
+  }
+}

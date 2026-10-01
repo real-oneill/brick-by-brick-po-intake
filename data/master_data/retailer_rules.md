@@ -1,0 +1,21 @@
+# Retailer rules (tribal knowledge)
+
+These are the rules the customer-service team knows by heart. They are written the way a senior rep would explain them to a new hire.
+
+- **R01 · Halcyon & Finch · ship_to_reroute**: Distribution center DC 0042 (Columbus, OH) closed on 2026-09-01. Any order addressed to DC 0042 must ship to DC 0047 (Groveport, OH) instead.
+- **R02 · Meridian Travel Retail · unit_of_measure**: Meridian buysheet quantities are always in CASES. Multiply by the SKU case pack to get eaches.
+- **R03 · Corso Profumerie · default_size**: When Corso Profumerie omits the size, a fragrance means the 100 ml and a skincare product means the 50 ml.
+- **R04 · Harlow & Vale · free_goods**: Lines marked FOC (free of charge) on Harlow & Vale orders are free goods: price 0, item category FREE. They still consume inventory.
+- **R05 · Pharmacie Lumen · number_format**: Pharmacie Lumen uses French formats: decimal comma (12,50), DD/MM/YYYY dates. 'EAN' is the GTIN-13.
+- **R06 · Northbay Drug · ignore_zero_rows**: Northbay Drug sends back the full Maison Solenne price list. Only rows with Order Qty > 0 are ordered.
+- **R07 · Kensington Salon Supply · default_size**: Kensington Salon Supply means the salon size (1 L / 500 ml Salon) of Mistral Hair products unless the caller says 'retail' or gives a size.
+- **R08 · BeautyHaus Online · discontinued_substitution**: BeautyHaus Online often orders superseded material codes. If the code is discontinued, substitute the successor material.
+- **R09 · Al Noor Trading · currency**: Al Noor Trading prices are in AED. If a price is missing, use the contracted AED price list.
+- **R10 · Glow Republic · free_goods**: Glow Republic lines described 'PROMO - NO CHARGE' are free goods (price 0, item category FREE).
+- **R11 · ALL · delivery_date**: A requested delivery date on a weekend moves to the next Monday. A date already in the past means 'as soon as possible' and must be flagged for review.
+- **R12 · ALL · price_tolerance**: If the price on a PO differs from the contracted net price by more than 2%, the contracted price wins and the line must be reviewed by Finance.
+- **R14 · German perfumeries · promo_pricing**: On a Maison Solenne promo form (Aktionsformular) the net price is the printed EK minus the discount in the orange badge (e.g. RR 15%). It overrides the contract price list for that order.
+- **R15 · German perfumeries · customer_identification**: The Kunden-Nr. handwritten on promo forms is the Maison Solenne sold-to number. If it is missing, identify the customer from the shop stamp.
+- **R16 · ALL · testers**: '+1 Tester' (or 'TESTER') means one free tester unit of that product: separate line, tester material, price 0, item category FREE.
+- **R17 · ALL · ship_to_override**: A handwritten or sticky-note delivery instruction ('bitte an Filiale … liefern', 'ship to …') overrides the default ship-to for that order.
+- **R13 · ALL · duplicates**: Retailers sometimes resend the same PO through a second channel (e.g. email then fax). The same retailer + PO number must never create two sales orders.

@@ -1,0 +1,21 @@
+CALL-ID 93605420 | 2026-09-12 14:29 UTC | inbound +44 20 7946 7737 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Chloe speaking, how can I help?
+[CALLER] Hi Chloe, uh, it's Gemma from Kensington Salons, the Park Royal depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] Yeah it's, um, K S S seven two five seven.
+[AGENT] Okay, go ahead.
+[CALLER] Six of the cedar shave cream in the 150 mil.
+[AGENT] Okay.
+[CALLER] Twelve of the hydro repair conditioner in the 250 mil.
+[AGENT] Mm-hm, next?
+[CALLER] Six of the color guard shampoo the big ones, uh, actually, make that twelve.
+[AGENT] Yep.
+[CALLER] Six of the hydra repair shampoo the big ones, uh, actually, make that twelve.
+[AGENT] Mm-hm, next?
+[CALLER] Eighteen of the beard oil in the 30 mil.
+[AGENT] Mm-hm, next?
+[CALLER] Twelve of the curl define cream in the 500 mil.
+[AGENT] Got it.
+[CALLER] That's it. Can we get it by Wednesday the 23?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

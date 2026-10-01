@@ -1,0 +1,167 @@
+{
+  "call_metadata": "CALL-ID 51258857 | 2026-09-08 12:47 UTC | inbound +44 20 7946 6036 | ASR engine v3.2 (en-GB)",
+  "language": "en-GB",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.38,
+      "speaker": "AGENT",
+      "text": "Maison Solenne customer orders, Ravi speaking, how can I help?",
+      "confidence": 0.837
+    },
+    {
+      "start": 4.07,
+      "end": 7.62,
+      "speaker": "CALLER",
+      "text": "Hi Ravi, uh, it's Gemma from Kensington Salon Supply, the Manchester depot.",
+      "confidence": 0.969
+    },
+    {
+      "start": 8.62,
+      "end": 12.23,
+      "speaker": "AGENT",
+      "text": "Lovely, and do you have a PO number for me?",
+      "confidence": 0.943
+    },
+    {
+      "start": 13.23,
+      "end": 16.19,
+      "speaker": "CALLER",
+      "text": "Yeah it's, um, K S S seven two three one.",
+      "confidence": 0.838
+    },
+    {
+      "start": 17.29,
+      "end": 18.18,
+      "speaker": "AGENT",
+      "text": "Okay, go ahead.",
+      "confidence": 0.862
+    },
+    {
+      "start": 19.29,
+      "end": 22.43,
+      "speaker": "CALLER",
+      "text": "Six of the post-shave balm in the 75 mil.",
+      "confidence": 0.794
+    },
+    {
+      "start": 23.0,
+      "end": 23.41,
+      "speaker": "AGENT",
+      "text": "Okay.",
+      "confidence": 0.814
+    },
+    {
+      "start": 23.79,
+      "end": 27.01,
+      "speaker": "CALLER",
+      "text": "Six of the scalp serum serum in the 50 mil.",
+      "confidence": 0.765
+    },
+    {
+      "start": 28.08,
+      "end": 28.46,
+      "speaker": "AGENT",
+      "text": "Yep.",
+      "confidence": 0.789
+    },
+    {
+      "start": 29.46,
+      "end": 33.72,
+      "speaker": "CALLER",
+      "text": "And, uh, six of the glitter fantasy palette, if you do that?",
+      "confidence": 0.965
+    },
+    {
+      "start": 34.63,
+      "end": 38.85,
+      "speaker": "AGENT",
+      "text": "I'm not sure we carry that, I'll note it and check.",
+      "confidence": 0.931
+    },
+    {
+      "start": 39.5,
+      "end": 43.44,
+      "speaker": "CALLER",
+      "text": "Thirty-six of the bond rebuilder mask in the 200 mil.",
+      "confidence": 0.83
+    },
+    {
+      "start": 44.19,
+      "end": 44.85,
+      "speaker": "AGENT",
+      "text": "Got it.",
+      "confidence": 0.717
+    },
+    {
+      "start": 45.72,
+      "end": 49.02,
+      "speaker": "CALLER",
+      "text": "Six of the curl define cream in the 150 mil.",
+      "confidence": 0.89
+    },
+    {
+      "start": 49.85,
+      "end": 50.14,
+      "speaker": "AGENT",
+      "text": "Okay.",
+      "confidence": 0.963
+    },
+    {
+      "start": 51.18,
+      "end": 56.49,
+      "speaker": "CALLER",
+      "text": "Twenty-four of the cedar shave cream in the 75 mil, uh, actually, make that eighteen.",
+      "confidence": 0.874
+    },
+    {
+      "start": 56.97,
+      "end": 57.26,
+      "speaker": "AGENT",
+      "text": "Yep.",
+      "confidence": 0.901
+    },
+    {
+      "start": 58.29,
+      "end": 62.56,
+      "speaker": "CALLER",
+      "text": "Eighteen of the sea salt texture spray in the 150 mil.",
+      "confidence": 0.867
+    },
+    {
+      "start": 62.93,
+      "end": 63.25,
+      "speaker": "AGENT",
+      "text": "Yep.",
+      "confidence": 0.77
+    },
+    {
+      "start": 64.05,
+      "end": 66.83,
+      "speaker": "CALLER",
+      "text": "Twelve of the post-shave balm in the 150 mil.",
+      "confidence": 0.811
+    },
+    {
+      "start": 67.99,
+      "end": 68.63,
+      "speaker": "AGENT",
+      "text": "Got it.",
+      "confidence": 0.85
+    },
+    {
+      "start": 69.23,
+      "end": 73.43,
+      "speaker": "CALLER",
+      "text": "That's it. Can we get it by Monday the twenty-eight?",
+      "confidence": 0.829
+    },
+    {
+      "start": 73.75,
+      "end": 80.11,
+      "speaker": "AGENT",
+      "text": "I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!",
+      "confidence": 0.816
+    }
+  ]
+}

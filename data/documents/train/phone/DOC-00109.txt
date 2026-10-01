@@ -1,0 +1,25 @@
+CALL-ID 58869996 | 2026-09-20 15:09 UTC | inbound +44 20 7946 3693 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Chloe speaking, how can I help?
+[CALLER] Hi Chloe, uh, it's Olu from Kensington Salon Supply, the Manchester depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] Yeah it's, um, K S S seven six eight zero.
+[AGENT] Okay, go ahead.
+[CALLER] Twelve of the hydra repair conditioner in the 250 mil.
+[AGENT] Yep.
+[CALLER] Twenty-four of the post-shave balm in the 150 mil, uh, actually, make that thirty-six.
+[AGENT] Mm-hm, next?
+[CALLER] Six of the charcoal face wash in the 75 mil.
+[AGENT] Okay.
+[CALLER] Eighteen of the sport deodorant stick in the 75 g.
+[AGENT] Yep.
+[CALLER] Twelve of the post-shave balm in the 75 mil.
+[AGENT] Yep.
+[CALLER] Twelve of the curl define cream the big ones.
+[AGENT] Mm-hm, next?
+[CALLER] Eighteen of the bond rebuilder mask in the 500 mil.
+[AGENT] Got it.
+[CALLER] Six of the colour guard shampoo in the 250 mil, uh, actually, make that twelve.
+[AGENT] Okay.
+[CALLER] That's it. Can we get it by Tuesday the fifteen?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

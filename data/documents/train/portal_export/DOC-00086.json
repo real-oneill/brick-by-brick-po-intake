@@ -1,0 +1,249 @@
+{
+  "bestellung": {
+    "bestellnummer": "BH-6971715",
+    "kunde": "BeautyHaus Online",
+    "kundennummer_lieferant": "200600",
+    "bestelldatum": "2026-09-26",
+    "lieferadresse": {
+      "lager": "Fulfillment Center Köln",
+      "anschrift": "Industriestraße 40, 50735 Köln",
+      "lagercode": "CGN"
+    },
+    "wunschliefertermin": "12.10.2026",
+    "waehrung": "EUR",
+    "positionen": [
+      {
+        "pos": 1,
+        "artikelnummer": "MS1010278",
+        "bezeichnung": "Solenne Paris Crème Lumière Day Cream 50 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 53.29
+      },
+      {
+        "pos": 2,
+        "artikelnummer": "MS2010060",
+        "bezeichnung": "Kōri Botanicals Green Tea Gel Cleanser 100 ml",
+        "menge": 60,
+        "einheit": "ST",
+        "einzelpreis": 15.89
+      },
+      {
+        "pos": 3,
+        "artikelnummer": "MS4000547",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 15 Cerise",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 11.7
+      },
+      {
+        "pos": 4,
+        "artikelnummer": "MS4000882",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 25 Prune",
+        "menge": 36,
+        "einheit": "ST",
+        "einzelpreis": 12.37
+      },
+      {
+        "pos": 5,
+        "artikelnummer": "MS3010166",
+        "bezeichnung": "Atelier Noor Rose Ambrée Eau de Parfum 50 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 73.44
+      },
+      {
+        "pos": 6,
+        "artikelnummer": "MS5040079",
+        "bezeichnung": "Thornfield Grooming Post-Shave Balm 75 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 17.3
+      },
+      {
+        "pos": 7,
+        "artikelnummer": "MS2020129",
+        "bezeichnung": "Kōri Botanicals Camellia Barrier Cream 100 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 31.54
+      },
+      {
+        "pos": 8,
+        "artikelnummer": "MS4010583",
+        "bezeichnung": "Velour Cosmetics Velvet Matte Foundation 30 ml 3W Golden",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 19.54
+      },
+      {
+        "pos": 9,
+        "artikelnummer": "MS3000278",
+        "bezeichnung": "Atelier Noor Oud Saffron Eau de Parfum 100 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 131.6
+      },
+      {
+        "pos": 10,
+        "artikelnummer": "MS4020080",
+        "bezeichnung": "Velour Cosmetics Soft Focus Blush Peach",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 14.05
+      },
+      {
+        "pos": 11,
+        "artikelnummer": "MS6020180",
+        "bezeichnung": "Mistral Hair Bond Rebuild Mask 500 ml Salon",
+        "menge": 36,
+        "einheit": "ST",
+        "einzelpreis": 48.21
+      },
+      {
+        "pos": 12,
+        "artikelnummer": "MS4000958",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 30 Fuchsia",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 13.05
+      },
+      {
+        "pos": 13,
+        "artikelnummer": "MS2800215",
+        "bezeichnung": "Kōri Botanicals Yuzu Brightening Essence 200 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 49.59
+      },
+      {
+        "pos": 14,
+        "artikelnummer": "MS9350996",
+        "bezeichnung": "Velvet Body Mist",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 9.39
+      },
+      {
+        "pos": 15,
+        "artikelnummer": "MS4000478",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 12 Rouge Velours",
+        "menge": 96,
+        "einheit": "ST",
+        "einzelpreis": 12.25
+      },
+      {
+        "pos": 16,
+        "artikelnummer": "MS7000986",
+        "bezeichnung": "Lune Rouge Lacquer Nail Colour 145 Bordeaux",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 6.05
+      },
+      {
+        "pos": 17,
+        "artikelnummer": "MS3020038",
+        "bezeichnung": "Atelier Noor Vétiver Nocturne Eau de Toilette 50 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 59.02
+      },
+      {
+        "pos": 18,
+        "artikelnummer": "MS4020252",
+        "bezeichnung": "Velour Cosmetics Soft Focus Blush Mauve",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 14.3
+      },
+      {
+        "pos": 19,
+        "artikelnummer": "MS1030011",
+        "bezeichnung": "Solenne Paris Eau Micellaire Cleansing Water 200 ml",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 44.81
+      },
+      {
+        "pos": 20,
+        "artikelnummer": "MS1040049",
+        "bezeichnung": "Solenne Paris Contour des Yeux Eye Cream 15 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 22.7
+      },
+      {
+        "pos": 21,
+        "artikelnummer": "MS9138711",
+        "bezeichnung": "Argan Miracle Oil",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 70.09
+      },
+      {
+        "pos": 22,
+        "artikelnummer": "MS3050040",
+        "bezeichnung": "Atelier Noor Cuir Fumé Extrait de Parfum 50 ml",
+        "menge": 60,
+        "einheit": "ST",
+        "einzelpreis": 110.51
+      },
+      {
+        "pos": 23,
+        "artikelnummer": "MS7000295",
+        "bezeichnung": "Lune Rouge Lacquer Nail Colour 110 Ballet",
+        "menge": 48,
+        "einheit": "ST",
+        "einzelpreis": 6.1
+      },
+      {
+        "pos": 24,
+        "artikelnummer": "MS2020048",
+        "bezeichnung": "Kōri Botanicals Camellia Barrier Cream 50 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 21.18
+      },
+      {
+        "pos": 25,
+        "artikelnummer": "MS4030052",
+        "bezeichnung": "Velour Cosmetics Brow Sculpt Pencil Blonde",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 10.22
+      },
+      {
+        "pos": 26,
+        "artikelnummer": "MS3800150",
+        "bezeichnung": "Atelier Noor Oud Saffron Eau de Parfum 50 ml",
+        "menge": 18,
+        "einheit": "ST",
+        "einzelpreis": 82.34
+      },
+      {
+        "pos": 27,
+        "artikelnummer": "MS2000175",
+        "bezeichnung": "Kōri Botanicals Yuzu Brightening Essence 100 ml",
+        "menge": 36,
+        "einheit": "ST",
+        "einzelpreis": 31.65
+      },
+      {
+        "pos": 28,
+        "artikelnummer": "MS1850061",
+        "bezeichnung": "Solenne Paris Huile Précieuse Face Oil 30 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 36.9
+      },
+      {
+        "pos": 29,
+        "artikelnummer": "MS1840049",
+        "bezeichnung": "Solenne Paris Contour des Yeux Eye Cream 15 ml",
+        "menge": 60,
+        "einheit": "ST",
+        "einzelpreis": 22.7
+      }
+    ]
+  }
+}

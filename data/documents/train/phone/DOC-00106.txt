@@ -1,0 +1,21 @@
+CALL-ID 24002900 | 2026-09-24 09:06 UTC | inbound +44 20 7946 3479 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Chloe speaking, how can I help?
+[CALLER] Hi Chloe, uh, it's Olu from KSS, the Manchester depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] Yeah it's, um, K S S seven eight four two.
+[AGENT] Okay, go ahead.
+[CALLER] Thirty-six of the the hydra conditioner in the 250 mil, uh, actually, make that forty-eight.
+[AGENT] Mm-hm, next?
+[CALLER] Twelve of the daily moisturiser spf 20 in the 75 mil, uh, actually, make that eighteen.
+[AGENT] Okay.
+[CALLER] Thirty-six of the bond rebuilder mask the big ones.
+[AGENT] Got it.
+[CALLER] Eighteen of the post-shave balm in the 150 mil.
+[AGENT] Got it.
+[CALLER] Twelve of the curl define cream in the 500 mil.
+[AGENT] Okay.
+[CALLER] Six of the charcoal face wash in the 150 mil, uh, actually, make that twelve.
+[AGENT] Got it.
+[CALLER] That's it. Can we get it by Monday the nineteen?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

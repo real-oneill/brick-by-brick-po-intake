@@ -1,0 +1,15 @@
+sold_to_id,customer_name,name_variants,country,currency,payment_terms,primary_channel,region,supply_plant
+100100,Halcyon & Finch,Halcyon & Finch Inc.|H&F Inc.|HALCYON AND FINCH|Halcyon Finch NYC,US,USD,NET60,erp_edi,NA,US-NJ
+100200,Glow Republic,Glow Republic LLC|GLOW REPUBLIC STORES|Glow Rep.,US,USD,NET45,email_pdf,NA,US-NJ
+200300,Pharmacie Lumen,Pharmacie Lumen SCA|PHARMACIES LUMEN - Centrale d'achat|Lumen Pharma,FR,EUR,NET30,fax,EMEA,EU-FR
+200400,Corso Profumerie,Profumeria Corso|Corso Profumerie S.r.l.|Corso Profumi Milano,IT,EUR,NET60,handwritten,EMEA,EU-FR
+300500,Meridian Travel Retail,Meridian Travel Retail FZE|MERIDIAN TR|Meridian Duty Free,AE,USD|EUR,NET45,excel_buysheet,Travel Retail,AE-JA
+200600,BeautyHaus Online,BeautyHaus Online GmbH|Beautyhaus.de|BEAUTY HAUS,DE,EUR,NET30,portal_export,EMEA,EU-FR
+300700,Al Noor Trading,Al Noor Trading LLC|AL-NOOR TRADING CO.|Alnoor General Trading,AE,AED,NET60,email_body,MEA,AE-JA
+400800,Kensington Salon Supply,Kensington Salon Supplies Ltd|KSS|Kensington Salons,GB,GBP,NET30,phone,EMEA,UK-MK
+100900,Northbay Drug,Northbay Drug Co.|NORTHBAY DRUG STORES|Northbay Pharmacy,US,USD,NET30,email_pricelist,NA,US-NJ
+401000,Harlow & Vale,Harlow and Vale plc|HARLOW & VALE LTD|Harlow Vale Oxford St,GB,GBP,NET60,amended_scan,EMEA,UK-MK
+200651,Parfümerie Albrecht,Parfümerie Albrecht e.K.|Albrecht Parfums,DE,EUR,NET30,multimodal,EMEA,EU-FR
+200652,Parfümerie Lindqvist,Lindqvist GmbH|Parfümerie Lindquist,DE,EUR,NET30,multimodal,EMEA,EU-FR
+200653,Duft & Pflege Kremer,Kremer Duft & Pflege|D&P Kremer,DE,EUR,NET30,multimodal,EMEA,EU-FR
+200654,Parfümerie am Markt,Parfümerie a. Markt|P. am Markt Leipzig,DE,EUR,NET30,multimodal,EMEA,EU-FR

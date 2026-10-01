@@ -1,0 +1,23 @@
+CALL-ID 28412800 | 2026-09-12 11:48 UTC | inbound +44 20 7946 7109 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Chloe speaking, how can I help?
+[CALLER] Hi Chloe, uh, it's Siobhan from KSS, the Park Royal depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] No, not today, just pop it on the account please.
+[AGENT] Okay, go ahead.
+[CALLER] Twelve of the daily moisturiser spf 20 in the 75 mil.
+[AGENT] Mm-hm, next?
+[CALLER] Twenty-four of the scalp balance serum in the 50 mil.
+[AGENT] Got it.
+[CALLER] Six of the charcoal face wash in the 150 mil.
+[AGENT] Got it.
+[CALLER] Twelve of the sea salt texture spray in the 150 mil.
+[AGENT] Got it.
+[CALLER] Six of the post-shave balm in the 75 mil.
+[AGENT] Yep.
+[CALLER] And, uh, twelve of the mini lip trio gift, if you do that?
+[AGENT] I'm not sure we carry that, I'll note it and check.
+[CALLER] Six of the sport deodorant stick in the 75 g.
+[AGENT] Yep.
+[CALLER] That's it. Can we get it by Friday the twenty-five?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

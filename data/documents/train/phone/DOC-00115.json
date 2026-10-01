@@ -1,0 +1,167 @@
+{
+  "call_metadata": "CALL-ID 57673392 | 2026-09-04 17:55 UTC | inbound +44 20 7946 2232 | ASR engine v3.2 (en-GB)",
+  "language": "en-GB",
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 3.64,
+      "speaker": "AGENT",
+      "text": "Maison Solenne customer orders, Ravi speaking, how can I help?",
+      "confidence": 0.97
+    },
+    {
+      "start": 4.25,
+      "end": 8.7,
+      "speaker": "CALLER",
+      "text": "Hi Ravi, uh, it's Olu from Kensington Salon Supply, the Park Royal depot.",
+      "confidence": 0.726
+    },
+    {
+      "start": 9.09,
+      "end": 12.17,
+      "speaker": "AGENT",
+      "text": "Lovely, and do you have a PO number for me?",
+      "confidence": 0.781
+    },
+    {
+      "start": 12.67,
+      "end": 16.46,
+      "speaker": "CALLER",
+      "text": "Yeah it's, um, K S S two one two two.",
+      "confidence": 0.916
+    },
+    {
+      "start": 17.01,
+      "end": 17.89,
+      "speaker": "AGENT",
+      "text": "Okay, go ahead.",
+      "confidence": 0.785
+    },
+    {
+      "start": 18.54,
+      "end": 21.07,
+      "speaker": "CALLER",
+      "text": "Thirty-six of the beard oil in the 30 mil.",
+      "confidence": 0.78
+    },
+    {
+      "start": 22.16,
+      "end": 22.48,
+      "speaker": "AGENT",
+      "text": "Okay.",
+      "confidence": 0.75
+    },
+    {
+      "start": 23.28,
+      "end": 27.27,
+      "speaker": "CALLER",
+      "text": "Twelve of the hydra repair shampoo in the 250 mil.",
+      "confidence": 0.75
+    },
+    {
+      "start": 27.67,
+      "end": 28.37,
+      "speaker": "AGENT",
+      "text": "Mm-hm, next?",
+      "confidence": 0.832
+    },
+    {
+      "start": 28.84,
+      "end": 34.93,
+      "speaker": "CALLER",
+      "text": "Twelve of the color guard shampoo in the 250 mil, uh, actually, make that six.",
+      "confidence": 0.748
+    },
+    {
+      "start": 35.28,
+      "end": 36.08,
+      "speaker": "AGENT",
+      "text": "Got it.",
+      "confidence": 0.887
+    },
+    {
+      "start": 36.41,
+      "end": 40.11,
+      "speaker": "CALLER",
+      "text": "Six of the hydra repair shampoo in the 1 litre.",
+      "confidence": 0.921
+    },
+    {
+      "start": 41.1,
+      "end": 41.5,
+      "speaker": "AGENT",
+      "text": "Yep.",
+      "confidence": 0.76
+    },
+    {
+      "start": 42.22,
+      "end": 45.96,
+      "speaker": "CALLER",
+      "text": "Six of the charcoal face wash in the 150 mil.",
+      "confidence": 0.937
+    },
+    {
+      "start": 46.84,
+      "end": 47.41,
+      "speaker": "AGENT",
+      "text": "Got it.",
+      "confidence": 0.77
+    },
+    {
+      "start": 48.05,
+      "end": 50.7,
+      "speaker": "CALLER",
+      "text": "Twelve of the post-shave balm in the 150 mil.",
+      "confidence": 0.795
+    },
+    {
+      "start": 50.93,
+      "end": 51.23,
+      "speaker": "AGENT",
+      "text": "Okay.",
+      "confidence": 0.951
+    },
+    {
+      "start": 51.98,
+      "end": 55.8,
+      "speaker": "CALLER",
+      "text": "Thirty-six of the curl defining cream in the 150 mil.",
+      "confidence": 0.795
+    },
+    {
+      "start": 56.5,
+      "end": 57.12,
+      "speaker": "AGENT",
+      "text": "Mm-hm, next?",
+      "confidence": 0.754
+    },
+    {
+      "start": 57.42,
+      "end": 60.64,
+      "speaker": "CALLER",
+      "text": "Twenty-four of the color guard shampoo in the 1 litre.",
+      "confidence": 0.764
+    },
+    {
+      "start": 61.8,
+      "end": 62.38,
+      "speaker": "AGENT",
+      "text": "Mm-hm, next?",
+      "confidence": 0.767
+    },
+    {
+      "start": 63.23,
+      "end": 67.05,
+      "speaker": "CALLER",
+      "text": "That's it. Can we get it by Monday the twenty-eight?",
+      "confidence": 0.966
+    },
+    {
+      "start": 67.96,
+      "end": 75.51,
+      "speaker": "AGENT",
+      "text": "I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!",
+      "confidence": 0.727
+    }
+  ]
+}

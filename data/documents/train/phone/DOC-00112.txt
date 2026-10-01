@@ -1,0 +1,17 @@
+CALL-ID 70747469 | 2026-09-07 14:02 UTC | inbound +44 20 7946 2425 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Chloe speaking, how can I help?
+[CALLER] Hi Chloe, uh, it's Olu from Kensington Salons, the Park Royal depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] No, not today, just pop it on the account please.
+[AGENT] Okay, go ahead.
+[CALLER] Eighteen of the hydra repair conditioner.
+[AGENT] Okay.
+[CALLER] Six of the bond rebuild mask in the 200 mil, uh, actually, make that twelve.
+[AGENT] Yep.
+[CALLER] Twelve of the curl defining cream in the 150 mil, uh, actually, make that eighteen.
+[AGENT] Mm-hm, next?
+[CALLER] Six of the scalp serum serum in the 50 mil.
+[AGENT] Got it.
+[CALLER] That's it. Can we get it by Friday the 2?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!
