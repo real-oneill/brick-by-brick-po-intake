@@ -86,7 +86,7 @@ Many real orders aren't "a document with a table". They're pictures: a promo fly
 | Key account managers (Sales) | Retailer relationships; nothing embarrassing reaches the customer |
 | Finance | Price accuracy vs. the contracted price list and promotions; free goods tracked correctly |
 | IT / ERP team | A clean, well-defined outbound order interface. No new systems to babysit |
-| Data governance / internal audit | Who saw what, who changed what, which model and prompt version made each decision |
+| Data governance / internal audit | Who saw what, who changed what, and why each decision was made |
 
 ## 3. What your team will build
 
@@ -102,7 +102,7 @@ An end-to-end, governed solution **on Databricks, using its data and AI capabili
  multimodal                                     dates, currencies, IDs          accuracy + ops metrics       approved orders ──► mock ERP
                                                                                                              corrections ──► evaluation set
   Master data: products · customers · ship-tos · retailer item cross-reference · price list · inventory (ATP) · retailer rules
-  Across everything: access control on every asset · lineage · versioned prompts & models · traced AI calls · audit trail · all code in a Git repo
+  Across everything: access control on every asset · lineage · audit trail · all code in a Git repo
 ```
 
 ### 3.1 Provided to the team
@@ -161,15 +161,13 @@ Requirement IDs are referenced in the scope tiers (§5) and the showcase rubric 
 | HIL-5 | Approved orders flow to an approved-orders table and a **mock ERP outbound** (e.g. a JSON order payload). |
 | HIL-6 | Corrections feed back. Fixed SKU matches can enrich the cross-reference (with approval), and corrected documents join the evaluation set. |
 
-### 4.5 AI quality, accuracy logging & tracing
+### 4.5 AI quality & accuracy
 
 | ID | Requirement |
 |---|---|
 | ACC-1 | Measure accuracy against ground truth **per field, per channel, and per complexity level**: header fields, line-level SKU, quantity, price, customer, and inventory outcome. |
-| ACC-2 | **Log every pipeline and evaluation run** (metrics, parameters, prompt version, model version) so accuracy over time is a chart, not an opinion. |
-| ACC-3 | **Trace every AI call**, so any extracted value can be traced to the exact prompt, input, model, and output. |
-| ACC-4 | Report the **straight-through-processing (STP) rate** (orders needing no human touch) together with the **false-confidence rate** (orders marked confident that were actually wrong). The second number matters more. |
-| ACC-5 | A **dashboard** for the CS team lead: volume by channel and complexity, STP rate, review backlog, accuracy trend, top review reasons, and inventory shortfalls. |
+| ACC-2 | Report the **straight-through-processing (STP) rate** (orders needing no human touch) together with the **false-confidence rate** (orders marked confident that were actually wrong). The second number matters more. |
+| ACC-3 | A **dashboard** for the CS team lead: volume by channel and complexity, STP rate, review backlog, top review reasons, and inventory shortfalls. |
 
 ### 4.6 Code in a repository
 
@@ -177,9 +175,9 @@ You are **not** asked to build a CI/CD pipeline or promote anything between envi
 
 | ID | Requirement |
 |---|---|
-| REPO-1 | **Everything is code in a Git repo**: pipelines, jobs, the app, dashboards, prompts, setup. Someone else could recreate your solution from the repo. No click-ops-only resources in the final demo. |
-| REPO-2 | **Prompts (and any model you train) are versioned**, so you can always say which version produced a given output. |
-| REPO-3 | A few **unit tests** on your deterministic logic (UOM conversion, date parsing, SKU matching) that run with one command. |
+| REPO-1 | **Everything is code in a Git repo**: pipelines, jobs, the app, prompts, setup. Someone else could recreate your solution from the repo. No click-ops-only resources in the final demo. |
+
+A couple of unit tests on your fiddly logic (UOM conversion, date parsing, SKU matching) are a good idea, but not required. Don't add tooling or process beyond this — keep the engineering light so you can spend your time on the actual problem.
 
 ### 4.7 Governance, access control & auditability
 
@@ -190,7 +188,7 @@ You are **not** asked to build a CI/CD pipeline or promote anything between envi
 | GOV-3 | Sensitive fields (buyer contact details, contracted prices) are protected, e.g. reviewers only see prices for their region. |
 | GOV-4 | The app runs with its own least-privilege identity, and reviewer actions are attributed to the **human user**. |
 | GOV-5 | **Lineage** shows, end to end, how any approved order line traces back to its raw document. Assets carry descriptions and tags. |
-| GOV-6 | You can answer the auditor's question live: *"For approved order X, line 3: what document did it come from, which prompt and model version extracted it, what was the confidence, and who approved or changed it?"* |
+| GOV-6 | You can answer the auditor's question live: *"For approved order X, line 3: what document did it come from, what was the confidence, and who approved or changed it?"* |
 
 ### 4.8 Non-functional
 
@@ -200,13 +198,12 @@ You are **not** asked to build a CI/CD pipeline or promote anything between envi
 
 ## 5. Scope (two tiers)
 
-**Deliver Tier 1 and Tier 2.** Tier 1 is a complete, demo-able project on its own; Tier 2 is the target. Tier 3 is optional, only if your team has time and wants to impress the judges.
+**Deliver Tier 1 and Tier 2.** Tier 1 is a complete, demo-able project on its own; Tier 2 is the target. That's the whole scope — there's no third tier, and nothing here needs more engineering ceremony than it says.
 
 | Tier | Goal | Requirements |
 |---|---|---|
 | **Tier 1: Foundation** (must) | Complexity-1 and -2 documents end to end (at least EDI, Email/PDF, and Excel). Bronze → Silver → Gold with customer + SKU resolution via cross-reference. A basic review app (approve/edit). Everything in Git. Accuracy computed against ground truth. | ING-1–3, PAR-1–2, EXT-1–2, CON-1, RES-1, RES-2 (exact matches), GLD-1, HIL-1–3, ACC-1, REPO-1 |
-| **Tier 2: Production-shaped** (target) | All channels including fax, handwriting, phone, and complexity-3 multimodal documents. Inventory and price checks. Confidence-based routing. Versioned prompts and traced AI calls. Personas + least privilege + protected fields. Audit trail. Dashboard. | + ING-4, PAR-3, EXT-3, RUL-1, ATP-1, PRC-1, HIL-4–5, ACC-2–5, REPO-2–3, GOV-2–6 |
-| **Tier 3: Optional stretch** (not required) | Complexity-4 documents. Duplicate/amendment detection. Image- or meaning-based SKU matching. A feedback loop from corrections. An automated evaluation gate. Natural-language Q&A for the CS lead. | + EXT-4, RES-2 (fuzzy/semantic/visual), HIL-6 |
+| **Tier 2: Production-shaped** (target) | All channels including fax, handwriting, phone, and complexity-3 multimodal documents. Inventory and price checks. Confidence-based routing. Personas + least privilege + protected fields. Audit trail. Dashboard. | + ING-4, PAR-3, EXT-3, RUL-1, ATP-1, PRC-1, HIL-4–5, ACC-2–3, GOV-2–6 |
 
 ## 6. Suggested week-by-week plan (6 build weeks)
 
@@ -216,10 +213,10 @@ You have roughly six weeks to build (Weeks 4–9), then polish and present. Week
 |---|---|---|
 | 4 | **Explore & land.** Set up Free Edition and a Git repo. Load the corpus and master data. Try a couple of ways to read a fax, a handwritten form, and a promo form. | Master data queryable; you've seen what's easy and hard to read |
 | 5 | **Bronze + start Silver.** Ingest every channel (incremental, idempotent). Begin turning documents into machine-readable content. | Re-running doesn't duplicate; the Tier-1 channels parse |
-| 6 | **Extract + first accuracy.** Typed schema, first versioned prompt, headers + lines for the Tier-1 channels. | First accuracy number against ground truth |
+| 6 | **Extract + first accuracy.** Typed schema and headers + lines for the Tier-1 channels. | First accuracy number against ground truth |
 | 7 | **Resolve, conform, inventory.** Customer and SKU resolution, conformance, inventory + price checks, proposed sales orders. Bring in the Tier-2 channels. | Gold orders with confidence + review reasons |
 | 8 | **Human in the loop.** Review app (queue, side-by-side, approve/edit/reject) and audit trail. | A reviewer can fix and approve an order; audit row written |
-| 9 | **Govern + dashboard + harden.** Access control and personas, tracing, a dashboard, and fixing your worst failure categories. | Auditor question answerable; dashboard live |
+| 9 | **Govern + dashboard + harden.** Access control and personas, a dashboard, and fixing your worst failure categories. | Auditor question answerable; dashboard live |
 | 10 | **Polish + rough-draft presentation.** Run a broad slice of the corpus, tidy up, rehearse. | Draft deck + a working live-demo path |
 | 11 | **Showcase.** Present to the judges and report honest numbers. | Final presentation |
 
@@ -234,7 +231,7 @@ These are stretch-realistic targets, not pass/fail lines, measured on the provid
 | Quantity accuracy (after UOM conversion) | ≥ 97% |
 | Straight-through-processing rate | ≥ 50% of orders |
 | **False-confidence rate** (wrong but not sent to review) | **≤ 2%** |
-| Every approved line traceable to document + prompt version + reviewer | 100% |
+| Every approved line traceable to its document + who approved it | 100% |
 
 ## 8. Week 11 showcase rubric (judges)
 
@@ -243,7 +240,7 @@ These are stretch-realistic targets, not pass/fail lines, measured on the provid
 | **Business outcome** | 20% | The team frames the problem the way the CS lead would. Reports STP rate, accuracy (by complexity), and time saved honestly. |
 | **Handling the mess** | 20% | Handwritten, fax, phone, multimodal, multi-PO, discontinued SKUs, and stock shortfalls are handled or routed to a human *with a clear reason*. |
 | **Human-in-the-loop experience** | 20% | A reviewer could use the app on Monday. It's fast and explains why each order is in the queue. Corrections stick. |
-| **Governance & auditability** | 20% | Live answer to the auditor question (GOV-6). Least-privilege personas. Prompts and models are versioned and traced. |
+| **Governance & auditability** | 20% | Live answer to the auditor question (GOV-6). Least-privilege personas. End-to-end lineage and an audit trail. |
 | **Engineering & design choices** | 20% | A clean repo with idempotent pipelines and a few tests. **The team can explain why each design choice beat the alternatives they tried.** |
 
 ## 9. Real-world trade-offs to discuss with your advisor
