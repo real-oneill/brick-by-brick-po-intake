@@ -93,16 +93,43 @@ Many real orders aren't "a document with a table". They're pictures: a promo fly
 An end-to-end, governed solution **on Databricks, using its data and AI capabilities**, that turns this pile of documents into **synthesized, ERP-ready sales orders**, with a human reviewing anything the system isn't confident about. The data must flow through a **medallion architecture** (raw → refined → business-ready).
 
 ```
- Channels (11)          BRONZE (raw)            SILVER (refined)                 GOLD (business-ready)        People / ERP
- ─────────────          ────────────            ────────────────                 ─────────────────────        ────────────
- EDI · email · fax  ──► every inbound file, ──► machine-readable content   ──►  proposed sales orders     ──► interactive review app
- handwritten · Excel    as received, with       per document; extracted         (customer + SKU resolved,     (approve / edit / reject)
- portal · phone ·       arrival metadata        headers + lines in a typed      inventory + price checked,          │
- price list · scans ·                           schema; conformed units,        confidence + reasons)               ▼
- multimodal                                     dates, currencies, IDs          accuracy + ops metrics       approved orders ──► mock ERP
-                                                                                                             corrections ──► evaluation set
-  Master data: products · customers · ship-tos · retailer item cross-reference · price list · inventory (ATP) · retailer rules
-  Across everything: access control on every asset · lineage · audit trail · all code in a Git repo
+CHANNELS (11)
+  EDI · email · fax · handwritten · Excel ·
+  portal · phone · price list · scans ·
+  multimodal
+        │
+        ▼
+BRONZE  (raw)
+  every inbound file, as received,
+  with its arrival metadata
+        │
+        ▼
+SILVER  (refined)
+  machine-readable content per document;
+  headers + lines extracted into a typed
+  schema; units, dates, currencies, IDs
+  conformed
+        │
+        ▼
+GOLD  (business-ready)
+  proposed sales orders — customer + SKU
+  resolved, inventory + price checked,
+  confidence + review reasons
+        │
+        ▼
+PEOPLE / ERP
+  interactive review app
+  (approve / edit / reject)
+  → approved orders → mock ERP
+  → corrections feed the evaluation set
+──────────────────────────────────────────────
+Master data: products · customers · ship-tos ·
+  retailer item cross-reference · price list ·
+  inventory (ATP) · retailer rules
+
+Across everything: access control on every
+  asset · lineage · audit trail ·
+  all code in a Git repo
 ```
 
 ### 3.1 Provided to the team
