@@ -2,24 +2,24 @@
 
 The synthetic dataset for the Brick-by-Brick @ NYU use case *Intelligent Purchase Order Intake*. **Everything here is fictional.** Every company, brand, retailer, person, product, GTIN, address, and price is invented. GTINs use the GS1 `29` prefix, which is reserved for internal use, so none of them collide with real products.
 
-| | train | holdout |
-|---|---|---|
-| Documents | 184 | 48 |
-| …of which multimodal | 24 | 8 |
-| Purchase orders (some docs contain several) | 220 | 58 |
-| Order lines | 2,719 | 943 |
-| Complexity 1 / 2 / 3 / 4 | 43 / 43 / 74 / 24 | 10 / 11 / 22 / 5 |
-| Size | 26 MB | 9 MB |
+| | |
+|---|---|
+| Documents | 184 |
+| …of which multimodal | 24 |
+| Purchase orders (some docs contain several) | 220 |
+| Order lines | 2,719 |
+| Complexity 1 / 2 / 3 / 4 | 43 / 43 / 74 / 24 |
+| Size | 26 MB |
 
-> **The holdout set is for the Week 11 showcase.** Your mentor releases the 48 holdout documents (without answers) the week before the showcase. You run them through your solution, and they're scored against a private answer key.
+The documents and the answer key are all here, in one set. Use whatever subset you need, and measure your own accuracy against `ground_truth/`.
 
 ## Layout
 
 ```
-master_data/                 reference data your pipeline joins against
-documents/<split>/<channel>/DOC-xxxxx.<ext>   raw inbound documents, one folder per channel
-documents/<split>/_arrivals.csv               what the inbox / EDI gateway knows on arrival (no answers)
-ground_truth/<split>/        the answer key: manifest, headers, lines, issues
+master_data/                      reference data your pipeline joins against
+documents/<channel>/DOC-xxxxx.<ext>   raw inbound documents, one folder per channel
+documents/_arrivals.csv               what the inbox / EDI gateway knows on arrival (no answers)
+ground_truth/                     the answer key: manifest.csv, headers.csv, lines.csv, issues.csv
 ```
 
 Suggested Unity Catalog layout: upload each channel folder to `/Volumes/<catalog>/po_intake/landing/<channel>/` in batches to simulate arrival, and load `master_data/*.csv` as Delta tables.
@@ -67,9 +67,9 @@ Suggested Unity Catalog layout: upload each channel folder to `/Volumes/<catalog
 
 8 brands: Solenne Paris, Kōri Botanicals, Atelier Noor, Velour Cosmetics, Thornfield Grooming, Mistral Hair, Lune Rouge, and Ember & Oak. There are 4 currencies (USD, EUR, GBP, AED) and 4 supply plants (US-NJ, EU-FR, UK-MK, AE-JA).
 
-## ground_truth/<split>/
+## ground_truth/
 
-**`manifest.csv`**: doc_id, relative_path, split, channel, retailer, file_format, received_at, sender, subject, page_count (pages, or sheets for `.xlsx`), po_count, line_count, doc_type, complexity (1–4)
+**`manifest.csv`**: doc_id, relative_path, channel, retailer, file_format, received_at, sender, subject, page_count (pages, or sheets for `.xlsx`), po_count, line_count, doc_type, complexity (1–4)
 
 **`headers.csv`** (one row per PO): doc_id, po_number (the *intended* number; blank if none was given), customer_name_as_written, sold_to_id, ship_to_as_written, ship_to_id (**after** applying reroute rules), order_date, requested_delivery_date (as stated, ISO), currency, order_type (`STANDARD`/`AMENDMENT`), is_duplicate_of (doc_id of the first copy), amends_po
 

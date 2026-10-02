@@ -2,7 +2,7 @@
 
 **Program:** Brick-by-Brick @ NYU (Tech@NYU x Databricks), Fall 2026
 **Industry:** Consumer Packaged Goods / Prestige Beauty (B2B order-to-cash)
-**Team size:** 3 students | **Build window:** Weeks 4–10 (~8 weeks) | **Showcase:** Week 11 (in person)
+**Team size:** 3 students (with other coursework) | **Build window:** ~6 weeks (Weeks 4–9) | **Showcase:** Week 11 (in person)
 **Platform:** Databricks Free Edition (serverless)
 **Data:** 100% synthetic. Every company, brand, retailer, person, SKU, and price in this project is fictional.
 
@@ -102,17 +102,16 @@ An end-to-end, governed solution **on Databricks, using its data and AI capabili
  multimodal                                     dates, currencies, IDs          accuracy + ops metrics       approved orders ──► mock ERP
                                                                                                              corrections ──► evaluation set
   Master data: products · customers · ship-tos · retailer item cross-reference · price list · inventory (ATP) · retailer rules
-  Across everything: access control on every asset · lineage · versioned prompts & models · traced AI calls · audit trail · packaged & CI/CD-ready
+  Across everything: access control on every asset · lineage · versioned prompts & models · traced AI calls · audit trail · all code in a Git repo
 ```
 
 ### 3.1 Provided to the team
 
 A synthetic corpus, in the `data/` folder of the course repo ([github.com/real-oneill/brick-by-brick-po-intake](https://github.com/real-oneill/brick-by-brick-po-intake)), containing:
 
-- **184 training documents** (220 POs, ~2,700 order lines) across 11 channels and 9 file types: PDF, PNG, JPG, EML, XLSX, CSV, JSON, X12 `.edi`, and TXT transcripts. That includes **24 multimodal documents** across all four multimodal types and all four complexity levels.
-- **48 holdout documents** (58 POs, ~940 lines). Held back by the mentor and released only for the **Week 11 showcase evaluation**, so teams can't overfit.
+- **184 documents** (220 POs, ~2,700 order lines) across 11 channels and 9 file types: PDF, PNG, JPG, EML, XLSX, CSV, JSON, X12 `.edi`, and TXT transcripts. That includes **24 multimodal documents** across all four multimodal types and all four complexity levels. Use whatever subset you need; you don't have to process all 184.
 - **Master data** as CSVs: product master (163 SKUs across 8 brands, with case packs, barcodes, testers, and discontinued → successor links), 14 customers and their ship-tos (with name variants), retailer item cross-reference (deliberately incomplete), contracted price list, inventory / available-to-promise, and 17 retailer rules written in plain English.
-- **Ground truth** for the training set: expected headers, expected lines (including the expected inventory outcome per line), a complexity rating per document, and a labeled list of every injected issue across 35 issue types. `data/README.md` documents every file and column.
+- **Ground truth:** expected headers, expected lines (including the expected inventory outcome per line), a complexity rating per document, and a labeled list of every injected issue across 35 issue types, so you can measure your own accuracy. `data/README.md` documents every file and column.
 
 ## 4. Requirements
 
@@ -172,29 +171,15 @@ Requirement IDs are referenced in the scope tiers (§5) and the showcase rubric 
 | ACC-4 | Report the **straight-through-processing (STP) rate** (orders needing no human touch) together with the **false-confidence rate** (orders marked confident that were actually wrong). The second number matters more. |
 | ACC-5 | A **dashboard** for the CS team lead: volume by channel and complexity, STP rate, review backlog, accuracy trend, top review reasons, and inventory shortfalls. |
 
-### 4.6 Packaging & CI/CD plan
+### 4.6 Code in a repository
 
-You **don't** have to build a CI/CD pipeline or actually promote anything from dev to prod. You **do** have to package the solution so it *could* be promoted, and explain exactly how it would be.
-
-**Packaging (built)**
+You are **not** asked to build a CI/CD pipeline or promote anything between environments. Just keep the work as code so it's reproducible and auditable.
 
 | ID | Requirement |
 |---|---|
-| PKG-1 | **Everything is code in a Git repo**: pipelines, jobs, the app, dashboards, prompts, setup scripts. Someone else could recreate your solution from the repo alone. No click-ops resources in the final demo. |
-| PKG-2 | **Nothing environment-specific is hard-coded**: catalog/schema names, workspace URLs, model endpoints, secrets. Configuration is parameterized, so the same code could run unchanged in dev, test, or prod. |
-| PKG-3 | **Prompts are versioned, governed assets**, loaded by version or alias at runtime. You can always say which prompt version produced which output. |
-| PKG-4 | **Models are versioned, governed assets**, including any model you train or fine-tune. |
-| PKG-5 | **Unit tests** cover your deterministic logic (UOM conversion, date parsing, SKU matching, rules) and run with one command. |
-
-**CI/CD plan (written, not built).** About 2 pages plus one diagram, in the repo, and summarized in under 2 minutes at the showcase.
-
-| ID | The plan must explain |
-|---|---|
-| PLAN-1 | **Environments:** which ones you'd have (e.g. dev / test / prod), how they'd be isolated (workspaces, data, identities), and what data each one uses. |
-| PLAN-2 | **Pipeline stages:** what happens automatically on a pull request, on merge, and on a release (tests, validation, deployment, approvals), and which tools would run each step. |
-| PLAN-3 | **Promoting AI assets:** how a new prompt or model version gets from an experiment to prod, including the **evaluation gate**: it must beat the current version on ground truth, with no regression in false confidence. |
-| PLAN-4 | **Identities & secrets:** what identity deploys to prod (not a person's account), how secrets are handled, and who approves a prod release. |
-| PLAN-5 | **Rollback & monitoring:** how you'd roll back a bad release or a bad prompt, and what you'd watch after a deployment (accuracy drift, STP rate, false confidence, cost). |
+| REPO-1 | **Everything is code in a Git repo**: pipelines, jobs, the app, dashboards, prompts, setup. Someone else could recreate your solution from the repo. No click-ops-only resources in the final demo. |
+| REPO-2 | **Prompts (and any model you train) are versioned**, so you can always say which version produced a given output. |
+| REPO-3 | A few **unit tests** on your deterministic logic (UOM conversion, date parsing, SKU matching) that run with one command. |
 
 ### 4.7 Governance, access control & auditability
 
@@ -213,34 +198,34 @@ You **don't** have to build a CI/CD pipeline or actually promote anything from d
 - **Idempotent and re-runnable:** a full refresh reproduces the same gold tables.
 - **No real data, ever.** Synthetic corpus only.
 
-## 5. Scope tiers (find your way in)
+## 5. Scope (two tiers)
 
-The team doesn't have to do everything. Tier 1 is a complete, demo-able project on its own.
+**Deliver Tier 1 and Tier 2.** Tier 1 is a complete, demo-able project on its own; Tier 2 is the target. Tier 3 is optional, only if your team has time and wants to impress the judges.
 
 | Tier | Goal | Requirements |
 |---|---|---|
-| **Tier 1: Foundation** (must) | Complexity-1 and -2 documents end to end (at least EDI, Email/PDF, and Excel). Bronze → Silver → Gold with customer + SKU resolution via cross-reference. A basic review app (approve/edit). Everything in Git. Accuracy computed against ground truth. | ING-1–3, PAR-1–2, EXT-1–2, CON-1, RES-1, RES-2 (exact matches), GLD-1, HIL-1–3, ACC-1, PKG-1, GOV-1 |
-| **Tier 2: Production-shaped** (target) | All channels including fax, handwriting, phone, and complexity-3 multimodal documents. Inventory and price checks. Confidence-based routing. Versioned prompts, traced AI calls, logged evals. Parameterized, tested repo + a written CI/CD plan. Personas + least privilege + protected fields. Audit trail. Dashboard. | + ING-4, PAR-3, EXT-3, RUL-1, ATP-1, PRC-1, HIL-4–5, ACC-2–5, PKG-2–3, PKG-5, PLAN-1–5, GOV-2–6 |
-| **Tier 3: Stretch** (impress the judges) | Complexity-4 documents. Duplicate/amendment detection. Image- or meaning-based SKU matching as a versioned model. A feedback loop from corrections. An automated evaluation you could use as the promotion gate. Automated quality judges. Natural-language Q&A for the CS lead ("what's stuck and why?"). | + EXT-4, RES-2 (fuzzy/semantic/visual), HIL-6, PKG-4 |
+| **Tier 1: Foundation** (must) | Complexity-1 and -2 documents end to end (at least EDI, Email/PDF, and Excel). Bronze → Silver → Gold with customer + SKU resolution via cross-reference. A basic review app (approve/edit). Everything in Git. Accuracy computed against ground truth. | ING-1–3, PAR-1–2, EXT-1–2, CON-1, RES-1, RES-2 (exact matches), GLD-1, HIL-1–3, ACC-1, REPO-1 |
+| **Tier 2: Production-shaped** (target) | All channels including fax, handwriting, phone, and complexity-3 multimodal documents. Inventory and price checks. Confidence-based routing. Versioned prompts and traced AI calls. Personas + least privilege + protected fields. Audit trail. Dashboard. | + ING-4, PAR-3, EXT-3, RUL-1, ATP-1, PRC-1, HIL-4–5, ACC-2–5, REPO-2–3, GOV-2–6 |
+| **Tier 3: Optional stretch** (not required) | Complexity-4 documents. Duplicate/amendment detection. Image- or meaning-based SKU matching. A feedback loop from corrections. An automated evaluation gate. Natural-language Q&A for the CS lead. | + EXT-4, RES-2 (fuzzy/semantic/visual), HIL-6 |
 
-## 6. Suggested week-by-week plan
+## 6. Suggested week-by-week plan (6 build weeks)
 
-Weekly in-class platform topics are set by the Instructors. This is a *suggested* sequence of project milestones; adjust it with your Mentor.
+You have roughly six weeks to build (Weeks 4–9), then polish and present. Weekly in-class platform topics are set by the Instructors. This is a *suggested* sequence; adjust it with your Mentor, and don't be afraid to cut scope to land Tiers 1 and 2 well.
 
 | Week | Milestone | Done when… |
 |---|---|---|
-| 4 | **Explore & land.** Set up Free Edition and a Git repo. Explore the corpus and master data. Run quick experiments on how the platform can read a fax, a handwritten form, and a promo form. | Master data queryable; a short write-up of what you tried on 3 hard documents and what worked |
-| 5 | **Bronze.** Incremental, idempotent ingestion of every channel. | Re-running doesn't duplicate; all channels landed |
-| 6 | **Understand + extract.** Machine-readable content for every format; first extraction into your schema; first versioned prompt. | Extracted orders for complexity-1/2 documents; first accuracy number |
-| 7 | **Resolve, conform, inventory.** Customer and SKU resolution, conformance, inventory and price checks, proposed sales orders. | Gold orders with confidence + review reasons |
-| 8 | **Human in the loop.** Review app and audit trail. | A reviewer can fix and approve an order; audit row written |
-| 9 | **Govern & package.** Personas and access control, tracing, an evaluation run, parameterized config, unit tests, dashboard. Write the CI/CD plan. | CI/CD plan reviewed with your mentor |
-| 10 | **Harden + rough-draft presentation.** Run the full corpus, fix the worst failure categories (by complexity level), rehearse. | Draft deck + live demo path |
-| 11 | **Showcase.** The mentor releases the holdout set the week before. Teams run it and report honest numbers. | Final presentation |
+| 4 | **Explore & land.** Set up Free Edition and a Git repo. Load the corpus and master data. Try a couple of ways to read a fax, a handwritten form, and a promo form. | Master data queryable; you've seen what's easy and hard to read |
+| 5 | **Bronze + start Silver.** Ingest every channel (incremental, idempotent). Begin turning documents into machine-readable content. | Re-running doesn't duplicate; the Tier-1 channels parse |
+| 6 | **Extract + first accuracy.** Typed schema, first versioned prompt, headers + lines for the Tier-1 channels. | First accuracy number against ground truth |
+| 7 | **Resolve, conform, inventory.** Customer and SKU resolution, conformance, inventory + price checks, proposed sales orders. Bring in the Tier-2 channels. | Gold orders with confidence + review reasons |
+| 8 | **Human in the loop.** Review app (queue, side-by-side, approve/edit/reject) and audit trail. | A reviewer can fix and approve an order; audit row written |
+| 9 | **Govern + dashboard + harden.** Access control and personas, tracing, a dashboard, and fixing your worst failure categories. | Auditor question answerable; dashboard live |
+| 10 | **Polish + rough-draft presentation.** Run a broad slice of the corpus, tidy up, rehearse. | Draft deck + a working live-demo path |
+| 11 | **Showcase.** Present to the judges and report honest numbers. | Final presentation |
 
-## 7. Definition of "good" (target metrics on the holdout set)
+## 7. Definition of "good" (target metrics)
 
-These are stretch-realistic targets, not pass/fail lines. Showing honest numbers and the failure analysis behind them beats inflated ones. **Report every metric by complexity level.** Nobody expects level 4 to match level 1.
+These are stretch-realistic targets, not pass/fail lines, measured on the provided corpus. Showing honest numbers and the failure analysis behind them beats inflated ones. **Report every metric by complexity level.** Nobody expects level 4 to match level 1.
 
 | Metric | Target |
 |---|---|
@@ -255,11 +240,11 @@ These are stretch-realistic targets, not pass/fail lines. Showing honest numbers
 
 | Criterion | Weight | What "ship-ready" looks like |
 |---|---|---|
-| **Business outcome** | 20% | The team frames the problem the way the CS lead would. Reports STP rate, accuracy (by complexity), and time saved honestly on the holdout set. |
+| **Business outcome** | 20% | The team frames the problem the way the CS lead would. Reports STP rate, accuracy (by complexity), and time saved honestly. |
 | **Handling the mess** | 20% | Handwritten, fax, phone, multimodal, multi-PO, discontinued SKUs, and stock shortfalls are handled or routed to a human *with a clear reason*. |
 | **Human-in-the-loop experience** | 20% | A reviewer could use the app on Monday. It's fast and explains why each order is in the queue. Corrections stick. |
 | **Governance & auditability** | 20% | Live answer to the auditor question (GOV-6). Least-privilege personas. Prompts and models are versioned and traced. |
-| **Engineering & design choices** | 20% | A clean, parameterized, tested repo, idempotent pipelines, and a credible CI/CD plan (environments, gates, identities, rollback). **The team can explain why each design choice beat the alternatives they tried.** |
+| **Engineering & design choices** | 20% | A clean repo with idempotent pipelines and a few tests. **The team can explain why each design choice beat the alternatives they tried.** |
 
 ## 9. Real-world trade-offs to discuss with your advisor
 
@@ -274,7 +259,6 @@ These are stretch-realistic targets, not pass/fail lines. Showing honest numbers
 ## 10. Free Edition notes & known constraints
 
 - **Serverless only.** One 2X-Small SQL warehouse, up to 3 apps (they auto-stop after 24h), one managed Postgres project, one active pipeline per pipeline type, and limited model-serving endpoints (no GPU, no provisioned throughput). Design within these limits.
-- **One workspace.** You won't promote between environments, but your CI/CD plan should say how you'd isolate them at a real company (typically separate workspaces) and how the same code would run in each.
 - **Verify early (Week 4)** that the platform capabilities your design depends on are available on Free Edition. If something isn't, talk to your mentor about alternatives.
 - **Free Edition is non-commercial.** This is a learning project.
 
