@@ -2,6 +2,8 @@
 
 A Streamlit app for the Gold schema exported November 5. Includes an overview, order-level risk queue, original-document evidence next to proposed order lines, and an approval workflow. No pipeline source is moved, replaced, or executed, and Gold, Silver, Bronze, and reference data are never written to directly.
 
+The overview deliberately matches the AI/BI dashboard definitions: total purchase orders are distinct non-null `po_number` values and READY percentage is calculated across Gold lines. The review queue uses a finer-grained review-case key (`source_doc_id`, `po_number`, `source_order_index`), so its case count can be larger than the distinct PO count. The UI labels this difference instead of presenting the values as interchangeable.
+
 Approvals write only to two new, app-owned tables: `gold.approved_sales_orders` (a snapshot of approved/auto-included lines, upserted by a durable `gold_line_id`) and `gold.review_events` (an append-only audit log of every edit and approve/auto-approve decision, with who, when, before → after, and the reason). See "Approval workflow" below.
 
 ## Upload to your fork
@@ -29,6 +31,9 @@ From app/: `python -m pip install -r requirements.txt`, configure Databricks SDK
 
 - **Approve:** on any order (Needs attention or Ready), the "Approve this order" panel lets a reviewer edit key fields (SKU match, quantity, price, resolved customer/ship-to), add a reason, and approve. This upserts the order's lines into `approved_sales_orders` and appends EDIT + APPROVE events to `review_events`.
 - **Auto-include:** orders that are already READY (no FAILED or REVIEW lines) are included into `approved_sales_orders` automatically on load, attributed to `system:auto-ready-rule` with `approval_type = 'AUTO'`, per the mentor's suggestion. A reviewer can still open a READY order and re-approve manually after a correction.
+- **Approved orders page:** shows AUTO and MANUAL approvals from the app-owned snapshot table. It never updates the source `gold_sales_orders` table.
+- **Reviewer guidance:** review reasons are translated into suggested next steps while the editable grid remains the place where the reviewer corrects approved values.
+- **Demo examples:** the Overview page recommends one current READY, REVIEW, and FAILED document from the loaded Gold snapshot. This avoids relying on document IDs that may change status after a pipeline refresh.
 - **Identity:** `approved_by` / the audit log's `actor` come only from the `X-Forwarded-Email` header Databricks forwards for the signed-in user. There is no fallback to the app's service identity, so approvals from a local `streamlit run` (no forwarded header) are blocked.
 - **Staleness:** before writing, the app re-reads the order straight from Gold and compares it against what was on screen. If Gold changed underneath the reviewer, the approval is refused with a message to refresh, rather than silently overwritten.
 - **Line identity:** Gold's `(source_doc_id, po_number, line_number)` key can be incomplete (null line numbers), so `approved_sales_orders`/`review_events` key off a durable `gold_line_id` (Gold's own `line_id` if present, else a content hash, flagged `line_id_is_fallback`). A fallback id will not survive a re-extraction of the source document — ask the pipeline team for a durable `line_id` column in Gold.

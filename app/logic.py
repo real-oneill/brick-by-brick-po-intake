@@ -5,8 +5,23 @@ import pandas as pd
 ORDER_KEYS = ['source_doc_id', 'po_number', 'source_order_index']
 
 # Fields a reviewer may correct before approving. Everything else is taken as extracted.
-EDITABLE_FIELDS = ['material_id', 'quantity_each', 'expected_net_price',
+EDITABLE_FIELDS = ['po_number', 'material_id', 'quantity_each', 'expected_net_price',
     'master_customer_name', 'master_ship_to_name']
+
+ACTION_RULES = (
+    (('missing po',), 'Enter or confirm the purchase order number from the source document.'),
+    (('customer unresolved',), 'Confirm the customer and select the correct customer record.'),
+    (('ship-to unresolved',), 'Confirm the delivery location and select the correct ship-to record.'),
+    (('sku unresolved', 'missing item code'), 'Check the source item and select the correct product or SKU.'),
+    (('contract price unavailable',), 'Confirm the applicable contract price before approval.'),
+    (('price differs', 'price mismatch'), 'Compare the document and contract prices, then confirm the approved price.'),
+    (('invalid or unconverted quantity',), 'Confirm the quantity and unit of measure, then correct the unit quantity.'),
+    (('insufficient atp', 'partial shipment'), 'Review the proposed partial shipment and confirm the quantity to ship.'),
+    (('no atp', 'backorder'), 'Confirm whether the line should be backordered or held.'),
+    (('discontinued', 'successor'), 'Review the proposed successor product before approval.'),
+    (('atp decision unavailable', 'line cancelled'), 'Confirm the inventory decision or cancellation with operations.'),
+    (('low header confidence', 'low line confidence'), 'Compare the extracted fields with the source evidence.'),
+)
 
 # Captured in the approved-orders snapshot; also the basis for detecting Gold drift.
 SNAPSHOT_FIELDS = ['source_doc_id', 'po_number', 'source_order_index', 'line_number',
@@ -36,6 +51,72 @@ def orders_from_lines(lines):
     result['status'] = result.apply(lambda r: 'FAILED' if r['failed'] else 'REVIEW' if r['needs_review'] else 'READY', axis=1)
     # Value sorting is only meaningful within a currency. No implicit FX conversion.
     return result.sort_values(['confidence', 'currency', 'known_value'], ascending=[True, True, False], na_position='first').reset_index(drop=True)
+
+
+def portfolio_metrics(lines):
+    """Dashboard-aligned portfolio KPIs, calculated directly from Gold lines.
+
+    Purchase orders follow the dashboard definition: distinct, non-empty PO
+    numbers. READY percentage is line based, not a percentage of review cases.
+    """
+    po_numbers = lines.get('po_number', pd.Series(dtype='object')).dropna().astype(str).str.strip()
+    po_numbers = po_numbers[po_numbers.ne('')]
+    statuses = lines.get('quality_status', pd.Series(index=lines.index, dtype='object')).fillna('')
+    total_lines = len(lines)
+    ready_lines = int(statuses.eq('READY').sum())
+    return {
+        'purchase_orders': int(po_numbers.nunique()),
+        'total_lines': total_lines,
+        'ready_lines': ready_lines,
+        'review_lines': int(statuses.eq('REVIEW').sum()),
+        'failed_lines': int(statuses.eq('FAILED').sum()),
+        'ready_line_share': ready_lines / total_lines if total_lines else 0.0,
+    }
+
+
+def recommended_actions(review_reasons, status=None):
+    """Plain-language next steps inferred from Gold's review reasons."""
+    reason_text = '; '.join(str(value) for value in review_reasons if value is not None and not pd.isna(value)).lower()
+    actions = []
+    for needles, action in ACTION_RULES:
+        if any(needle in reason_text for needle in needles) and action not in actions:
+            actions.append(action)
+    if not actions and status == 'FAILED':
+        actions.append('Compare the extracted order with the source document and complete the missing required fields.')
+    elif not actions and status == 'REVIEW':
+        actions.append('Review the flagged fields against the source evidence before approval.')
+    return actions
+
+
+def demo_cases(orders):
+    """Select one useful live example for each workflow path.
+
+    These are suggestions from the currently loaded Gold snapshot, not
+    hardcoded document IDs that can become stale after a refresh.
+    """
+    picks = []
+    for status in ('READY', 'REVIEW', 'FAILED'):
+        candidates = orders[orders.status.eq(status)].copy()
+        if candidates.empty:
+            continue
+        if status == 'READY':
+            candidates = candidates.sort_values(['confidence', 'lines'], ascending=[False, False], na_position='last')
+            purpose = 'Show automatic inclusion in Approved orders.'
+        elif status == 'REVIEW':
+            candidates = candidates.sort_values(['known_value', 'confidence'], ascending=[False, True], na_position='last')
+            purpose = 'Show review flags, suggested actions, edits and manual approval.'
+        else:
+            candidates = candidates.sort_values(['confidence', 'lines'], ascending=[True, False], na_position='first')
+            purpose = 'Show missing critical data, source evidence, correction and manual approval.'
+        row = candidates.iloc[0]
+        picks.append({
+            'Workflow': status,
+            'Document': row.get('source_doc_id'),
+            'PO number': row.get('po_number'),
+            'Channel': row.get('channel'),
+            'Why use it': purpose,
+        })
+    return pd.DataFrame(picks)
 
 def select_order(lines, order):
     mask = pd.Series(True, index=lines.index)

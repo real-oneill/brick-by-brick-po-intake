@@ -9,7 +9,8 @@ import altair as alt
 from database import (load_lines, source_files, ensure_approval_tables, load_approved,
     record_decision, gold_rows_for_order, check_not_stale, StaleGoldError)
 from logic import (orders_from_lines, select_order, ready_order_lines, line_identifier,
-    row_hash, diff_editable_fields, EDITABLE_FIELDS)
+    row_hash, diff_editable_fields, portfolio_metrics, recommended_actions, demo_cases,
+    EDITABLE_FIELDS)
 
 def current_actor():
     """The signed-in reviewer, from the identity Databricks forwards to the
@@ -25,6 +26,8 @@ st.markdown('''<style>
 .stApp{background:#f5f7fa} .block-container{padding-top:2rem;max-width:1500px}
 h1,h2,h3{color:#18334b} [data-testid="stMetric"]{background:white;padding:18px;border-radius:10px;border:1px solid #e3e9ef}
 [data-testid="stSidebar"]{background:#eaf0f5}
+[data-testid="InputInstructions"]{display:flex;align-items:center;justify-content:flex-end;height:100%;top:0;padding-top:0}
+[data-testid="stTextInput"] [data-baseweb="input"]{align-items:center}
 </style>''', unsafe_allow_html=True)
 
 # Databricks authenticates visitors before this presentation-only welcome screen.
@@ -150,8 +153,8 @@ st.sidebar.caption('ORDER OPERATIONS')
 if st.sidebar.button('← Welcome', key='return_to_welcome'):
     st.session_state.workspace_entered = False
     st.rerun()
-page = st.sidebar.radio('Workspace', ['Overview', 'Review queue', 'Order review'])
-st.sidebar.caption('Live Databricks data · View only')
+page = st.sidebar.radio('Workspace', ['Overview', 'Review queue', 'Order review', 'Approved orders'])
+st.sidebar.caption('Gold source data · Read only')
 if st.sidebar.button('Refresh data'):
     for key in ['gold_lines', 'approved', 'approvals_ready', 'approvals_error', 'auto_included']:
         st.session_state.pop(key, None)
@@ -183,6 +186,7 @@ if lines.empty:
     st.info('No lines match these filters.')
     st.stop()
 orders = orders_from_lines(lines)
+metrics = portfolio_metrics(lines)
 st.caption('Proposed sales orders · quantities in individual units · values in original currencies')
 
 if 'approvals_ready' not in st.session_state:
@@ -223,12 +227,17 @@ if st.session_state.approvals_ready and not st.session_state.get('auto_included'
     st.session_state.auto_included = True
 
 if page == 'Overview':
-    cols = st.columns(4)
-    cols[0].metric('Proposed orders', f'{len(orders):,}')
-    cols[1].metric('Order lines', f'{len(lines):,}')
-    cols[2].metric('Needs attention', f'{orders.status.ne("READY").sum():,}')
-    cols[3].metric('Ready order share', f'{orders.status.eq("READY").mean():.1%}')
-    st.caption('Ready share is a routing metric, not measured straight-through processing or accuracy.')
+    cols = st.columns(6)
+    cols[0].metric('Purchase orders', f'{metrics["purchase_orders"]:,}')
+    cols[1].metric('Order lines', f'{metrics["total_lines"]:,}')
+    cols[2].metric('READY lines', f'{metrics["ready_lines"]:,}')
+    cols[3].metric('REVIEW lines', f'{metrics["review_lines"]:,}')
+    cols[4].metric('FAILED lines', f'{metrics["failed_lines"]:,}')
+    cols[5].metric('READY percentage', f'{metrics["ready_line_share"]:.1%}')
+    st.caption('These KPIs use the same definitions as the dashboard: distinct non-null PO numbers and line-level quality status. Live values may change after a pipeline refresh.')
+    with st.expander('Demo examples from the current Gold snapshot'):
+        st.caption('Use these document IDs during the demo. They are selected from live data on each refresh, so they stay relevant when pipeline results change.')
+        st.dataframe(demo_cases(orders), hide_index=True, use_container_width=True)
     left, right = st.columns(2)
     with left:
         st.subheader('Line quality')
@@ -257,11 +266,12 @@ elif page == 'Review queue':
     if search:
         mask = queue[['source_doc_id','po_number','customer']].fillna('').astype(str).apply(lambda x: x.str.contains(search,case=False,regex=False)).any(axis=1)
         queue = queue[mask]
+    st.caption(f'Showing {len(queue):,} of {len(orders):,} review cases. The dashboard\'s {metrics["purchase_orders"]:,} purchase orders count is distinct non-null PO numbers; a source document can produce more than one review case.')
     st.dataframe(queue.style.apply(status_row_style, axis=1), hide_index=True, use_container_width=True,
         column_config={'confidence': st.column_config.NumberColumn(format='%.2f'), 'known_value':st.column_config.NumberColumn('Known value (original currency)',format='%.2f')})
-    st.caption('Open Order review in the sidebar to inspect an order. Nothing in this screen changes source data.')
+    st.caption('Open Order review in the sidebar to inspect a case. Nothing in this screen changes source Gold data.')
 
-else:
+elif page == 'Order review':
     def render_order_review(tab_orders, tab_key):
         if tab_orders.empty:
             st.info('No orders in this section match the current filters.')
@@ -323,6 +333,9 @@ else:
             reasons = sorted({reason.strip() for value in selected.review_reasons.dropna() for reason in str(value).split(';') if reason.strip()})
             if reasons:
                 st.warning('**Order notes and review flags**\n\n' + '\n'.join(f'- {reason}' for reason in reasons))
+            actions = recommended_actions(selected.review_reasons.dropna().tolist(), order.status)
+            if actions:
+                st.info('**Recommended reviewer actions**\n\n' + '\n'.join(f'{i}. {action}' for i, action in enumerate(actions, 1)))
             visible = ['quality_status','line_number','item_code','item_description','material_id','quantity_as_written','uom_as_written','quantity_each','expected_net_price','currency','proposed_atp_outcome','proposed_ship_quantity','overall_confidence','source_pointer']
             visible = [x for x in visible if x in selected]
             st.subheader('Order lines')
@@ -409,3 +422,32 @@ else:
     with ready_tab:
         st.caption('Passed current readiness checks · Auto-included in approved orders; re-approve here after any correction.')
         render_order_review(ready_orders, 'ready')
+
+else:
+    st.caption('Approved line snapshots are stored separately from the read-only Gold source table.')
+    if not st.session_state.get('approvals_ready'):
+        st.info('Approved orders are unavailable: ' + str(st.session_state.get('approvals_error')))
+    elif st.session_state.approved.empty:
+        st.info('No approved lines have been recorded yet. READY cases are added automatically when approval storage is available.')
+    else:
+        approved = st.session_state.approved.copy()
+        approved['approved_at'] = pd.to_datetime(approved['approved_at'], errors='coerce', utc=True)
+        summary = approved.groupby(['source_doc_id', 'po_number', 'approval_type', 'approved_by'], dropna=False).agg(
+            lines=('gold_line_id', 'size'),
+            approved_at=('approved_at', 'max'),
+            source_status=('quality_status', lambda values: ', '.join(sorted(set(values.dropna().astype(str))))),
+        ).reset_index().sort_values('approved_at', ascending=False)
+        auto_count = int(summary.approval_type.eq('AUTO').sum())
+        manual_count = int(summary.approval_type.eq('MANUAL').sum())
+        a, b, c = st.columns(3)
+        a.metric('Approved cases', f'{len(summary):,}')
+        b.metric('Automatically included', f'{auto_count:,}')
+        c.metric('Manually approved', f'{manual_count:,}')
+        st.dataframe(summary, hide_index=True, use_container_width=True,
+            column_config={
+                'source_doc_id': 'Document', 'po_number': 'PO number',
+                'approval_type': 'Approval type', 'approved_by': 'Approved by',
+                'lines': 'Lines', 'approved_at': st.column_config.DatetimeColumn('Approved at'),
+                'source_status': 'Original Gold status',
+            })
+        st.caption('AUTO means every line in the review case was READY. MANUAL means a reviewer checked or corrected the case before approval. Neither action changes gold_sales_orders.')
