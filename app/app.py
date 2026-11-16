@@ -211,8 +211,9 @@ if 'approvals_ready' not in st.session_state:
         st.session_state.approvals_error = str(exc)
 
 if st.session_state.approvals_ready and not st.session_state.get('auto_included'):
-    # Mentor-suggested rule: READY orders passed every automated check already,
-    # so they're included without waiting on a reviewer click. Still logged.
+    # Dashboard-aligned rule: readiness belongs to each Gold line. A review
+    # exception elsewhere in the order does not block an independently READY
+    # line, and the mixed order remains in the exception queue. Still logged.
     ready_lines = ready_order_lines(lines, orders)
     approved_ids = set(st.session_state.approved.get('gold_line_id', []))
     to_write, events = [], []
@@ -224,15 +225,15 @@ if st.session_state.approvals_ready and not st.session_state.get('auto_included'
         events.append({'action': 'AUTO_APPROVE', 'gold_line_id': gold_id,
             'source_doc_id': row.get('source_doc_id'), 'po_number': row.get('po_number'),
             'source_order_index': row.get('source_order_index'), 'line_number': row.get('line_number'),
-            'reason': 'READY order auto-included per mentor-suggested rule.',
+            'reason': 'READY line auto-included per dashboard-aligned routing rule.',
             'source_row_hash': row_hash(row)})
     if to_write:
         try:
             record_decision(to_write, 'system:auto-ready-rule', 'AUTO', events)
             st.session_state.approved = load_approved()
-            st.toast(f'Auto-included {len(to_write)} line(s) from READY orders into approved orders.')
+            st.toast(f'Auto-included {len(to_write)} READY line(s) into approved orders.')
         except Exception as exc:
-            st.warning('Could not auto-include READY orders into approved orders.')
+            st.warning('Could not auto-include READY lines into approved orders.')
             st.code(str(exc))
     st.session_state.auto_included = True
 
@@ -498,9 +499,9 @@ else:
                 st.dataframe(selected,hide_index=True,use_container_width=True)
 
     needs_attention = orders[orders.status.isin(['REVIEW', 'FAILED'])]
-    # READY orders are auto-included on load (see above), so they're always
-    # "Approved" -- the show_handled filter only applies to the REVIEW/FAILED
-    # work queue; the Ready tab stays browsable for re-approving after a fix.
+    # Fully READY orders are handled automatically. Mixed orders stay in the
+    # attention queue even though their independently READY lines have already
+    # continued through the automated path.
     if not show_handled:
         needs_attention = needs_attention[needs_attention.review_status.eq('Pending')]
     ready_orders = orders[orders.status.eq('READY')]
@@ -512,5 +513,5 @@ else:
         st.caption('Review orders needing attention. FAILED orders and lines are highlighted in red.')
         render_order_review(needs_attention, 'attention')
     with ready_tab:
-        st.caption('Passed current readiness checks · Auto-included in approved orders; re-approve here after any correction.')
+        st.caption('Every line in these orders passed current readiness checks. READY lines in mixed orders are also auto-included line by line while their exceptions remain in Needs attention.')
         render_order_review(ready_orders, 'ready')
