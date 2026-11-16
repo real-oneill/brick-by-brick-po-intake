@@ -1,0 +1,15 @@
+CALL-ID 67858050 | 2026-09-17 10:54 UTC | inbound +44 20 7946 2646 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Ravi speaking, how can I help?
+[CALLER] Hi Ravi, uh, it's Siobhan from Kensington Salons, the Manchester depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] Yeah it's, um, K S S two six three eight.
+[AGENT] Okay, go ahead.
+[CALLER] Eighteen of the bond rebuild mask in the 200 mil, uh, actually, make that thirty.
+[AGENT] Okay.
+[CALLER] Twelve of the beard oil in the 30 mil.
+[AGENT] Yep.
+[CALLER] Eighteen of the hydro repair conditioner in the 250 mil, uh, actually, make that twenty-four.
+[AGENT] Mm-hm, next?
+[CALLER] That's it. Can we get it by Thursday the fifteen?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

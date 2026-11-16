@@ -1,17 +1,27 @@
 """Portfolio metrics are computed from Gold, never from the answer key."""
-import difflib
 import hashlib
 import pandas as pd
 
 ORDER_KEYS = ['source_doc_id', 'po_number', 'source_order_index']
 
 # Fields a reviewer may correct before approving. Everything else is taken as extracted.
-EDITABLE_FIELDS = ['material_id', 'quantity_each', 'expected_net_price',
+EDITABLE_FIELDS = ['po_number', 'material_id', 'quantity_each', 'expected_net_price',
     'master_customer_name', 'master_ship_to_name']
 
-# The inventory proposal is editable too, but logged as its own event type
-# (INVENTORY_OVERRIDE, not EDIT) so an override is distinguishable in the audit trail.
-INVENTORY_FIELDS = ['proposed_atp_outcome', 'proposed_ship_quantity']
+ACTION_RULES = (
+    (('missing po',), 'Enter or confirm the purchase order number from the source document.'),
+    (('customer unresolved',), 'Confirm the customer and select the correct customer record.'),
+    (('ship-to unresolved',), 'Confirm the delivery location and select the correct ship-to record.'),
+    (('sku unresolved', 'missing item code'), 'Check the source item and select the correct product or SKU.'),
+    (('contract price unavailable',), 'Confirm the applicable contract price before approval.'),
+    (('price differs', 'price mismatch'), 'Compare the document and contract prices, then confirm the approved price.'),
+    (('invalid or unconverted quantity',), 'Confirm the quantity and unit of measure, then correct the unit quantity.'),
+    (('insufficient atp', 'partial shipment'), 'Review the proposed partial shipment and confirm the quantity to ship.'),
+    (('no atp', 'backorder'), 'Confirm whether the line should be backordered or held.'),
+    (('discontinued', 'successor'), 'Review the proposed successor product before approval.'),
+    (('atp decision unavailable', 'line cancelled'), 'Confirm the inventory decision or cancellation with operations.'),
+    (('low header confidence', 'low line confidence'), 'Compare the extracted fields with the source evidence.'),
+)
 
 # Captured in the approved-orders snapshot; also the basis for detecting Gold drift.
 SNAPSHOT_FIELDS = ['source_doc_id', 'po_number', 'source_order_index', 'line_number',
@@ -42,6 +52,72 @@ def orders_from_lines(lines):
     # Value sorting is only meaningful within a currency. No implicit FX conversion.
     return result.sort_values(['confidence', 'currency', 'known_value'], ascending=[True, True, False], na_position='first').reset_index(drop=True)
 
+
+def portfolio_metrics(lines):
+    """Dashboard-aligned portfolio KPIs, calculated directly from Gold lines.
+
+    Purchase orders follow the dashboard definition: distinct, non-empty PO
+    numbers. READY percentage is line based, not a percentage of review cases.
+    """
+    po_numbers = lines.get('po_number', pd.Series(dtype='object')).dropna().astype(str).str.strip()
+    po_numbers = po_numbers[po_numbers.ne('')]
+    statuses = lines.get('quality_status', pd.Series(index=lines.index, dtype='object')).fillna('')
+    total_lines = len(lines)
+    ready_lines = int(statuses.eq('READY').sum())
+    return {
+        'purchase_orders': int(po_numbers.nunique()),
+        'total_lines': total_lines,
+        'ready_lines': ready_lines,
+        'review_lines': int(statuses.eq('REVIEW').sum()),
+        'failed_lines': int(statuses.eq('FAILED').sum()),
+        'ready_line_share': ready_lines / total_lines if total_lines else 0.0,
+    }
+
+
+def recommended_actions(review_reasons, status=None):
+    """Plain-language next steps inferred from Gold's review reasons."""
+    reason_text = '; '.join(str(value) for value in review_reasons if value is not None and not pd.isna(value)).lower()
+    actions = []
+    for needles, action in ACTION_RULES:
+        if any(needle in reason_text for needle in needles) and action not in actions:
+            actions.append(action)
+    if not actions and status == 'FAILED':
+        actions.append('Compare the extracted order with the source document and complete the missing required fields.')
+    elif not actions and status == 'REVIEW':
+        actions.append('Review the flagged fields against the source evidence before approval.')
+    return actions
+
+
+def demo_cases(orders):
+    """Select one useful live example for each workflow path.
+
+    These are suggestions from the currently loaded Gold snapshot, not
+    hardcoded document IDs that can become stale after a refresh.
+    """
+    picks = []
+    for status in ('READY', 'REVIEW', 'FAILED'):
+        candidates = orders[orders.status.eq(status)].copy()
+        if candidates.empty:
+            continue
+        if status == 'READY':
+            candidates = candidates.sort_values(['confidence', 'lines'], ascending=[False, False], na_position='last')
+            purpose = 'Show automatic inclusion in Approved orders.'
+        elif status == 'REVIEW':
+            candidates = candidates.sort_values(['known_value', 'confidence'], ascending=[False, True], na_position='last')
+            purpose = 'Show review flags, suggested actions, edits and manual approval.'
+        else:
+            candidates = candidates.sort_values(['confidence', 'lines'], ascending=[True, False], na_position='first')
+            purpose = 'Show missing critical data, source evidence, correction and manual approval.'
+        row = candidates.iloc[0]
+        picks.append({
+            'Workflow': status,
+            'Document': row.get('source_doc_id'),
+            'PO number': row.get('po_number'),
+            'Channel': row.get('channel'),
+            'Why use it': purpose,
+        })
+    return pd.DataFrame(picks)
+
 def select_order(lines, order):
     mask = pd.Series(True, index=lines.index)
     for col in ORDER_KEYS:
@@ -50,24 +126,9 @@ def select_order(lines, order):
     return lines.loc[mask].copy()
 
 
-# Numeric Gold columns: a whole-table load and a single-order re-query can
-# infer int vs. float for the same column (depending on whether nulls happen
-# to appear in that particular slice), which made identical values hash
-# differently and look like drift. Route these through float() so "6" and
-# "6.0" compare equal.
-NUMERIC_FIELDS = {'source_order_index', 'line_number', 'quantity_each', 'expected_net_price',
-    'proposed_ship_quantity', 'overall_confidence'}
-
 def _cell(row, column):
     value = row.get(column)
-    if value is None or pd.isna(value):
-        return ''
-    if column in NUMERIC_FIELDS:
-        try:
-            return repr(float(value))
-        except (TypeError, ValueError):
-            pass
-    return str(value)
+    return '' if value is None or pd.isna(value) else str(value)
 
 def row_hash(row, columns=SNAPSHOT_FIELDS):
     return hashlib.sha256('|'.join(_cell(row, c) for c in columns).encode('utf-8')).hexdigest()
@@ -83,89 +144,14 @@ def line_identifier(row):
         'item_code', 'item_description', 'quantity_as_written']
     return hashlib.sha256('|'.join(_cell(row, c) for c in basis).encode('utf-8')).hexdigest(), True
 
-def diff_editable_fields(original_row, edited_row, fields=EDITABLE_FIELDS):
-    """Field-level before/after for the given fields (editable fields by default,
-    or INVENTORY_FIELDS to isolate inventory overrides into their own event type)."""
+def diff_editable_fields(original_row, edited_row):
+    """Field-level before/after for the fields a reviewer is allowed to correct."""
     changes = []
-    for field in fields:
+    for field in EDITABLE_FIELDS:
         before, after = _cell(original_row, field), _cell(edited_row, field)
         if before != after:
             changes.append((field, before, after))
     return changes
-
-def suggest_skus(lines, line_row, limit=5):
-    """Candidate SKUs for a line the pipeline couldn't confidently match, drawn
-    from material_ids the pipeline already resolved elsewhere in this session's
-    Gold snapshot (not the full product catalog, which this app has no access
-    to) and ranked by text similarity to this line's source item code/description."""
-    resolved = lines[lines['material_id'].notna() & lines['quality_status'].ne('FAILED')]
-    catalog = (resolved[['material_id', 'item_description']].dropna(subset=['material_id'])
-        .drop_duplicates(subset=['material_id']))
-    current_material = line_row.get('material_id')
-    if pd.notna(current_material):
-        catalog = catalog[catalog['material_id'].ne(current_material)]
-    needle = ' '.join(str(line_row.get(c) or '') for c in ('item_code', 'item_description')).strip().lower()
-    if not needle or catalog.empty:
-        return []
-    scored = [(difflib.SequenceMatcher(None, needle, f'{row.material_id} {row.item_description}'.lower()).ratio(), row)
-        for row in catalog.itertuples()]
-    scored.sort(key=lambda pair: pair[0], reverse=True)
-    return [(row.material_id, row.item_description, score) for score, row in scored[:limit] if score > 0.3]
-
-def build_erp_payload(order, line_records):
-    """A mock ERP-ready sales order payload for an approved order: realistic
-    enough to show what would cross the outbound interface, not a real integration."""
-    return {
-        'order_header': {
-            'source_doc_id': order.get('source_doc_id'),
-            'po_number': order.get('po_number'),
-            'sold_to': order.get('master_customer_name') or order.get('customer'),
-            'ship_to': line_records[0].get('master_ship_to_name') if line_records else None,
-            'currency': order.get('currency'),
-            'channel': order.get('channel'),
-            'order_status': order.get('status'),
-        },
-        'order_lines': [{
-            'line_number': r.get('line_number'),
-            'material_id': r.get('material_id'),
-            'item_description': r.get('item_description'),
-            'quantity': r.get('quantity_each'),
-            'unit_price': r.get('expected_net_price'),
-            'currency': r.get('currency'),
-            'availability': r.get('proposed_atp_outcome'),
-            'ship_quantity': r.get('proposed_ship_quantity'),
-        } for r in line_records],
-    }
-
-def review_status(orders, approved_df, rejected_df):
-    """Per-order review outcome (Pending/Approved/Rejected), computed here in
-    the app from the two app-owned tables -- never written back to Gold, and
-    never confused with the AI's own status (READY/REVIEW/FAILED). Approved
-    takes precedence over a later rejection, since reject never retracts an
-    approval (see app/README.md)."""
-    def keys_from(df):
-        if df is None or df.empty or not set(ORDER_KEYS).issubset(df.columns):
-            return set()
-        return {tuple(None if pd.isna(v) else v for v in row) for row in df[ORDER_KEYS].itertuples(index=False)}
-    approved_keys, rejected_keys = keys_from(approved_df), keys_from(rejected_df)
-    def status_for(row):
-        key = tuple(None if pd.isna(row[c]) else row[c] for c in ORDER_KEYS)
-        return 'Approved' if key in approved_keys else 'Rejected' if key in rejected_keys else 'Pending'
-    return orders.apply(status_for, axis=1)
-
-# Purely a display choice for orders that already passed every automated
-# check: an unresolved ship-to is still informational there (Za's rule --
-# it must never flip status), so it's suppressed from view rather than
-# cluttering a READY order. Still shown in full for REVIEW/FAILED orders,
-# where a reviewer is already looking and the context matters.
-SUPPRESSED_WHEN_READY = ['ship-to unresolved', 'ship_to_unresolved', 'ship to unresolved']
-
-def filtered_reasons(value, suppress=SUPPRESSED_WHEN_READY):
-    if value is None or (isinstance(value, float) and pd.isna(value)):
-        return value
-    kept = [r.strip() for r in str(value).split(';')
-        if r.strip() and not any(s in r.strip().lower() for s in suppress)]
-    return '; '.join(kept) if kept else None
 
 def ready_order_lines(lines, orders):
     """Every line belonging to a READY order: the set eligible for automatic inclusion."""

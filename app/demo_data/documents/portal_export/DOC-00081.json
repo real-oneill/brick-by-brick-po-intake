@@ -1,0 +1,113 @@
+{
+  "bestellung": {
+    "bestellnummer": "BH-5886670",
+    "kunde": "Beautyhaus.de",
+    "kundennummer_lieferant": "200600",
+    "bestelldatum": "2026-09-01",
+    "lieferadresse": {
+      "lager": "Fulfillment Center Leipzig",
+      "anschrift": "Am Exer 7, 04158 Leipzig",
+      "lagercode": "LEJ"
+    },
+    "wunschliefertermin": "29.09.2026",
+    "waehrung": "EUR",
+    "positionen": [
+      {
+        "pos": 1,
+        "artikelnummer": "MS7810115",
+        "bezeichnung": "Lune Rouge Precision Liquid Eyeliner Brown",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 9.57
+      },
+      {
+        "pos": 2,
+        "artikelnummer": "MS2020048",
+        "bezeichnung": "Kōri Botanicals Camellia Barrier Cream 50 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 23.3
+      },
+      {
+        "pos": 3,
+        "artikelnummer": "MS3040044",
+        "bezeichnung": "Atelier Noor Musc Blanc Eau de Parfum 30 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 49.42
+      },
+      {
+        "pos": 4,
+        "artikelnummer": "MS3050124",
+        "bezeichnung": "Atelier Noor Cuir Fumé Extrait de Parfum 100 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 161.82
+      },
+      {
+        "pos": 5,
+        "artikelnummer": "MS2010137",
+        "bezeichnung": "Kōri Botanicals Green Tea Gel Cleanser 200 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 24.25
+      },
+      {
+        "pos": 6,
+        "artikelnummer": "MS2030016",
+        "bezeichnung": "Kōri Botanicals Rice Enzyme Polish 50 ml",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 14.61
+      },
+      {
+        "pos": 7,
+        "artikelnummer": "MS4030315",
+        "bezeichnung": "Velour Cosmetics Brow Sculpt Pencil Soft Black",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 10.16
+      },
+      {
+        "pos": 8,
+        "artikelnummer": "MS2010060",
+        "bezeichnung": "Kōri Botanicals Green Tea Gel Cleanser 100 ml",
+        "menge": 18,
+        "einheit": "ST",
+        "einzelpreis": 15.89
+      },
+      {
+        "pos": 9,
+        "artikelnummer": "MS3010048",
+        "bezeichnung": "Atelier Noor Rose Ambrée Eau de Parfum 30 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 54.15
+      },
+      {
+        "pos": 10,
+        "artikelnummer": "MS7000653",
+        "bezeichnung": "Lune Rouge Lacquer Nail Colour 130 Coral Reef",
+        "menge": 96,
+        "einheit": "ST",
+        "einzelpreis": 6.04
+      },
+      {
+        "pos": 11,
+        "artikelnummer": "MS4000134",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 03 Petal",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 13.53
+      },
+      {
+        "pos": 12,
+        "artikelnummer": "MS9541839",
+        "bezeichnung": "Travel Exclusive Duo Set",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 49.42
+      }
+    ]
+  }
+}

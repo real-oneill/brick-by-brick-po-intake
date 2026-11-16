@@ -1,5 +1,7 @@
 command: ['streamlit', 'run', 'app.py', '--server.address=0.0.0.0']
 env:
+  - name: SOLENNE_DEMO_MODE
+    value: 'true'
   - name: DATABRICKS_WAREHOUSE_ID
     valueFrom: sql-warehouse
   - name: STREAMLIT_BROWSER_GATHER_USAGE_STATS

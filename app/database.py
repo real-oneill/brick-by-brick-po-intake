@@ -1,7 +1,7 @@
 """Gold, Silver, and Bronze business tables are read-only here -- never
-updated, never written to directly. Writes are limited to three app-owned
-tables (see ensure_approval_tables below): an approved-orders snapshot, an
-append-only review-events audit log, and an xref-corrections feed."""
+updated, never written to directly. Writes are limited to two app-owned
+approvals tables (see ensure_approval_tables below): an approved-orders
+snapshot and an append-only review-events audit log."""
 import os
 import uuid
 from contextlib import contextmanager
@@ -17,8 +17,18 @@ GOLD = f'`{CATALOG}`.gold.gold_sales_orders'
 BRONZE = f'`{CATALOG}`.bronze.bronze_documents'
 APPROVED_ORDERS = f'`{CATALOG}`.gold.approved_sales_orders'
 REVIEW_EVENTS = f'`{CATALOG}`.gold.review_events'
-XREF_CORRECTIONS = f'`{CATALOG}`.gold.xref_corrections'
 ORDER_KEYS = ['source_doc_id', 'po_number', 'source_order_index']
+_LOCAL_APPROVED = pd.DataFrame()
+_LOCAL_EVENTS = []
+
+
+def is_local_demo():
+    """Use the self-contained portfolio for local runs or the deployed demo."""
+    forced_demo = os.environ.get('SOLENNE_DEMO_MODE', '').strip().lower()
+    return forced_demo in {'1', 'true', 'yes'} or (
+        not os.environ.get('DATABRICKS_WAREHOUSE_ID') and
+        not os.environ.get('DATABRICKS_HOST')
+    )
 
 
 class StaleGoldError(RuntimeError):
@@ -45,6 +55,9 @@ def query(statement, parameters=None):
         return pd.DataFrame.from_records(cursor.fetchall(), columns=[c[0] for c in cursor.description])
 
 def load_lines():
+    if is_local_demo():
+        from local_demo import load_local_lines
+        return load_local_lines()
     # Detect growth instead of silently presenting a truncated portfolio.
     df = query(f'SELECT * FROM {GOLD} LIMIT 20001')
     if len(df) > 20000:
@@ -52,6 +65,9 @@ def load_lines():
     return df
 
 def source_files(doc_id):
+    if is_local_demo():
+        from local_demo import local_source_files
+        return local_source_files(doc_id)
     return query(f'''SELECT file_name, file_path, file_extension,
         CASE WHEN length(raw_content) <= 16000000 THEN raw_content ELSE NULL END AS content
         FROM {BRONZE} WHERE doc_id = ? LIMIT 20''', [doc_id])
@@ -60,9 +76,11 @@ def source_files(doc_id):
 # --- Approvals: an app-owned schema, separate from pipeline-managed Gold. ---
 
 def ensure_approval_tables():
-    """Creates the three app-owned tables if missing. Idempotent; never touches
+    """Creates the two approvals tables if missing. Idempotent; never touches
     gold_sales_orders itself. A pipeline engineer can instead run this once
-    and grant the app identity MODIFY on just these three tables."""
+    and grant the app identity MODIFY on just these two tables."""
+    if is_local_demo():
+        return
     with connection() as conn, conn.cursor() as cursor:
         cursor.execute(f'''CREATE TABLE IF NOT EXISTS {APPROVED_ORDERS} (
             gold_line_id STRING NOT NULL,
@@ -105,57 +123,32 @@ def ensure_approval_tables():
             reason STRING,
             source_row_hash STRING
         ) USING DELTA''')
-        cursor.execute(f'''CREATE TABLE IF NOT EXISTS {XREF_CORRECTIONS} (
-            correction_id STRING NOT NULL,
-            confirmed_at TIMESTAMP NOT NULL,
-            confirmed_by STRING NOT NULL,
-            source_doc_id STRING,
-            po_number STRING,
-            channel STRING,
-            retailer_item_id STRING,
-            item_description STRING,
-            previous_material_id STRING,
-            confirmed_material_id STRING,
-            reason STRING
-        ) USING DELTA''')
 
 def load_approved():
+    if is_local_demo():
+        return _LOCAL_APPROVED.copy()
     return query(f'SELECT * FROM {APPROVED_ORDERS}')
 
-def load_rejections():
-    """Latest REJECT event per order, if any -- review_events is append-only,
-    so a prior reject is never overwritten, just superseded for display."""
-    return query(f'''SELECT source_doc_id, po_number, source_order_index, actor, event_time, reason
-        FROM (SELECT *, ROW_NUMBER() OVER (
-                PARTITION BY source_doc_id, po_number, source_order_index
-                ORDER BY event_time DESC) AS rn
-            FROM {REVIEW_EVENTS} WHERE action = 'REJECT') WHERE rn = 1''')
 
-def reset_demo_data():
-    """Permanently deletes every approval, rejection, and xref correction
-    logged so far. Never touches Gold. For deliberate, manual use only (a
-    demo/testing reset) -- ordinary refresh and redeploy never call this."""
-    with connection() as conn, conn.cursor() as cursor:
-        cursor.execute(f'DELETE FROM {APPROVED_ORDERS}')
-        cursor.execute(f'DELETE FROM {REVIEW_EVENTS}')
-        cursor.execute(f'DELETE FROM {XREF_CORRECTIONS}')
-
-def record_xref_correction(actor, source_doc_id, po_number, channel, retailer_item_id,
-        item_description, previous_material_id, confirmed_material_id, reason):
-    """Appends a reviewer-confirmed item-code -> SKU mapping. This never writes
-    to the pipeline's own retailer_item_xref table (unknown to this app); it's a
-    durable, auditable feed for a pipeline engineer to merge into it by hand."""
-    with connection() as conn, conn.cursor() as cursor:
-        cursor.execute(f'''INSERT INTO {XREF_CORRECTIONS}
-            (correction_id, confirmed_at, confirmed_by, source_doc_id, po_number, channel,
-             retailer_item_id, item_description, previous_material_id, confirmed_material_id, reason)
-            VALUES (?,?,?,?,?,?,?,?,?,?,?)''',
-            [str(uuid.uuid4()), datetime.now(timezone.utc), actor, source_doc_id, po_number, channel,
-             retailer_item_id, item_description, previous_material_id, confirmed_material_id, reason])
+def reset_demo_approvals():
+    """Clear only the self-contained demo's app-owned approval state."""
+    global _LOCAL_APPROVED
+    if not is_local_demo():
+        raise RuntimeError('Demo reset is disabled outside the self-contained demo.')
+    _LOCAL_APPROVED = pd.DataFrame()
+    _LOCAL_EVENTS.clear()
 
 def gold_rows_for_order(order):
     """Re-reads an order's lines straight from Gold, bypassing the session
     snapshot, so an approval can be checked for staleness before it is written."""
+    if is_local_demo():
+        from local_demo import load_local_lines
+        lines = load_local_lines()
+        mask = pd.Series(True, index=lines.index)
+        for col in ORDER_KEYS:
+            value = order[col]
+            mask &= lines[col].isna() if pd.isna(value) else lines[col].eq(value)
+        return lines.loc[mask].copy()
     conditions, params = [], []
     for col in ORDER_KEYS:
         value = order[col]
@@ -207,7 +200,22 @@ def record_decision(line_rows, actor, approval_type, events):
     approve/auto-approve decision itself -- to the audit log. One connection
     for the whole order, so a partial failure can't leave a half-written
     decision."""
+    global _LOCAL_APPROVED
     now = datetime.now(timezone.utc)
+    if is_local_demo():
+        rows = [] if _LOCAL_APPROVED.empty else _LOCAL_APPROVED.to_dict('records')
+        by_id = {row['gold_line_id']: row for row in rows}
+        for row in line_rows:
+            values = _approved_values(row, approval_type, actor, now)
+            by_id[values[0]] = dict(zip([
+                'gold_line_id','line_id_is_fallback','source_doc_id','po_number','source_order_index',
+                'line_number','item_code','item_description','material_id','master_customer_name',
+                'master_ship_to_name','quantity_each','expected_net_price','currency','channel',
+                'proposed_atp_outcome','proposed_ship_quantity','overall_confidence','quality_status',
+                'source_row_hash','approval_type','approved_by','approved_at'], values))
+        _LOCAL_APPROVED = pd.DataFrame(by_id.values())
+        _LOCAL_EVENTS.extend(events)
+        return
     with connection() as conn, conn.cursor() as cursor:
         for row in line_rows:
             cursor.execute(_MERGE_APPROVED, _approved_values(row, approval_type, actor, now))

@@ -1,0 +1,1116 @@
+doc_id,issue_type,detail
+DOC-00001,past_or_weekend_delivery_date,requested 2026-09-11 is before order date
+DOC-00001,customer_name_variant,'Halcyon Finch NYC' -> 100100
+DOC-00001,uom_cases,PO 4574104909 line 1 ordered in cases of 12
+DOC-00001,xref_missing_but_resolvable,IN 24710878 not in xref; GTIN 2917711592121 given
+DOC-00001,xref_missing_but_resolvable,IN 76876068 not in xref; GTIN 2997403447137 given
+DOC-00001,uom_cases,PO 4574104909 line 13 ordered in cases of 6
+DOC-00001,uom_cases,PO 4572176148 line 4 ordered in cases of 6
+DOC-00001,multi_po_document,2 POs in one interchange
+DOC-00002,customer_name_variant,'H&F Inc.' -> 100100
+DOC-00002,uom_cases,PO 4558743898 line 1 ordered in cases of 6
+DOC-00002,price_mismatch,MS6050191 doc price 38.05 vs contract 33.09
+DOC-00002,closed_dc_reroute,PO 4548249394 ship-to DC 0042 closed -> 0047
+DOC-00002,xref_missing_but_resolvable,IN 56354851 not in xref; resolve by description
+DOC-00002,uom_cases,PO 4548249394 line 6 ordered in cases of 6
+DOC-00002,xref_missing_but_resolvable,IN 92071195 not in xref; GTIN 2905297516136 given
+DOC-00002,xref_missing_but_resolvable,IN 52111160 not in xref; resolve by description
+DOC-00002,multi_po_document,2 POs in one interchange
+DOC-00003,past_or_weekend_delivery_date,requested 2026-09-14 is before order date
+DOC-00003,customer_name_variant,'H&F Inc.' -> 100100
+DOC-00003,uom_cases,PO 4584495485 line 6 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 53627409 not in xref; GTIN 2912779979952 given
+DOC-00003,uom_cases,PO 4584495485 line 9 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 96155337 not in xref; GTIN 2995798687275 given
+DOC-00003,xref_missing_but_resolvable,IN 76876068 not in xref; GTIN 2997403447137 given
+DOC-00003,xref_missing_but_resolvable,IN 22086184 not in xref; resolve by description
+DOC-00003,xref_missing_but_resolvable,IN 95235919 not in xref; resolve by description
+DOC-00003,uom_cases,PO 4584495485 line 22 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 61559717 not in xref; resolve by description
+DOC-00003,uom_cases,PO 4584495485 line 30 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 71694994 not in xref; GTIN 2979807935977 given
+DOC-00003,price_mismatch,MS4010990 doc price 20.6 vs contract 19.25
+DOC-00003,unresolvable_sku,'Discovery Coffret 5x10ml' 38286706 is not a Maison Solenne product
+DOC-00003,xref_missing_but_resolvable,IN 51954112 not in xref; GTIN 2924190496635 given
+DOC-00003,uom_cases,PO 4584495485 line 42 ordered in cases of 12
+DOC-00003,unresolvable_sku,'Argan Miracle Oil' 26272220 is not a Maison Solenne product
+DOC-00003,xref_missing_but_resolvable,IN 35805259 not in xref; GTIN 2962914865282 given
+DOC-00003,uom_cases,PO 4584495485 line 49 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 79645282 not in xref; resolve by description
+DOC-00003,uom_cases,PO 4584495485 line 57 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 92071195 not in xref; GTIN 2905297516136 given
+DOC-00003,uom_cases,PO 4584495485 line 62 ordered in cases of 6
+DOC-00003,uom_cases,PO 4584495485 line 63 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 24710878 not in xref; resolve by description
+DOC-00003,price_mismatch,MS1070033 doc price 40.69 vs contract 46.24
+DOC-00003,uom_cases,PO 4584495485 line 77 ordered in cases of 6
+DOC-00003,price_mismatch,MS4010349 doc price 19.07 vs contract 17.82
+DOC-00003,xref_missing_but_resolvable,IN 63440127 not in xref; GTIN 2932764835032 given
+DOC-00003,uom_cases,PO 4584495485 line 93 ordered in cases of 12
+DOC-00003,uom_cases,PO 4584495485 line 97 ordered in cases of 6
+DOC-00003,xref_missing_but_resolvable,IN 56354851 not in xref; GTIN 2928498776949 given
+DOC-00003,uom_cases,PO 4584495485 line 98 ordered in cases of 6
+DOC-00003,xref_missing_but_resolvable,IN 91370909 not in xref; resolve by description
+DOC-00003,unresolvable_sku,'Mini Lip Trio Gift' 38016352 is not a Maison Solenne product
+DOC-00003,uom_cases,PO 4584495485 line 102 ordered in cases of 6
+DOC-00003,uom_cases,PO 4584495485 line 104 ordered in cases of 12
+DOC-00003,uom_cases,PO 4584495485 line 107 ordered in cases of 12
+DOC-00003,xref_missing_but_resolvable,IN 52111160 not in xref; GTIN 2947700541199 given
+DOC-00003,xref_missing_but_resolvable,IN 62741471 not in xref; GTIN 2951585064315 given
+DOC-00003,unresolvable_sku,'Crema Mani Rosa' 14652375 is not a Maison Solenne product
+DOC-00003,price_mismatch,MS8010127 doc price 57.57 vs contract 63.97
+DOC-00003,xref_missing_but_resolvable,IN 40181142 not in xref; GTIN 2921418880597 given
+DOC-00003,uom_cases,PO 4584495485 line 124 ordered in cases of 6
+DOC-00003,large_document,126 lines / 1 pages
+DOC-00005,uom_cases,PO 4564830696 line 3 ordered in cases of 12
+DOC-00005,xref_missing_but_resolvable,IN 71694994 not in xref; resolve by description
+DOC-00006,past_or_weekend_delivery_date,requested 2026-09-01 is before order date
+DOC-00006,customer_name_variant,'Halcyon Finch NYC' -> 100100
+DOC-00006,uom_cases,PO 4575254207 line 3 ordered in cases of 12
+DOC-00006,xref_missing_but_resolvable,IN 56354851 not in xref; GTIN 2928498776949 given
+DOC-00006,uom_cases,PO 4575254207 line 5 ordered in cases of 12
+DOC-00006,uom_cases,PO 4575254207 line 9 ordered in cases of 12
+DOC-00007,closed_dc_reroute,PO 4585476210 ship-to DC 0042 closed -> 0047
+DOC-00007,customer_name_variant,'H&F Inc.' -> 100100
+DOC-00007,xref_missing_but_resolvable,IN 56354851 not in xref; resolve by description
+DOC-00007,xref_missing_but_resolvable,IN 62741471 not in xref; resolve by description
+DOC-00008,customer_name_variant,'Halcyon & Finch Inc.' -> 100100
+DOC-00008,xref_missing_but_resolvable,IN 52111160 not in xref; resolve by description
+DOC-00008,uom_cases,PO 4593430858 line 3 ordered in cases of 12
+DOC-00008,xref_missing_but_resolvable,IN 53627409 not in xref; GTIN 2912779979952 given
+DOC-00008,unresolvable_sku,'Advent Calendar 2026' 76231992 is not a Maison Solenne product
+DOC-00008,uom_cases,PO 4593430858 line 8 ordered in cases of 12
+DOC-00008,xref_missing_but_resolvable,IN 62741471 not in xref; GTIN 2951585064315 given
+DOC-00008,uom_cases,PO 4593430858 line 11 ordered in cases of 12
+DOC-00008,uom_cases,PO 4593430858 line 15 ordered in cases of 6
+DOC-00009,closed_dc_reroute,PO 4547493391 ship-to DC 0042 closed -> 0047
+DOC-00009,price_mismatch,MS8040171 doc price 70.95 vs contract 61.7
+DOC-00009,uom_cases,PO 4547493391 line 10 ordered in cases of 6
+DOC-00009,uom_cases,PO 4547493391 line 13 ordered in cases of 6
+DOC-00009,uom_cases,PO 4547493391 line 17 ordered in cases of 12
+DOC-00009,xref_missing_but_resolvable,IN 24710878 not in xref; resolve by description
+DOC-00009,uom_cases,PO 4547493391 line 18 ordered in cases of 12
+DOC-00010,closed_dc_reroute,PO 4569870757 ship-to DC 0042 closed -> 0047
+DOC-00010,past_or_weekend_delivery_date,requested 2026-09-08 is before order date
+DOC-00010,unresolvable_sku,'Overnight Peel Pads' 93610257 is not a Maison Solenne product
+DOC-00010,xref_missing_but_resolvable,IN 96155337 not in xref; resolve by description
+DOC-00010,xref_missing_but_resolvable,IN 91370909 not in xref; GTIN 2931746120043 given
+DOC-00010,uom_cases,PO 4569870757 line 11 ordered in cases of 6
+DOC-00010,xref_missing_but_resolvable,IN 79645282 not in xref; GTIN 2924751079918 given
+DOC-00011,closed_dc_reroute,PO 4508866414 ship-to DC 0042 closed -> 0047
+DOC-00011,uom_cases,PO 4508866414 line 1 ordered in cases of 12
+DOC-00011,xref_missing_but_resolvable,IN 51954112 not in xref; GTIN 2924190496635 given
+DOC-00011,unresolvable_sku,'Glitter Fantasy Palette' 29693143 is not a Maison Solenne product
+DOC-00011,xref_missing_but_resolvable,IN 91370909 not in xref; resolve by description
+DOC-00011,unresolvable_sku,'Argan Miracle Oil' 85165988 is not a Maison Solenne product
+DOC-00011,xref_missing_but_resolvable,IN 24710878 not in xref; GTIN 2917711592121 given
+DOC-00011,unresolvable_sku,'Holiday Vault Set Exclusive' 97025331 is not a Maison Solenne product
+DOC-00011,uom_cases,PO 4508866414 line 15 ordered in cases of 6
+DOC-00011,uom_cases,PO 4508866414 line 18 ordered in cases of 12
+DOC-00011,unresolvable_sku,'Velvet Body Mist' 15082158 is not a Maison Solenne product
+DOC-00011,uom_cases,PO 4508866414 line 21 ordered in cases of 6
+DOC-00011,uom_cases,PO 4508866414 line 22 ordered in cases of 12
+DOC-00012,closed_dc_reroute,PO 4577796412 ship-to DC 0042 closed -> 0047
+DOC-00012,xref_missing_but_resolvable,IN 71694994 not in xref; GTIN 2979807935977 given
+DOC-00012,uom_cases,PO 4577796412 line 4 ordered in cases of 12
+DOC-00012,xref_missing_but_resolvable,IN 22086184 not in xref; GTIN 2919065940139 given
+DOC-00012,xref_missing_but_resolvable,IN 56354851 not in xref; GTIN 2928498776949 given
+DOC-00012,uom_cases,PO 4577796412 line 12 ordered in cases of 12
+DOC-00012,xref_missing_but_resolvable,IN 95235919 not in xref; resolve by description
+DOC-00012,xref_missing_but_resolvable,IN 62741471 not in xref; resolve by description
+DOC-00013,closed_dc_reroute,PO 4588128100 ship-to DC 0042 closed -> 0047
+DOC-00013,customer_name_variant,'Halcyon & Finch Inc.' -> 100100
+DOC-00013,uom_cases,PO 4588128100 line 4 ordered in cases of 12
+DOC-00013,xref_missing_but_resolvable,IN 71694994 not in xref; resolve by description
+DOC-00013,uom_cases,PO 4588128100 line 8 ordered in cases of 4
+DOC-00014,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00014,free_goods,MS2030164 promo no charge
+DOC-00014,free_goods,MS7000022 promo no charge
+DOC-00014,discontinued_sku_successor,MS7840117 discontinued -> MS7040117
+DOC-00014,price_mismatch,MS3000278 doc price 112.69 vs contract 125.21
+DOC-00014,discontinued_sku_successor,MS4800716 discontinued -> MS4000716
+DOC-00014,discontinued_sku_successor,MS4810861 discontinued -> MS4010861
+DOC-00014,price_mismatch,MS4030218 doc price 11.75 vs contract 10.22
+DOC-00014,free_goods,MS4030218 promo no charge
+DOC-00014,discontinued_sku_successor,MS3800150 discontinued -> MS3000150
+DOC-00014,price_mismatch,MS3800150 doc price 102.27 vs contract 88.93
+DOC-00014,discontinued_sku_successor,MS4810861 discontinued -> MS4010861
+DOC-00014,discontinued_sku_successor,MS7800716 discontinued -> MS7000716
+DOC-00014,discontinued_sku_successor,MS3860057 discontinued -> MS3060057
+DOC-00014,price_mismatch,MS7040117 doc price 10.2 vs contract 8.87
+DOC-00014,discontinued_sku_successor,MS4810167 discontinued -> MS4010167
+DOC-00014,discontinued_sku_successor,MS7830190 discontinued -> MS7030190
+DOC-00014,free_goods,MS3030052 promo no charge
+DOC-00014,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00014,large_document,90 lines / 4 pages
+DOC-00015,discontinued_sku_successor,MS4800958 discontinued -> MS4000958
+DOC-00015,discontinued_sku_successor,MS7800986 discontinued -> MS7000986
+DOC-00015,price_mismatch,MS3050124 doc price 195.06 vs contract 177.33
+DOC-00015,discontinued_sku_successor,MS7830190 discontinued -> MS7030190
+DOC-00015,price_mismatch,MS7040117 doc price 7.81 vs contract 8.87
+DOC-00017,unresolvable_sku,'Discovery Coffret 5x10ml' 2926814535679 is not a Maison Solenne product
+DOC-00017,price_mismatch,MS2040026 doc price 22.45 vs contract 19.52
+DOC-00017,free_goods,MS3040237 promo no charge
+DOC-00018,discontinued_sku_successor,MS4800478 discontinued -> MS4000478
+DOC-00018,discontinued_sku_successor,MS4800380 discontinued -> MS4000380
+DOC-00019,free_goods,MS2010060 promo no charge
+DOC-00019,discontinued_sku_successor,MS2800215 discontinued -> MS2000215
+DOC-00019,unresolvable_sku,'Glitter Fantasy Palette' 2996123108643 is not a Maison Solenne product
+DOC-00020,price_mismatch,MS4030143 doc price 9.22 vs contract 10.48
+DOC-00020,free_goods,MS4010167 promo no charge
+DOC-00020,free_goods,MS4020174 promo no charge
+DOC-00021,unresolvable_sku,'Mini Lip Trio Gift' 2932592489917 is not a Maison Solenne product
+DOC-00021,price_mismatch,MS3010048 doc price 52.92 vs contract 60.14
+DOC-00021,free_goods,MS4020362 promo no charge
+DOC-00022,customer_name_variant,'Glow Rep.' -> 100200
+DOC-00022,discontinued_sku_successor,MS2800215 discontinued -> MS2000215
+DOC-00022,discontinued_sku_successor,MS4800134 discontinued -> MS4000134
+DOC-00022,price_mismatch,MS5040119 doc price 31.43 vs contract 28.57
+DOC-00022,free_goods,MS4000716 promo no charge
+DOC-00022,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00023,free_goods,MS4000716 promo no charge
+DOC-00023,unresolvable_sku,'Overnight Peel Pads' 2955425306512 is not a Maison Solenne product
+DOC-00023,price_mismatch,MS4010290 doc price 21.53 vs contract 20.12
+DOC-00024,price_mismatch,MS4010583 doc price 18.33 vs contract 20.83
+DOC-00026,free_goods,MS2030164 promo no charge
+DOC-00026,discontinued_sku_successor,MS7810115 discontinued -> MS7010115
+DOC-00027,past_or_weekend_delivery_date,requested 2026-09-02 is before order date
+DOC-00027,customer_name_variant,'GLOW REPUBLIC STORES' -> 100200
+DOC-00027,discontinued_sku_successor,MS4810990 discontinued -> MS4010990
+DOC-00027,free_goods,MS3010240 promo no charge
+DOC-00027,free_goods,MS2020129 promo no charge
+DOC-00027,free_goods,MS4000958 promo no charge
+DOC-00027,free_goods,MS3040044 promo no charge
+DOC-00028,customer_name_variant,'Glow Republic LLC' -> 100200
+DOC-00028,discontinued_sku_successor,MS7840059 discontinued -> MS7040059
+DOC-00028,unresolvable_sku,'Overnight Peel Pads' 2940500750713 is not a Maison Solenne product
+DOC-00028,free_goods,MS3000278 promo no charge
+DOC-00029,discontinued_sku_successor,MS4810167 discontinued -> MS4010167
+DOC-00029,price_mismatch,MS7000295 doc price 7.29 vs contract 6.63
+DOC-00029,free_goods,MS2040026 promo no charge
+DOC-00029,discontinued_sku_successor,MS7800716 discontinued -> MS7000716
+DOC-00029,discontinued_sku_successor,MS4800134 discontinued -> MS4000134
+DOC-00029,discontinued_sku_successor,MS4810990 discontinued -> MS4010990
+DOC-00029,discontinued_sku_successor,MS4800478 discontinued -> MS4000478
+DOC-00031,customer_name_variant,'Lumen Pharma' -> 200300
+DOC-00031,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00033,customer_name_variant,'Pharmacie Lumen SCA' -> 200300
+DOC-00033,price_mismatch,MS5000033 doc price 17.03 vs contract 15.48
+DOC-00033,unresolvable_sku,'Argan Miracle Oil' 2931118942519 is not a Maison Solenne product
+DOC-00033,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00033,discontinued_sku_successor,MS2800215 discontinued -> MS2000215
+DOC-00033,price_mismatch,MS6040167 doc price 34.74 vs contract 38.6
+DOC-00033,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00033,unresolvable_sku,'Mini Lip Trio Gift' 2991226864989 is not a Maison Solenne product
+DOC-00034,price_mismatch,MS1060019 doc price 43.58 vs contract 39.62
+DOC-00034,discontinued_sku_successor,MS1820092 discontinued -> MS1020092
+DOC-00035,customer_name_variant,'Pharmacie Lumen SCA' -> 200300
+DOC-00035,price_mismatch,MS6030079 doc price 21.4 vs contract 23.78
+DOC-00035,discontinued_sku_successor,MS2800215 discontinued -> MS2000215
+DOC-00035,discontinued_sku_successor,MS1850061 discontinued -> MS1050061
+DOC-00035,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00035,discontinued_sku_successor,MS1850061 discontinued -> MS1050061
+DOC-00035,price_mismatch,MS1060019 doc price 43.58 vs contract 39.62
+DOC-00035,price_mismatch,MS2020129 doc price 28.63 vs contract 32.53
+DOC-00035,discontinued_sku_successor,MS1840049 discontinued -> MS1040049
+DOC-00035,price_mismatch,MS1840049 doc price 25.35 vs contract 23.69
+DOC-00036,garbled_po_number,shown 'BC-1383O' true 'BC-13830'
+DOC-00036,customer_name_variant,'PHARMACIES LUMEN - Centrale d'achat' -> 200300
+DOC-00036,price_mismatch,MS1030011 doc price 50.64 vs contract 46.04
+DOC-00036,discontinued_sku_successor,MS2800215 discontinued -> MS2000215
+DOC-00036,price_mismatch,MS2020129 doc price 37.41 vs contract 32.53
+DOC-00038,customer_name_variant,'Lumen Pharma' -> 200300
+DOC-00038,discontinued_sku_successor,MS1820092 discontinued -> MS1020092
+DOC-00038,price_mismatch,MS2000175 doc price 35.24 vs contract 32.04
+DOC-00039,unresolvable_sku,'Argan Miracle Oil' 2916392055779 is not a Maison Solenne product
+DOC-00039,price_mismatch,MS6000088 doc price 24.59 vs contract 27.32
+DOC-00039,discontinued_sku_successor,MS1810090 discontinued -> MS1010090
+DOC-00040,garbled_po_number,shown 'BC-59O61' true 'BC-59061'
+DOC-00041,discontinued_sku_successor,MS1810090 discontinued -> MS1010090
+DOC-00042,price_mismatch,MS6010029 doc price 33.46 vs contract 29.1
+DOC-00042,discontinued_sku_successor,MS2800215 discontinued -> MS2000215
+DOC-00043,missing_po_number,no order number written on form
+DOC-00043,customer_name_variant,'Profumeria Corso' -> 200400
+DOC-00044,unresolvable_sku,'Holiday Vault Set Exclusive'  is not a Maison Solenne product
+DOC-00045,customer_name_variant,'Corso Profumerie S.r.l.' -> 200400
+DOC-00045,size_omitted_default_rule,'Serum Absolu' no size -> 50 ml
+DOC-00045,size_omitted_default_rule,'Baume Nuit' no size -> 50 ml
+DOC-00045,unresolvable_sku,'Argan Miracle Oil'  is not a Maison Solenne product
+DOC-00045,unresolvable_sku,'Travel Exclusive Duo Set'  is not a Maison Solenne product
+DOC-00046,missing_po_number,no order number written on form
+DOC-00046,customer_name_variant,'Corso Profumi Milano' -> 200400
+DOC-00046,size_omitted_default_rule,'crème lumière' no size -> 50 ml
+DOC-00047,customer_name_variant,'Corso Profumi Milano' -> 200400
+DOC-00047,size_omitted_default_rule,'solennem asque éclat' no size -> 50 ml
+DOC-00048,garbled_po_number,written '918 / 2 6' true '918/26'
+DOC-00048,customer_name_variant,'Profumeria Corso' -> 200400
+DOC-00048,size_omitted_default_rule,'Vétiver Nocturne edt' no size -> 100 ml
+DOC-00048,size_omitted_default_rule,'Noor Rose Ambrée EDP' no size -> 100 ml
+DOC-00048,size_omitted_default_rule,'Neroli Soleil edt' no size -> 100 ml
+DOC-00049,customer_name_variant,'Profumeria Corso' -> 200400
+DOC-00050,unresolvable_sku,'Overnight Peel Pads'  is not a Maison Solenne product
+DOC-00050,size_omitted_default_rule,'Crème Lumière' no size -> 50 ml
+DOC-00050,size_omitted_default_rule,'Solenne Baume uNit' no size -> 50 ml
+DOC-00051,customer_name_variant,'Corso Profumi Milano' -> 200400
+DOC-00051,size_omitted_default_rule,'Solenne Masque Éclat' no size -> 50 ml
+DOC-00051,size_omitted_default_rule,'Noor Vetvier Nocturne toilette' no size -> 100 ml
+DOC-00051,size_omitted_default_rule,'Baume Nuit' no size -> 50 ml
+DOC-00051,size_omitted_default_rule,'rose ambree edp' no size -> 100 ml
+DOC-00052,size_omitted_default_rule,'Cuir Fume extrait' no size -> 100 ml
+DOC-00052,size_omitted_default_rule,'Noor Iris Poudre edp' no size -> 100 ml
+DOC-00053,garbled_po_number,written '646 / 2 6' true '646/26'
+DOC-00053,size_omitted_default_rule,'vétiver nocturne edt' no size -> 100 ml
+DOC-00053,unresolvable_sku,'Glitter Fantasy Palette'  is not a Maison Solenne product
+DOC-00053,unresolvable_sku,'Argan Miracle Oil'  is not a Maison Solenne product
+DOC-00054,size_omitted_default_rule,'noor oud saffron edp' no size -> 100 ml
+DOC-00054,size_omitted_default_rule,'Solenne Crème Lumière' no size -> 50 ml
+DOC-00054,size_omitted_default_rule,'solenne baume nuit' no size -> 50 ml
+DOC-00055,missing_po_number,no order number written on form
+DOC-00055,customer_name_variant,'Corso Profumerie S.r.l.' -> 200400
+DOC-00055,size_omitted_default_rule,'solenne crème lumière' no size -> 50 ml
+DOC-00055,unresolvable_sku,'Glitter Fantasy Palette'  is not a Maison Solenne product
+DOC-00056,size_omitted_default_rule,'noor cuir fume extrait' no size -> 100 ml
+DOC-00056,unresolvable_sku,'Crema Mani Rosa'  is not a Maison Solenne product
+DOC-00057,garbled_po_number,written '642 / 2 6' true '642/26'
+DOC-00057,customer_name_variant,'Profumeria Corso' -> 200400
+DOC-00057,unresolvable_sku,'Crema Mani Rosa'  is not a Maison Solenne product
+DOC-00057,unresolvable_sku,'Argan Miracle Oil'  is not a Maison Solenne product
+DOC-00058,garbled_po_number,written '696 / 2 6' true '696/26'
+DOC-00058,customer_name_variant,'Profumeria Corso' -> 200400
+DOC-00058,unresolvable_sku,'Advent Calendar 2026'  is not a Maison Solenne product
+DOC-00059,price_mismatch,MS7040059 doc price 9.18 vs contract 7.98
+DOC-00059,xref_missing_but_resolvable,MTR-59767 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00059,unresolvable_sku,'Travel Exclusive Duo Set' MTR-69071 is not a Maison Solenne product
+DOC-00059,xref_missing_but_resolvable,MTR-44995 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00059,unresolvable_sku,'Discovery Coffret 5x10ml' MTR-12635 is not a Maison Solenne product
+DOC-00059,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-59767 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-82135 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-75866 not in xref; brand+description+size exact
+DOC-00059,price_mismatch,MS3060057 doc price 60.43 vs contract 68.67
+DOC-00059,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-33040 not in xref; brand+description+size exact
+DOC-00059,unresolvable_sku,'Mini Lip Trio Gift' MTR-38280 is not a Maison Solenne product
+DOC-00059,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-81781 not in xref; brand+description+size exact
+DOC-00059,unresolvable_sku,'Argan Miracle Oil' MTR-78111 is not a Maison Solenne product
+DOC-00059,xref_missing_but_resolvable,MTR-82135 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-74738 not in xref; brand+description+size exact
+DOC-00059,unresolvable_sku,'Velvet Body Mist' MTR-14686 is not a Maison Solenne product
+DOC-00059,unresolvable_sku,'Advent Calendar 2026' MTR-35480 is not a Maison Solenne product
+DOC-00059,xref_missing_but_resolvable,MTR-82135 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-74738 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00059,price_mismatch,MS1070033 doc price 47.1 vs contract 40.96
+DOC-00059,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-93717 not in xref; brand+description+size exact
+DOC-00059,unresolvable_sku,'Mini Lip Trio Gift' MTR-91667 is not a Maison Solenne product
+DOC-00059,price_mismatch,MS3050124 doc price 130.37 vs contract 148.15
+DOC-00059,xref_missing_but_resolvable,MTR-14763 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-14888 not in xref; brand+description+size exact
+DOC-00059,unresolvable_sku,'Crema Mani Rosa' MTR-65091 is not a Maison Solenne product
+DOC-00059,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-75866 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-14763 not in xref; brand+description+size exact
+DOC-00059,xref_missing_but_resolvable,MTR-82135 not in xref; brand+description+size exact
+DOC-00059,uom_cases,all quantities in cases (5 sheets)
+DOC-00059,multi_po_document,"5 POs, one per sheet"
+DOC-00059,mixed_currency,sheets in USD and EUR
+DOC-00059,large_document,173 lines / 5 pages
+DOC-00060,unresolvable_sku,'Advent Calendar 2026' MTR-96088 is not a Maison Solenne product
+DOC-00060,unresolvable_sku,'Overnight Peel Pads' MTR-60375 is not a Maison Solenne product
+DOC-00060,unresolvable_sku,'Velvet Body Mist' MTR-59362 is not a Maison Solenne product
+DOC-00060,past_or_weekend_delivery_date,requested 2026-10-03 is a weekend
+DOC-00060,price_mismatch,MS7000653 doc price 6.08 vs contract 5.53
+DOC-00060,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00060,uom_cases,all quantities in cases (2 sheets)
+DOC-00060,multi_po_document,"2 POs, one per sheet"
+DOC-00060,mixed_currency,sheets in USD and EUR
+DOC-00061,past_or_weekend_delivery_date,requested 2026-09-18 is before order date
+DOC-00061,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00061,price_mismatch,MS3020038 doc price 51.04 vs contract 56.71
+DOC-00061,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00061,past_or_weekend_delivery_date,requested 2026-10-24 is a weekend
+DOC-00061,price_mismatch,MS3040237 doc price 78.68 vs contract 87.42
+DOC-00061,price_mismatch,MS1060019 doc price 39.24 vs contract 34.12
+DOC-00061,unresolvable_sku,'Mini Lip Trio Gift' MTR-71004 is not a Maison Solenne product
+DOC-00061,price_mismatch,MS7030029 doc price 8.81 vs contract 9.79
+DOC-00061,unresolvable_sku,'Travel Exclusive Duo Set' MTR-50553 is not a Maison Solenne product
+DOC-00061,uom_cases,all quantities in cases (4 sheets)
+DOC-00061,multi_po_document,"4 POs, one per sheet"
+DOC-00061,mixed_currency,sheets in USD and EUR
+DOC-00062,xref_missing_but_resolvable,MTR-74738 not in xref; brand+description+size exact
+DOC-00062,price_mismatch,MS4010583 doc price 16.91 vs contract 18.79
+DOC-00062,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00062,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00062,xref_missing_but_resolvable,MTR-14763 not in xref; brand+description+size exact
+DOC-00062,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00062,uom_cases,all quantities in cases (2 sheets)
+DOC-00062,multi_po_document,"2 POs, one per sheet"
+DOC-00063,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00063,unresolvable_sku,'Argan Miracle Oil' MTR-85497 is not a Maison Solenne product
+DOC-00063,xref_missing_but_resolvable,MTR-74738 not in xref; brand+description+size exact
+DOC-00063,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00063,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00063,xref_missing_but_resolvable,MTR-44995 not in xref; brand+description+size exact
+DOC-00063,unresolvable_sku,'Overnight Peel Pads' MTR-34334 is not a Maison Solenne product
+DOC-00063,uom_cases,all quantities in cases (3 sheets)
+DOC-00063,multi_po_document,"3 POs, one per sheet"
+DOC-00063,mixed_currency,sheets in USD and EUR
+DOC-00064,unresolvable_sku,'Mini Lip Trio Gift' MTR-56398 is not a Maison Solenne product
+DOC-00064,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00064,xref_missing_but_resolvable,MTR-59767 not in xref; brand+description+size exact
+DOC-00064,price_mismatch,MS1010158 doc price 32.6 vs contract 36.22
+DOC-00064,price_mismatch,MS1020092 doc price 41.42 vs contract 36.02
+DOC-00064,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00064,unresolvable_sku,'Holiday Vault Set Exclusive' MTR-40042 is not a Maison Solenne product
+DOC-00064,unresolvable_sku,'Mini Lip Trio Gift' MTR-76964 is not a Maison Solenne product
+DOC-00064,uom_cases,all quantities in cases (4 sheets)
+DOC-00064,multi_po_document,"4 POs, one per sheet"
+DOC-00064,mixed_currency,sheets in USD and EUR
+DOC-00065,customer_name_variant,'Meridian Travel Retail FZE' -> 300500
+DOC-00065,xref_missing_but_resolvable,MTR-14763 not in xref; brand+description+size exact
+DOC-00065,xref_missing_but_resolvable,MTR-44995 not in xref; brand+description+size exact
+DOC-00065,price_mismatch,MS4010349 doc price 15.47 vs contract 17.19
+DOC-00065,xref_missing_but_resolvable,MTR-93717 not in xref; brand+description+size exact
+DOC-00065,uom_cases,all quantities in cases (4 sheets)
+DOC-00065,multi_po_document,"4 POs, one per sheet"
+DOC-00065,mixed_currency,sheets in USD and EUR
+DOC-00066,customer_name_variant,'MERIDIAN TR' -> 300500
+DOC-00066,price_mismatch,MS4000478 doc price 12.39 vs contract 10.77
+DOC-00066,xref_missing_but_resolvable,MTR-14888 not in xref; brand+description+size exact
+DOC-00066,xref_missing_but_resolvable,MTR-33040 not in xref; brand+description+size exact
+DOC-00066,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00066,xref_missing_but_resolvable,MTR-59767 not in xref; brand+description+size exact
+DOC-00066,uom_cases,all quantities in cases (2 sheets)
+DOC-00066,multi_po_document,"2 POs, one per sheet"
+DOC-00066,mixed_currency,sheets in USD and EUR
+DOC-00067,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00067,unresolvable_sku,'Crema Mani Rosa' MTR-89271 is not a Maison Solenne product
+DOC-00067,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00067,xref_missing_but_resolvable,MTR-44995 not in xref; brand+description+size exact
+DOC-00067,xref_missing_but_resolvable,MTR-81781 not in xref; brand+description+size exact
+DOC-00067,xref_missing_but_resolvable,MTR-75866 not in xref; brand+description+size exact
+DOC-00067,uom_cases,all quantities in cases (2 sheets)
+DOC-00067,multi_po_document,"2 POs, one per sheet"
+DOC-00067,mixed_currency,sheets in USD and EUR
+DOC-00068,price_mismatch,MS3040160 doc price 56.74 vs contract 63.05
+DOC-00068,xref_missing_but_resolvable,MTR-14888 not in xref; brand+description+size exact
+DOC-00068,price_mismatch,MS4000882 doc price 12.97 vs contract 12.12
+DOC-00068,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00068,price_mismatch,MS4000380 doc price 10.58 vs contract 11.75
+DOC-00068,uom_cases,all quantities in cases (3 sheets)
+DOC-00068,multi_po_document,"3 POs, one per sheet"
+DOC-00068,mixed_currency,sheets in USD and EUR
+DOC-00069,customer_name_variant,'Meridian Duty Free' -> 300500
+DOC-00069,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00069,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00069,xref_missing_but_resolvable,MTR-74738 not in xref; brand+description+size exact
+DOC-00069,xref_missing_but_resolvable,MTR-81781 not in xref; brand+description+size exact
+DOC-00069,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00069,xref_missing_but_resolvable,MTR-33040 not in xref; brand+description+size exact
+DOC-00069,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00069,unresolvable_sku,'Advent Calendar 2026' MTR-14973 is not a Maison Solenne product
+DOC-00069,xref_missing_but_resolvable,MTR-59767 not in xref; brand+description+size exact
+DOC-00069,uom_cases,all quantities in cases (3 sheets)
+DOC-00069,multi_po_document,"3 POs, one per sheet"
+DOC-00069,mixed_currency,sheets in USD and EUR
+DOC-00070,customer_name_variant,'Meridian Travel Retail FZE' -> 300500
+DOC-00070,past_or_weekend_delivery_date,requested 2026-10-17 is a weekend
+DOC-00070,price_mismatch,MS4010290 doc price 16.51 vs contract 18.76
+DOC-00070,unresolvable_sku,'Holiday Vault Set Exclusive' MTR-27322 is not a Maison Solenne product
+DOC-00070,xref_missing_but_resolvable,MTR-75866 not in xref; brand+description+size exact
+DOC-00070,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00070,unresolvable_sku,'Advent Calendar 2026' MTR-72608 is not a Maison Solenne product
+DOC-00070,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00070,xref_missing_but_resolvable,MTR-75866 not in xref; brand+description+size exact
+DOC-00070,xref_missing_but_resolvable,MTR-93717 not in xref; brand+description+size exact
+DOC-00070,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00070,xref_missing_but_resolvable,MTR-82135 not in xref; brand+description+size exact
+DOC-00070,xref_missing_but_resolvable,MTR-74738 not in xref; brand+description+size exact
+DOC-00070,uom_cases,all quantities in cases (2 sheets)
+DOC-00070,multi_po_document,"2 POs, one per sheet"
+DOC-00071,customer_name_variant,'MERIDIAN TR' -> 300500
+DOC-00071,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00071,xref_missing_but_resolvable,MTR-34420 not in xref; brand+description+size exact
+DOC-00071,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00071,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00071,price_mismatch,MS1000013 doc price 26.66 vs contract 30.3
+DOC-00071,xref_missing_but_resolvable,MTR-14888 not in xref; brand+description+size exact
+DOC-00071,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00071,xref_missing_but_resolvable,MTR-81989 not in xref; brand+description+size exact
+DOC-00071,unresolvable_sku,'Discovery Coffret 5x10ml' MTR-77570 is not a Maison Solenne product
+DOC-00071,past_or_weekend_delivery_date,requested 2026-09-01 is before order date
+DOC-00071,unresolvable_sku,'Travel Exclusive Duo Set' MTR-79573 is not a Maison Solenne product
+DOC-00071,price_mismatch,MS4000716 doc price 10.7 vs contract 12.16
+DOC-00071,xref_missing_but_resolvable,MTR-75866 not in xref; brand+description+size exact
+DOC-00071,price_mismatch,MS4010861 doc price 15.43 vs contract 17.14
+DOC-00071,uom_cases,all quantities in cases (4 sheets)
+DOC-00071,multi_po_document,"4 POs, one per sheet"
+DOC-00071,mixed_currency,sheets in USD and EUR
+DOC-00072,price_mismatch,MS7040288 doc price 6.55 vs contract 7.28
+DOC-00072,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00072,xref_missing_but_resolvable,MTR-82135 not in xref; brand+description+size exact
+DOC-00072,xref_missing_but_resolvable,MTR-33040 not in xref; brand+description+size exact
+DOC-00072,price_mismatch,MS1060170 doc price 39.92 vs contract 45.36
+DOC-00072,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00072,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00072,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00072,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00072,uom_cases,all quantities in cases (3 sheets)
+DOC-00072,multi_po_document,"3 POs, one per sheet"
+DOC-00072,mixed_currency,sheets in USD and EUR
+DOC-00073,xref_missing_but_resolvable,MTR-27589 not in xref; brand+description+size exact
+DOC-00073,price_mismatch,MS4000051 doc price 10.36 vs contract 11.77
+DOC-00073,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00073,xref_missing_but_resolvable,MTR-81781 not in xref; brand+description+size exact
+DOC-00073,price_mismatch,MS1010158 doc price 44.67 vs contract 38.84
+DOC-00073,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00073,xref_missing_but_resolvable,MTR-47941 not in xref; brand+description+size exact
+DOC-00073,unresolvable_sku,'Holiday Vault Set Exclusive' MTR-42431 is not a Maison Solenne product
+DOC-00073,past_or_weekend_delivery_date,requested 2026-10-17 is a weekend
+DOC-00073,price_mismatch,MS7040288 doc price 6.55 vs contract 7.28
+DOC-00073,xref_missing_but_resolvable,MTR-20237 not in xref; brand+description+size exact
+DOC-00073,uom_cases,all quantities in cases (4 sheets)
+DOC-00073,multi_po_document,"4 POs, one per sheet"
+DOC-00073,mixed_currency,sheets in USD and EUR
+DOC-00074,customer_name_variant,'Meridian Duty Free' -> 300500
+DOC-00074,past_or_weekend_delivery_date,requested 2026-10-10 is a weekend
+DOC-00074,xref_missing_but_resolvable,MTR-74738 not in xref; brand+description+size exact
+DOC-00074,xref_missing_but_resolvable,MTR-44995 not in xref; brand+description+size exact
+DOC-00074,unresolvable_sku,'Glitter Fantasy Palette' MTR-74651 is not a Maison Solenne product
+DOC-00074,xref_missing_but_resolvable,MTR-47700 not in xref; brand+description+size exact
+DOC-00074,xref_missing_but_resolvable,MTR-44995 not in xref; brand+description+size exact
+DOC-00074,xref_missing_but_resolvable,MTR-14888 not in xref; brand+description+size exact
+DOC-00074,xref_missing_but_resolvable,MTR-81781 not in xref; brand+description+size exact
+DOC-00074,uom_cases,all quantities in cases (3 sheets)
+DOC-00074,multi_po_document,"3 POs, one per sheet"
+DOC-00074,mixed_currency,sheets in USD and EUR
+DOC-00075,customer_name_variant,'BeautyHaus Online GmbH' -> 200600
+DOC-00075,discontinued_sku_successor,MS7840117 discontinued -> MS7040117
+DOC-00075,unresolvable_sku,'Advent Calendar 2026' MS9436892 is not a Maison Solenne product
+DOC-00075,discontinued_sku_successor,MS4810990 discontinued -> MS4010990
+DOC-00076,customer_name_variant,'BEAUTY HAUS' -> 200600
+DOC-00076,discontinued_sku_successor,MS1850061 discontinued -> MS1050061
+DOC-00076,discontinued_sku_successor,MS7800986 discontinued -> MS7000986
+DOC-00076,discontinued_sku_successor,MS4810990 discontinued -> MS4010990
+DOC-00076,discontinued_sku_successor,MS1810090 discontinued -> MS1010090
+DOC-00077,discontinued_sku_successor,MS7840117 discontinued -> MS7040117
+DOC-00077,discontinued_sku_successor,MS4800958 discontinued -> MS4000958
+DOC-00077,discontinued_sku_successor,MS1810090 discontinued -> MS1010090
+DOC-00077,discontinued_sku_successor,MS4800958 discontinued -> MS4000958
+DOC-00078,past_or_weekend_delivery_date,requested 2026-09-05 is before order date
+DOC-00079,past_or_weekend_delivery_date,requested 2026-09-04 is before order date
+DOC-00079,customer_name_variant,'Beautyhaus.de' -> 200600
+DOC-00079,discontinued_sku_successor,MS4810167 discontinued -> MS4010167
+DOC-00079,discontinued_sku_successor,MS7840117 discontinued -> MS7040117
+DOC-00080,unresolvable_sku,'Holiday Vault Set Exclusive' MS9298410 is not a Maison Solenne product
+DOC-00080,unresolvable_sku,'Discovery Coffret 5x10ml' MS9156364 is not a Maison Solenne product
+DOC-00080,discontinued_sku_successor,MS7830190 discontinued -> MS7030190
+DOC-00081,customer_name_variant,'Beautyhaus.de' -> 200600
+DOC-00081,discontinued_sku_successor,MS7810115 discontinued -> MS7010115
+DOC-00081,price_mismatch,MS2020048 doc price 23.3 vs contract 21.18
+DOC-00081,price_mismatch,MS4000134 doc price 13.53 vs contract 12.3
+DOC-00081,unresolvable_sku,'Travel Exclusive Duo Set' MS9541839 is not a Maison Solenne product
+DOC-00082,customer_name_variant,'BEAUTY HAUS' -> 200600
+DOC-00082,discontinued_sku_successor,MS4800958 discontinued -> MS4000958
+DOC-00082,discontinued_sku_successor,MS7810115 discontinued -> MS7010115
+DOC-00083,discontinued_sku_successor,MS7840117 discontinued -> MS7040117
+DOC-00084,past_or_weekend_delivery_date,requested 2026-09-19 is a weekend
+DOC-00084,unresolvable_sku,'Velvet Body Mist' MS9510757 is not a Maison Solenne product
+DOC-00084,discontinued_sku_successor,MS4810861 discontinued -> MS4010861
+DOC-00084,discontinued_sku_successor,MS7800716 discontinued -> MS7000716
+DOC-00084,discontinued_sku_successor,MS3800150 discontinued -> MS3000150
+DOC-00084,price_mismatch,MS3800150 doc price 90.57 vs contract 82.34
+DOC-00084,discontinued_sku_successor,MS7800716 discontinued -> MS7000716
+DOC-00084,unresolvable_sku,'Holiday Vault Set Exclusive' MS9535427 is not a Maison Solenne product
+DOC-00084,unresolvable_sku,'Travel Exclusive Duo Set' MS9468239 is not a Maison Solenne product
+DOC-00085,unresolvable_sku,'Argan Miracle Oil' MS9252076 is not a Maison Solenne product
+DOC-00085,discontinued_sku_successor,MS7840059 discontinued -> MS7040059
+DOC-00085,price_mismatch,MS3060057 doc price 79.29 vs contract 68.95
+DOC-00086,price_mismatch,MS4000547 doc price 11.7 vs contract 13.3
+DOC-00086,price_mismatch,MS3000278 doc price 131.6 vs contract 119.64
+DOC-00086,discontinued_sku_successor,MS2800215 discontinued -> MS2000215
+DOC-00086,unresolvable_sku,'Velvet Body Mist' MS9350996 is not a Maison Solenne product
+DOC-00086,unresolvable_sku,'Argan Miracle Oil' MS9138711 is not a Maison Solenne product
+DOC-00086,discontinued_sku_successor,MS3800150 discontinued -> MS3000150
+DOC-00086,discontinued_sku_successor,MS1850061 discontinued -> MS1050061
+DOC-00086,discontinued_sku_successor,MS1840049 discontinued -> MS1040049
+DOC-00087,unresolvable_sku,'Holiday Vault Set Exclusive' MS9826768 is not a Maison Solenne product
+DOC-00087,discontinued_sku_successor,MS1850061 discontinued -> MS1050061
+DOC-00087,discontinued_sku_successor,MS7830190 discontinued -> MS7030190
+DOC-00088,unresolvable_sku,'Advent Calendar 2026' MS9259620 is not a Maison Solenne product
+DOC-00088,discontinued_sku_successor,MS7840059 discontinued -> MS7040059
+DOC-00089,discontinued_sku_successor,MS7840117 discontinued -> MS7040117
+DOC-00089,discontinued_sku_successor,MS4810167 discontinued -> MS4010167
+DOC-00090,past_or_weekend_delivery_date,requested 2026-09-26 is before order date
+DOC-00090,customer_name_variant,'Beautyhaus.de' -> 200600
+DOC-00090,discontinued_sku_successor,MS2850139 discontinued -> MS2050139
+DOC-00090,discontinued_sku_successor,MS7810115 discontinued -> MS7010115
+DOC-00090,price_mismatch,MS7810115 doc price 8.42 vs contract 9.57
+DOC-00090,discontinued_sku_successor,MS4810990 discontinued -> MS4010990
+DOC-00090,discontinued_sku_successor,MS1840049 discontinued -> MS1040049
+DOC-00090,price_mismatch,MS4020252 doc price 15.3 vs contract 14.3
+DOC-00090,discontinued_sku_successor,MS1850061 discontinued -> MS1050061
+DOC-00091,past_or_weekend_delivery_date,requested 2026-10-31 is a weekend
+DOC-00091,customer_name_variant,'Al Noor Trading LLC' -> 300700
+DOC-00093,unresolvable_sku,'Mini Lip Trio Gift'  is not a Maison Solenne product
+DOC-00093,unresolvable_sku,'Advent Calendar 2026'  is not a Maison Solenne product
+DOC-00096,customer_name_variant,'AL-NOOR TRADING CO.' -> 300700
+DOC-00097,past_or_weekend_delivery_date,requested 2026-09-26 is a weekend
+DOC-00098,unresolvable_sku,'Overnight Peel Pads'  is not a Maison Solenne product
+DOC-00098,price_mismatch,MS4000134 doc price 42.38 vs contract 47.09
+DOC-00098,price_mismatch,MS1040049 doc price 90.66 vs contract 84.73
+DOC-00099,customer_name_variant,'AL-NOOR TRADING CO.' -> 300700
+DOC-00099,price_mismatch,MS3040044 doc price 213.23 vs contract 185.42
+DOC-00099,price_mismatch,MS4030052 doc price 41.97 vs contract 39.22
+DOC-00099,price_mismatch,MS4000716 doc price 51.71 vs contract 48.33
+DOC-00100,customer_name_variant,'Al Noor Trading LLC' -> 300700
+DOC-00100,price_mismatch,MS4010167 doc price 76.85 vs contract 66.83
+DOC-00101,customer_name_variant,'Alnoor General Trading' -> 300700
+DOC-00102,price_mismatch,MS3040044 doc price 163.17 vs contract 185.42
+DOC-00103,customer_name_variant,'KSS' -> 400800
+DOC-00103,missing_po_number,caller has no PO; order on account
+DOC-00103,unresolvable_sku,'Mini Lip Trio Gift'  is not a Maison Solenne product
+DOC-00104,missing_po_number,caller has no PO; order on account
+DOC-00104,past_or_weekend_delivery_date,requested 2026-09-06 is before order date
+DOC-00104,mid_call_correction,MS5010085 12 -> 6
+DOC-00104,mid_call_correction,MS6000088 36 -> 48
+DOC-00105,unresolvable_sku,'Glitter Fantasy Palette'  is not a Maison Solenne product
+DOC-00105,mid_call_correction,MS5000033 24 -> 18
+DOC-00106,customer_name_variant,'KSS' -> 400800
+DOC-00106,mid_call_correction,MS6010029 36 -> 48
+DOC-00106,mid_call_correction,MS5020046 12 -> 18
+DOC-00106,mid_call_correction,MS5010155 6 -> 12
+DOC-00107,customer_name_variant,'Kensington Salons' -> 400800
+DOC-00107,mid_call_correction,MS6050191 6 -> 12
+DOC-00107,mid_call_correction,MS6000124 6 -> 12
+DOC-00108,customer_name_variant,'Kensington Salons' -> 400800
+DOC-00108,missing_po_number,caller has no PO; order on account
+DOC-00108,unresolvable_sku,'Holiday Vault Set Exclusive'  is not a Maison Solenne product
+DOC-00108,mid_call_correction,MS6050191 18 -> 12
+DOC-00108,mid_call_correction,MS5000191 24 -> 30
+DOC-00108,unresolvable_sku,'Mini Lip Trio Gift'  is not a Maison Solenne product
+DOC-00108,mid_call_correction,MS6030079 6 -> 12
+DOC-00109,past_or_weekend_delivery_date,requested 2026-09-15 is before order date
+DOC-00109,mid_call_correction,MS5040119 24 -> 36
+DOC-00109,mid_call_correction,MS6050064 6 -> 12
+DOC-00110,customer_name_variant,'Kensington Salons' -> 400800
+DOC-00110,mid_call_correction,MS5050057 12 -> 18
+DOC-00111,mid_call_correction,MS5020046 12 -> 24
+DOC-00112,customer_name_variant,'Kensington Salons' -> 400800
+DOC-00112,missing_po_number,caller has no PO; order on account
+DOC-00112,size_omitted_default_rule,'hydra repair conditioner' no size -> salon size (R07)
+DOC-00112,mid_call_correction,MS6020068 6 -> 12
+DOC-00112,mid_call_correction,MS6040043 12 -> 18
+DOC-00113,customer_name_variant,'Kensington Salon Supplies Ltd' -> 400800
+DOC-00113,mid_call_correction,MS5050057 12 -> 24
+DOC-00114,customer_name_variant,'Kensington Salon Supplies Ltd' -> 400800
+DOC-00114,missing_po_number,caller has no PO; order on account
+DOC-00115,mid_call_correction,MS6050064 12 -> 6
+DOC-00116,missing_po_number,caller has no PO; order on account
+DOC-00117,customer_name_variant,'Kensington Salons' -> 400800
+DOC-00117,mid_call_correction,MS6020068 18 -> 30
+DOC-00117,mid_call_correction,MS6010029 18 -> 24
+DOC-00118,customer_name_variant,'Kensington Salons' -> 400800
+DOC-00118,missing_po_number,caller has no PO; order on account
+DOC-00118,mid_call_correction,MS5050057 12 -> 24
+DOC-00119,customer_name_variant,'Northbay Drug Co.' -> 100900
+DOC-00119,zero_qty_rows_trap,"126 price-list rows, 11 ordered"
+DOC-00120,zero_qty_rows_trap,"126 price-list rows, 9 ordered"
+DOC-00121,past_or_weekend_delivery_date,requested 2026-10-10 is a weekend
+DOC-00121,customer_name_variant,'NORTHBAY DRUG STORES' -> 100900
+DOC-00121,zero_qty_rows_trap,"126 price-list rows, 13 ordered"
+DOC-00122,zero_qty_rows_trap,"126 price-list rows, 15 ordered"
+DOC-00123,zero_qty_rows_trap,"126 price-list rows, 10 ordered"
+DOC-00124,zero_qty_rows_trap,"126 price-list rows, 9 ordered"
+DOC-00125,zero_qty_rows_trap,"126 price-list rows, 5 ordered"
+DOC-00126,past_or_weekend_delivery_date,requested 2026-09-05 is before order date
+DOC-00126,zero_qty_rows_trap,"126 price-list rows, 6 ordered"
+DOC-00127,customer_name_variant,'Northbay Pharmacy' -> 100900
+DOC-00127,zero_qty_rows_trap,"126 price-list rows, 7 ordered"
+DOC-00128,customer_name_variant,'NORTHBAY DRUG STORES' -> 100900
+DOC-00128,zero_qty_rows_trap,"126 price-list rows, 7 ordered"
+DOC-00129,zero_qty_rows_trap,"126 price-list rows, 6 ordered"
+DOC-00130,zero_qty_rows_trap,"126 price-list rows, 13 ordered"
+DOC-00131,customer_name_variant,'Northbay Pharmacy' -> 100900
+DOC-00131,zero_qty_rows_trap,"126 price-list rows, 12 ordered"
+DOC-00132,zero_qty_rows_trap,"126 price-list rows, 12 ordered"
+DOC-00133,customer_name_variant,'NORTHBAY DRUG STORES' -> 100900
+DOC-00133,zero_qty_rows_trap,"126 price-list rows, 5 ordered"
+DOC-00134,customer_name_variant,'Northbay Drug Co.' -> 100900
+DOC-00134,zero_qty_rows_trap,"126 price-list rows, 13 ordered"
+DOC-00135,customer_name_variant,'HARLOW & VALE LTD' -> 401000
+DOC-00135,xref_missing_but_resolvable,HV 891030 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 683761 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 799143 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 299254 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 461145 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 870925 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 435788 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 172371 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 297636 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 163182 not in xref; description exact
+DOC-00135,price_mismatch,MS5000033 doc price 13.43 vs contract 12.21
+DOC-00135,price_mismatch,MS4000958 doc price 11.56 vs contract 10.51
+DOC-00135,unresolvable_sku,'Crema Mani Rosa' 889114 is not a Maison Solenne product
+DOC-00135,price_mismatch,MS3020181 doc price 64.11 vs contract 72.85
+DOC-00135,price_mismatch,MS6020180 doc price 43.46 vs contract 37.79
+DOC-00135,xref_missing_but_resolvable,HV 815894 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 415344 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 786406 not in xref; description exact
+DOC-00135,unresolvable_sku,'Argan Miracle Oil' 916833 is not a Maison Solenne product
+DOC-00135,xref_missing_but_resolvable,HV 941814 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 250219 not in xref; description exact
+DOC-00135,xref_missing_but_resolvable,HV 668471 not in xref; description exact
+DOC-00135,unresolvable_sku,'Glitter Fantasy Palette' 340099 is not a Maison Solenne product
+DOC-00135,handwritten_amendment,line 115 struck through and cancelled
+DOC-00135,large_document,126 lines / 4 pages
+DOC-00136,xref_missing_but_resolvable,HV 786406 not in xref; description exact
+DOC-00136,unresolvable_sku,'Mini Lip Trio Gift' 279582 is not a Maison Solenne product
+DOC-00136,xref_missing_but_resolvable,HV 415344 not in xref; description exact
+DOC-00136,unresolvable_sku,'Advent Calendar 2026' 111144 is not a Maison Solenne product
+DOC-00136,xref_missing_but_resolvable,HV 163182 not in xref; description exact
+DOC-00136,unresolvable_sku,'Velvet Body Mist' 856755 is not a Maison Solenne product
+DOC-00136,unresolvable_sku,'Advent Calendar 2026' 818326 is not a Maison Solenne product
+DOC-00136,handwritten_amendment,line 10 struck through and cancelled
+DOC-00136,free_goods,line 11 circled FOC
+DOC-00136,handwritten_amendment,line 18 '+2 cs' -> 18 EA
+DOC-00137,handwritten_amendment,line 1 struck through and cancelled
+DOC-00137,handwritten_amendment,line 4 '+2 cs' -> 24 EA
+DOC-00138,customer_name_variant,'Harlow Vale Oxford St' -> 401000
+DOC-00138,xref_missing_but_resolvable,HV 891030 not in xref; description exact
+DOC-00138,xref_missing_but_resolvable,HV 870925 not in xref; description exact
+DOC-00138,unresolvable_sku,'Holiday Vault Set Exclusive' 230809 is not a Maison Solenne product
+DOC-00138,handwritten_amendment,line 12 struck through and cancelled
+DOC-00138,free_goods,line 3 circled FOC
+DOC-00138,handwritten_amendment,line 4 '+2 cs' -> 120 EA
+DOC-00139,unresolvable_sku,'Glitter Fantasy Palette' 589684 is not a Maison Solenne product
+DOC-00139,xref_missing_but_resolvable,HV 941814 not in xref; description exact
+DOC-00139,unresolvable_sku,'Velvet Body Mist' 723393 is not a Maison Solenne product
+DOC-00139,handwritten_amendment,line 7 '+2 cs' -> 72 EA
+DOC-00139,handwritten_amendment,line 1 struck through and cancelled
+DOC-00139,free_goods,line 4 circled FOC
+DOC-00140,price_mismatch,MS4000882 doc price 11.49 vs contract 9.99
+DOC-00140,price_mismatch,MS8040171 doc price 57.3 vs contract 49.83
+DOC-00140,xref_missing_but_resolvable,HV 870925 not in xref; description exact
+DOC-00140,xref_missing_but_resolvable,HV 668471 not in xref; description exact
+DOC-00140,handwritten_amendment,line 3 '+2 cs' -> 144 EA
+DOC-00140,handwritten_amendment,line 1 struck through and cancelled
+DOC-00140,free_goods,line 11 circled FOC
+DOC-00141,past_or_weekend_delivery_date,requested 2026-09-19 is a weekend
+DOC-00141,xref_missing_but_resolvable,HV 815894 not in xref; description exact
+DOC-00141,xref_missing_but_resolvable,HV 891030 not in xref; description exact
+DOC-00141,xref_missing_but_resolvable,HV 415344 not in xref; description exact
+DOC-00141,xref_missing_but_resolvable,HV 299254 not in xref; description exact
+DOC-00142,xref_missing_but_resolvable,HV 815894 not in xref; description exact
+DOC-00142,free_goods,line 7 circled FOC
+DOC-00142,handwritten_amendment,line 6 '+2 cs' -> 72 EA
+DOC-00143,customer_name_variant,'HARLOW & VALE LTD' -> 401000
+DOC-00143,price_mismatch,MS4000478 doc price 11.64 vs contract 10.12
+DOC-00143,unresolvable_sku,'Crema Mani Rosa' 897174 is not a Maison Solenne product
+DOC-00143,xref_missing_but_resolvable,HV 299254 not in xref; description exact
+DOC-00143,unresolvable_sku,'Travel Exclusive Duo Set' 836982 is not a Maison Solenne product
+DOC-00143,handwritten_amendment,line 13 '+2 cs' -> 24 EA
+DOC-00143,handwritten_amendment,line 7 struck through and cancelled
+DOC-00143,free_goods,line 10 circled FOC
+DOC-00144,customer_name_variant,'Harlow Vale Oxford St' -> 401000
+DOC-00144,price_mismatch,MS4000380 doc price 12.14 vs contract 11.04
+DOC-00144,xref_missing_but_resolvable,HV 250219 not in xref; description exact
+DOC-00144,xref_missing_but_resolvable,HV 461145 not in xref; description exact
+DOC-00144,unresolvable_sku,'Velvet Body Mist' 575667 is not a Maison Solenne product
+DOC-00144,free_goods,line 12 circled FOC
+DOC-00144,handwritten_amendment,line 1 struck through and cancelled
+DOC-00145,customer_name_variant,'HARLOW & VALE LTD' -> 401000
+DOC-00145,price_mismatch,MS8030088 doc price 24.35 vs contract 21.17
+DOC-00145,xref_missing_but_resolvable,HV 786406 not in xref; description exact
+DOC-00145,xref_missing_but_resolvable,HV 163182 not in xref; description exact
+DOC-00145,free_goods,line 2 circled FOC
+DOC-00145,handwritten_amendment,line 19 struck through and cancelled
+DOC-00145,handwritten_amendment,line 6 '+2 cs' -> 48 EA
+DOC-00146,price_mismatch,MS4010349 doc price 12.83 vs contract 14.25
+DOC-00146,price_mismatch,MS1070140 doc price 61.89 vs contract 56.26
+DOC-00146,xref_missing_but_resolvable,HV 815894 not in xref; description exact
+DOC-00146,handwritten_amendment,line 14 struck through and cancelled
+DOC-00146,free_goods,line 1 circled FOC
+DOC-00147,customer_name_variant,'HARLOW & VALE LTD' -> 401000
+DOC-00147,unresolvable_sku,'Holiday Vault Set Exclusive' 398309 is not a Maison Solenne product
+DOC-00147,unresolvable_sku,'Holiday Vault Set Exclusive' 930892 is not a Maison Solenne product
+DOC-00147,unresolvable_sku,'Travel Exclusive Duo Set' 966295 is not a Maison Solenne product
+DOC-00147,handwritten_amendment,line 4 struck through and cancelled
+DOC-00147,free_goods,line 7 circled FOC
+DOC-00147,handwritten_amendment,line 2 '+2 cs' -> 16 EA
+DOC-00148,xref_missing_but_resolvable,HV 250219 not in xref; description exact
+DOC-00148,unresolvable_sku,'Travel Exclusive Duo Set' 694184 is not a Maison Solenne product
+DOC-00148,xref_missing_but_resolvable,HV 172371 not in xref; description exact
+DOC-00148,unresolvable_sku,'Crema Mani Rosa' 118151 is not a Maison Solenne product
+DOC-00148,handwritten_amendment,line 6 struck through and cancelled
+DOC-00149,customer_name_variant,'Harlow and Vale plc' -> 401000
+DOC-00149,xref_missing_but_resolvable,HV 941814 not in xref; description exact
+DOC-00149,xref_missing_but_resolvable,HV 299254 not in xref; description exact
+DOC-00149,unresolvable_sku,'Mini Lip Trio Gift' 370704 is not a Maison Solenne product
+DOC-00149,unresolvable_sku,'Argan Miracle Oil' 824983 is not a Maison Solenne product
+DOC-00149,unresolvable_sku,'Velvet Body Mist' 676852 is not a Maison Solenne product
+DOC-00149,free_goods,line 1 circled FOC
+DOC-00149,handwritten_amendment,line 15 struck through and cancelled
+DOC-00149,handwritten_amendment,line 21 '+2 cs' -> 120 EA
+DOC-00150,past_or_weekend_delivery_date,requested 2026-09-20 is before order date
+DOC-00150,customer_name_variant,'Harlow and Vale plc' -> 401000
+DOC-00150,price_mismatch,MS1060170 doc price 40.8 vs contract 38.13
+DOC-00150,xref_missing_but_resolvable,HV 683761 not in xref; description exact
+DOC-00150,xref_missing_but_resolvable,HV 297636 not in xref; description exact
+DOC-00150,xref_missing_but_resolvable,HV 250219 not in xref; description exact
+DOC-00150,price_mismatch,MS4030052 doc price 9.77 vs contract 8.5
+DOC-00150,free_goods,line 23 circled FOC
+DOC-00150,handwritten_amendment,line 21 '+2 cs' -> 48 EA
+DOC-00151,missing_po_number,no Kommissions-Nr. written
+DOC-00151,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00152,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00153,handwritten_customer_number,Kunden-Nr. 200653 written by hand
+DOC-00153,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00154,missing_po_number,no Kommissions-Nr. written
+DOC-00154,handwritten_customer_number,Kunden-Nr. 200652 written by hand
+DOC-00154,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00155,unordered_offer_rows,2 offers left blank
+DOC-00155,tester_free_goods,'+1 Tester' on MS3040237 -> MS3049867
+DOC-00155,handwritten_correction,MS2020129 6 crossed out -> 18
+DOC-00155,missing_po_number,no Kommissions-Nr. written
+DOC-00155,handwritten_customer_number,Kunden-Nr. 200654 written by hand
+DOC-00155,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00156,unordered_offer_rows,2 offers left blank
+DOC-00156,tester_free_goods,'+1 Tester' on MS3020038 -> MS3029560
+DOC-00156,handwritten_correction,MS3020038 6 crossed out -> 24
+DOC-00156,handwritten_customer_number,Kunden-Nr. 200653 written by hand
+DOC-00156,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00157,unordered_offer_rows,1 offers left blank
+DOC-00157,tester_free_goods,'+1 Tester' on MS3020181 -> MS3029560
+DOC-00157,handwritten_correction,MS4011124 6 crossed out -> 18
+DOC-00157,handwritten_customer_number,Kunden-Nr. 200652 written by hand
+DOC-00157,ship_to_override_note,sticky note: deliver to Filiale Altona
+DOC-00157,page_upside_down,page 2 scanned upside down
+DOC-00157,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00158,unordered_offer_rows,2 offers left blank
+DOC-00158,tester_free_goods,'+1 Tester' on MS3000078 -> MS3009416
+DOC-00158,tester_free_goods,'+1 Tester' on MS1000013 -> MS1009199
+DOC-00158,handwritten_correction,MS3000078 3 crossed out -> 24
+DOC-00158,handwritten_customer_number,Kunden-Nr. 200653 written by hand
+DOC-00158,ship_to_override_note,sticky note: deliver to Geschäft Rodenkirchen
+DOC-00158,promo_discount_pricing,net = EK minus badge % (R14)
+DOC-00159,uom_cases,MS4020252 '1 cs' next to photo
+DOC-00159,identify_by_image_caption,"2 items chosen by photo/caption, no item codes"
+DOC-00160,uom_cases,MS3010240 '2 cs' next to photo
+DOC-00160,identify_by_image_caption,"3 items chosen by photo/caption, no item codes"
+DOC-00161,uom_cases,MS7010115 '3 cs' next to photo
+DOC-00161,uom_cases,MS1020161 '2 cs' next to photo
+DOC-00161,uom_cases,MS4010684 '2 cs' next to photo
+DOC-00161,identify_by_image_caption,"4 items chosen by photo/caption, no item codes"
+DOC-00162,uom_cases,MS2040162 '3 cs' next to photo
+DOC-00162,circled_then_crossed_out,MS3050040 circled then crossed out
+DOC-00162,uom_cases,MS2030016 '2 cs' next to photo
+DOC-00162,circled_then_crossed_out,MS7010115 circled then crossed out
+DOC-00162,identify_by_image_caption,"8 items chosen by photo/caption, no item codes"
+DOC-00163,uom_cases,MS3020181 '2 cs' next to photo
+DOC-00163,uom_cases,MS3050124 '2 cs' next to photo
+DOC-00163,uom_cases,MS4010167 '1 cs' next to photo
+DOC-00163,circled_then_crossed_out,MS8010095 circled then crossed out
+DOC-00163,uom_cases,MS1030011 '2 cs' next to photo
+DOC-00163,uom_cases,MS1000013 '1 cs' next to photo
+DOC-00163,circled_then_crossed_out,MS7000653 circled then crossed out
+DOC-00163,identify_by_image_caption,"10 items chosen by photo/caption, no item codes"
+DOC-00164,uom_cases,MS6040043 '2 cs' next to photo
+DOC-00164,uom_cases,MS3040160 '4 cs' next to photo
+DOC-00164,circled_then_crossed_out,MS4000238 circled then crossed out
+DOC-00164,uom_cases,MS5030066 '2 cs' next to photo
+DOC-00164,circled_then_crossed_out,MS3030052 circled then crossed out
+DOC-00164,identify_by_image_caption,"6 items chosen by photo/caption, no item codes"
+DOC-00165,identify_by_photo,2 items only identifiable from product photos
+DOC-00165,photo_of_handwritten_list,2 items on a photographed list
+DOC-00165,missing_po_number,chat: no PO
+DOC-00166,identify_by_photo,2 items only identifiable from product photos
+DOC-00166,photo_of_handwritten_list,2 items on a photographed list
+DOC-00167,identify_by_photo,2 items only identifiable from product photos
+DOC-00167,photo_of_handwritten_list,3 items on a photographed list
+DOC-00167,missing_po_number,chat: no PO
+DOC-00168,identify_by_photo,2 items only identifiable from product photos
+DOC-00168,photo_of_handwritten_list,3 items on a photographed list
+DOC-00168,chat_correction,MS6000088 6 -> 9
+DOC-00168,missing_po_number,chat: no PO
+DOC-00168,photo_of_screen,"photo of a phone screen, not a screenshot"
+DOC-00169,identify_by_photo,2 items only identifiable from product photos
+DOC-00169,photo_of_handwritten_list,4 items on a photographed list
+DOC-00169,chat_correction,MS3050124 3 -> 6
+DOC-00169,photo_of_screen,"photo of a phone screen, not a screenshot"
+DOC-00170,inline_images_only,"3 products only shown as inline images, qty '24 of each'"
+DOC-00171,inline_images_only,"4 products only shown as inline images, qty '12 of each'"
+DOC-00172,inline_images_only,"3 products only shown as inline images, qty '24 of each'"
+DOC-00173,inline_images_only,"2 products only shown as inline images, qty '12 of each'"
+DOC-00173,photo_of_handwritten_list,2 items on attached photo
+DOC-00174,inline_images_only,"2 products only shown as inline images, qty '12 of each'"
+DOC-00174,photo_of_handwritten_list,2 items on attached photo
+DOC-00175,customer_name_variant,'Halcyon Finch NYC' -> 100100
+DOC-00175,amendment,X12 860 changes PO 4593430858
+DOC-00176,customer_name_variant,'Halcyon Finch NYC' -> 100100
+DOC-00176,amendment,X12 860 changes PO 4564830696
+DOC-00177,amendment,X12 860 changes PO 4569870757
+DOC-00178,duplicate_submission,"PO ANT/PO/26/0627 first sent in email body DOC-00101, resent as PDF"
+DOC-00179,duplicate_submission,"PO ANT/PO/26/0241 first sent in email body DOC-00094, resent as PDF"
+DOC-00180,amendment,email amends PO ANT/PO/26/0728
+DOC-00181,amendment,email amends PO ANT/PO/26/0301
+DOC-00182,duplicate_submission,"Glow PO GR-2026-90540 first emailed in DOC-00028, re-sent by fax"
+DOC-00183,duplicate_submission,"Glow PO GR-2026-13506 first emailed in DOC-00017, re-sent by fax"
+DOC-00184,duplicate_submission,"Glow PO GR-2026-58265 first emailed in DOC-00022, re-sent by fax"
+DOC-00001,out_of_stock,MS4020174 qty 24 at US-NJ: PARTIAL
+DOC-00002,out_of_stock,MS7000489 qty 120 at US-NJ: BACKORDER
+DOC-00002,out_of_stock,MS4020174 qty 12 at US-NJ: PARTIAL
+DOC-00002,out_of_stock,MS5030066 qty 48 at US-NJ: PARTIAL
+DOC-00002,out_of_stock,MS1060170 qty 12 at US-NJ: BACKORDER
+DOC-00002,out_of_stock,MS3020038 qty 36 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS5030066 qty 48 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS2050041 qty 36 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS4010583 qty 96 at US-NJ: BACKORDER
+DOC-00003,out_of_stock,MS7000489 qty 24 at US-NJ: BACKORDER
+DOC-00003,out_of_stock,MS1060170 qty 12 at US-NJ: BACKORDER
+DOC-00003,out_of_stock,MS2040162 qty 48 at US-NJ: BACKORDER
+DOC-00003,out_of_stock,MS6000124 qty 6 at US-NJ: BACKORDER
+DOC-00003,out_of_stock,MS1010278 qty 24 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS4020174 qty 24 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS4020362 qty 120 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS1020161 qty 6 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS3020038 qty 24 at US-NJ: PARTIAL
+DOC-00003,out_of_stock,MS6020068 qty 120 at US-NJ: BACKORDER
+DOC-00004,out_of_stock,MS4010583 qty 72 at US-NJ: BACKORDER
+DOC-00004,out_of_stock,MS4020362 qty 36 at US-NJ: PARTIAL
+DOC-00007,out_of_stock,MS4010583 qty 120 at US-NJ: BACKORDER
+DOC-00008,out_of_stock,MS7000489 qty 120 at US-NJ: BACKORDER
+DOC-00009,out_of_stock,MS7000489 qty 120 at US-NJ: BACKORDER
+DOC-00009,out_of_stock,MS2040162 qty 60 at US-NJ: BACKORDER
+DOC-00010,out_of_stock,MS3020038 qty 6 at US-NJ: PARTIAL
+DOC-00011,out_of_stock,MS4020174 qty 24 at US-NJ: PARTIAL
+DOC-00014,out_of_stock,MS5030066 qty 12 at US-NJ: PARTIAL
+DOC-00014,out_of_stock,MS4020362 qty 24 at US-NJ: PARTIAL
+DOC-00014,out_of_stock,MS4010583 qty 96 at US-NJ: BACKORDER
+DOC-00014,out_of_stock,MS2050041 qty 6 at US-NJ: PARTIAL
+DOC-00014,out_of_stock,MS2040162 qty 48 at US-NJ: BACKORDER
+DOC-00014,out_of_stock,MS4020174 qty 36 at US-NJ: PARTIAL
+DOC-00015,out_of_stock,MS3020038 qty 60 at US-NJ: PARTIAL
+DOC-00015,out_of_stock,MS4020174 qty 36 at US-NJ: PARTIAL
+DOC-00016,out_of_stock,MS2040162 qty 6 at US-NJ: BACKORDER
+DOC-00018,out_of_stock,MS7000489 qty 12 at US-NJ: BACKORDER
+DOC-00019,out_of_stock,MS4020362 qty 72 at US-NJ: PARTIAL
+DOC-00020,out_of_stock,MS2040162 qty 12 at US-NJ: BACKORDER
+DOC-00020,out_of_stock,MS4020174 qty 12 at US-NJ: PARTIAL
+DOC-00021,out_of_stock,MS2050041 qty 24 at US-NJ: PARTIAL
+DOC-00021,out_of_stock,MS4020362 qty 24 at US-NJ: PARTIAL
+DOC-00022,out_of_stock,MS3020038 qty 18 at US-NJ: PARTIAL
+DOC-00022,out_of_stock,MS2040162 qty 24 at US-NJ: BACKORDER
+DOC-00023,out_of_stock,MS4020362 qty 36 at US-NJ: PARTIAL
+DOC-00024,out_of_stock,MS4010583 qty 120 at US-NJ: BACKORDER
+DOC-00026,out_of_stock,MS2040162 qty 12 at US-NJ: BACKORDER
+DOC-00026,out_of_stock,MS3020038 qty 12 at US-NJ: PARTIAL
+DOC-00026,out_of_stock,MS7000489 qty 72 at US-NJ: BACKORDER
+DOC-00026,out_of_stock,MS4020174 qty 96 at US-NJ: PARTIAL
+DOC-00027,out_of_stock,MS4020174 qty 36 at US-NJ: PARTIAL
+DOC-00028,out_of_stock,MS5030066 qty 96 at US-NJ: PARTIAL
+DOC-00029,out_of_stock,MS2040162 qty 6 at US-NJ: BACKORDER
+DOC-00031,out_of_stock,MS6030079 qty 48 at EU-FR: BACKORDER
+DOC-00031,out_of_stock,MS1010158 qty 6 at EU-FR: PARTIAL
+DOC-00032,out_of_stock,MS6030079 qty 12 at EU-FR: BACKORDER
+DOC-00033,out_of_stock,MS6030079 qty 24 at EU-FR: BACKORDER
+DOC-00033,out_of_stock,MS1010158 qty 12 at EU-FR: PARTIAL
+DOC-00034,out_of_stock,MS1010158 qty 12 at EU-FR: PARTIAL
+DOC-00035,out_of_stock,MS6030079 qty 36 at EU-FR: BACKORDER
+DOC-00036,out_of_stock,MS1010158 qty 12 at EU-FR: PARTIAL
+DOC-00036,out_of_stock,MS6030079 qty 24 at EU-FR: BACKORDER
+DOC-00038,out_of_stock,MS1010158 qty 60 at EU-FR: PARTIAL
+DOC-00039,out_of_stock,MS1010158 qty 24 at EU-FR: PARTIAL
+DOC-00040,out_of_stock,MS6030079 qty 12 at EU-FR: BACKORDER
+DOC-00041,out_of_stock,MS6000124 qty 36 at EU-FR: BACKORDER
+DOC-00042,out_of_stock,MS1010158 qty 6 at EU-FR: PARTIAL
+DOC-00044,out_of_stock,MS3000078 qty 4 at EU-FR: PARTIAL
+DOC-00047,out_of_stock,MS3030152 qty 12 at EU-FR: BACKORDER
+DOC-00048,out_of_stock,MS3030152 qty 3 at EU-FR: BACKORDER
+DOC-00048,out_of_stock,MS3000078 qty 6 at EU-FR: PARTIAL
+DOC-00054,out_of_stock,MS3030152 qty 12 at EU-FR: BACKORDER
+DOC-00059,out_of_stock,MS3060165 qty 6 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS1020161 qty 6 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS4011124 qty 12 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS7040288 qty 12 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS3040044 qty 48 at AE-JA: BACKORDER
+DOC-00059,out_of_stock,MS3060165 qty 12 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS4030052 qty 36 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS3040044 qty 12 at AE-JA: BACKORDER
+DOC-00059,out_of_stock,MS4000547 qty 72 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS1020161 qty 36 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS7040288 qty 12 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS4030052 qty 12 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS1030011 qty 6 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS7000122 qty 72 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS4000547 qty 12 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS3060165 qty 24 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS3050124 qty 6 at AE-JA: BACKORDER
+DOC-00059,out_of_stock,MS7000122 qty 24 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS7040288 qty 12 at AE-JA: PARTIAL
+DOC-00059,out_of_stock,MS3050124 qty 6 at AE-JA: BACKORDER
+DOC-00060,out_of_stock,MS3010240 qty 18 at AE-JA: PARTIAL
+DOC-00061,out_of_stock,MS7020061 qty 12 at AE-JA: BACKORDER
+DOC-00061,out_of_stock,MS1030011 qty 12 at AE-JA: PARTIAL
+DOC-00062,out_of_stock,MS4000547 qty 24 at AE-JA: PARTIAL
+DOC-00062,out_of_stock,MS3050124 qty 18 at AE-JA: BACKORDER
+DOC-00062,out_of_stock,MS3060165 qty 12 at AE-JA: PARTIAL
+DOC-00063,out_of_stock,MS1020161 qty 6 at AE-JA: PARTIAL
+DOC-00063,out_of_stock,MS4000547 qty 12 at AE-JA: PARTIAL
+DOC-00063,out_of_stock,MS4011124 qty 72 at AE-JA: PARTIAL
+DOC-00063,out_of_stock,MS1020161 qty 36 at AE-JA: PARTIAL
+DOC-00064,out_of_stock,MS4030052 qty 12 at AE-JA: PARTIAL
+DOC-00064,out_of_stock,MS1030011 qty 36 at AE-JA: PARTIAL
+DOC-00064,out_of_stock,MS7000122 qty 24 at AE-JA: PARTIAL
+DOC-00064,out_of_stock,MS1030011 qty 24 at AE-JA: PARTIAL
+DOC-00064,out_of_stock,MS7020061 qty 12 at AE-JA: BACKORDER
+DOC-00064,out_of_stock,MS7000122 qty 48 at AE-JA: PARTIAL
+DOC-00064,out_of_stock,MS1030011 qty 24 at AE-JA: PARTIAL
+DOC-00065,out_of_stock,MS1030011 qty 6 at AE-JA: PARTIAL
+DOC-00065,out_of_stock,MS3050124 qty 6 at AE-JA: BACKORDER
+DOC-00065,out_of_stock,MS4011124 qty 36 at AE-JA: PARTIAL
+DOC-00066,out_of_stock,MS4030052 qty 12 at AE-JA: PARTIAL
+DOC-00067,out_of_stock,MS4011124 qty 48 at AE-JA: PARTIAL
+DOC-00067,out_of_stock,MS7000122 qty 12 at AE-JA: PARTIAL
+DOC-00068,out_of_stock,MS3060165 qty 36 at AE-JA: PARTIAL
+DOC-00069,out_of_stock,MS1020161 qty 24 at AE-JA: PARTIAL
+DOC-00069,out_of_stock,MS4000547 qty 12 at AE-JA: PARTIAL
+DOC-00069,out_of_stock,MS7020061 qty 12 at AE-JA: BACKORDER
+DOC-00069,out_of_stock,MS3060165 qty 36 at AE-JA: PARTIAL
+DOC-00070,out_of_stock,MS3060165 qty 18 at AE-JA: PARTIAL
+DOC-00070,out_of_stock,MS3010240 qty 12 at AE-JA: PARTIAL
+DOC-00070,out_of_stock,MS4000547 qty 24 at AE-JA: PARTIAL
+DOC-00071,out_of_stock,MS1020161 qty 12 at AE-JA: PARTIAL
+DOC-00071,out_of_stock,MS3010240 qty 6 at AE-JA: PARTIAL
+DOC-00071,out_of_stock,MS3060165 qty 12 at AE-JA: PARTIAL
+DOC-00071,out_of_stock,MS1020161 qty 6 at AE-JA: PARTIAL
+DOC-00071,out_of_stock,MS1020161 qty 6 at AE-JA: PARTIAL
+DOC-00071,out_of_stock,MS4030052 qty 36 at AE-JA: PARTIAL
+DOC-00072,out_of_stock,MS7040288 qty 72 at AE-JA: PARTIAL
+DOC-00072,out_of_stock,MS1020161 qty 6 at AE-JA: PARTIAL
+DOC-00072,out_of_stock,MS3010240 qty 12 at AE-JA: PARTIAL
+DOC-00072,out_of_stock,MS7020061 qty 48 at AE-JA: BACKORDER
+DOC-00073,out_of_stock,MS3010240 qty 24 at AE-JA: PARTIAL
+DOC-00073,out_of_stock,MS7040288 qty 24 at AE-JA: PARTIAL
+DOC-00073,out_of_stock,MS3040044 qty 48 at AE-JA: BACKORDER
+DOC-00073,out_of_stock,MS4030052 qty 12 at AE-JA: PARTIAL
+DOC-00073,out_of_stock,MS1030011 qty 18 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS1020161 qty 24 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS4000547 qty 12 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS1030011 qty 36 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS4011124 qty 36 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS4030052 qty 12 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS4011124 qty 12 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS7020061 qty 24 at AE-JA: BACKORDER
+DOC-00074,out_of_stock,MS7040288 qty 72 at AE-JA: PARTIAL
+DOC-00074,out_of_stock,MS1020161 qty 12 at AE-JA: PARTIAL
+DOC-00075,out_of_stock,MS1010158 qty 48 at EU-FR: PARTIAL
+DOC-00076,out_of_stock,MS6030079 qty 12 at EU-FR: BACKORDER
+DOC-00077,out_of_stock,MS6000124 qty 12 at EU-FR: BACKORDER
+DOC-00077,out_of_stock,MS3000078 qty 12 at EU-FR: PARTIAL
+DOC-00078,out_of_stock,MS4000699 qty 12 at EU-FR: PARTIAL
+DOC-00078,out_of_stock,MS6000124 qty 48 at EU-FR: BACKORDER
+DOC-00084,out_of_stock,MS4000699 qty 12 at EU-FR: PARTIAL
+DOC-00084,out_of_stock,MS4020080 qty 36 at EU-FR: PARTIAL
+DOC-00085,out_of_stock,MS1010158 qty 6 at EU-FR: PARTIAL
+DOC-00086,out_of_stock,MS4020080 qty 48 at EU-FR: PARTIAL
+DOC-00086,out_of_stock,MS7000295 qty 48 at EU-FR: PARTIAL
+DOC-00089,out_of_stock,MS7000295 qty 96 at EU-FR: PARTIAL
+DOC-00089,out_of_stock,MS1010158 qty 48 at EU-FR: PARTIAL
+DOC-00090,out_of_stock,MS3030152 qty 6 at EU-FR: BACKORDER
+DOC-00091,out_of_stock,MS4030052 qty 72 at AE-JA: PARTIAL
+DOC-00092,out_of_stock,MS3010240 qty 12 at AE-JA: PARTIAL
+DOC-00093,out_of_stock,MS3060165 qty 72 at AE-JA: PARTIAL
+DOC-00098,out_of_stock,MS3010240 qty 24 at AE-JA: PARTIAL
+DOC-00098,out_of_stock,MS4000547 qty 24 at AE-JA: PARTIAL
+DOC-00098,out_of_stock,MS3050124 qty 48 at AE-JA: BACKORDER
+DOC-00099,out_of_stock,MS3040044 qty 96 at AE-JA: BACKORDER
+DOC-00099,out_of_stock,MS1030011 qty 36 at AE-JA: PARTIAL
+DOC-00099,out_of_stock,MS4030052 qty 144 at AE-JA: PARTIAL
+DOC-00101,out_of_stock,MS3060165 qty 48 at AE-JA: PARTIAL
+DOC-00101,out_of_stock,MS4030052 qty 144 at AE-JA: PARTIAL
+DOC-00102,out_of_stock,MS3040044 qty 24 at AE-JA: BACKORDER
+DOC-00102,out_of_stock,MS1030011 qty 24 at AE-JA: PARTIAL
+DOC-00102,out_of_stock,MS1020161 qty 24 at AE-JA: PARTIAL
+DOC-00103,out_of_stock,MS5010155 qty 6 at UK-MK: BACKORDER
+DOC-00103,out_of_stock,MS5040079 qty 6 at UK-MK: BACKORDER
+DOC-00105,out_of_stock,MS5040079 qty 6 at UK-MK: BACKORDER
+DOC-00105,out_of_stock,MS6040043 qty 6 at UK-MK: PARTIAL
+DOC-00105,out_of_stock,MS5000033 qty 18 at UK-MK: PARTIAL
+DOC-00106,out_of_stock,MS5010155 qty 12 at UK-MK: BACKORDER
+DOC-00108,out_of_stock,MS5040079 qty 18 at UK-MK: BACKORDER
+DOC-00109,out_of_stock,MS5040079 qty 12 at UK-MK: BACKORDER
+DOC-00112,out_of_stock,MS6040043 qty 18 at UK-MK: PARTIAL
+DOC-00113,out_of_stock,MS6040043 qty 24 at UK-MK: PARTIAL
+DOC-00115,out_of_stock,MS5010155 qty 6 at UK-MK: BACKORDER
+DOC-00115,out_of_stock,MS6040043 qty 36 at UK-MK: PARTIAL
+DOC-00116,out_of_stock,MS5040079 qty 6 at UK-MK: BACKORDER
+DOC-00118,out_of_stock,MS5000033 qty 24 at UK-MK: PARTIAL
+DOC-00118,out_of_stock,MS5040079 qty 12 at UK-MK: BACKORDER
+DOC-00119,out_of_stock,MS7000489 qty 36 at US-NJ: BACKORDER
+DOC-00119,out_of_stock,MS5030066 qty 48 at US-NJ: PARTIAL
+DOC-00120,out_of_stock,MS2040162 qty 24 at US-NJ: BACKORDER
+DOC-00121,out_of_stock,MS5030066 qty 48 at US-NJ: PARTIAL
+DOC-00122,out_of_stock,MS2050041 qty 18 at US-NJ: PARTIAL
+DOC-00123,out_of_stock,MS2040162 qty 24 at US-NJ: BACKORDER
+DOC-00123,out_of_stock,MS7000489 qty 12 at US-NJ: BACKORDER
+DOC-00126,out_of_stock,MS7000489 qty 36 at US-NJ: BACKORDER
+DOC-00128,out_of_stock,MS2050041 qty 18 at US-NJ: PARTIAL
+DOC-00129,out_of_stock,MS2040162 qty 6 at US-NJ: BACKORDER
+DOC-00130,out_of_stock,MS2040162 qty 24 at US-NJ: BACKORDER
+DOC-00130,out_of_stock,MS2050041 qty 12 at US-NJ: PARTIAL
+DOC-00130,out_of_stock,MS5030066 qty 12 at US-NJ: PARTIAL
+DOC-00131,out_of_stock,MS6000124 qty 12 at US-NJ: BACKORDER
+DOC-00132,out_of_stock,MS6020068 qty 12 at US-NJ: BACKORDER
+DOC-00133,out_of_stock,MS2040162 qty 12 at US-NJ: BACKORDER
+DOC-00134,out_of_stock,MS2050041 qty 12 at US-NJ: PARTIAL
+DOC-00135,out_of_stock,MS4030052 qty 48 at UK-MK: PARTIAL
+DOC-00135,out_of_stock,MS5040079 qty 36 at UK-MK: BACKORDER
+DOC-00135,out_of_stock,MS1060019 qty 60 at UK-MK: PARTIAL
+DOC-00135,out_of_stock,MS3000078 qty 120 at UK-MK: BACKORDER
+DOC-00135,out_of_stock,MS5000033 qty 24 at UK-MK: PARTIAL
+DOC-00135,out_of_stock,MS7000022 qty 72 at UK-MK: PARTIAL
+DOC-00135,out_of_stock,MS8000149 qty 12 at UK-MK: BACKORDER
+DOC-00135,out_of_stock,MS7000122 qty 72 at UK-MK: BACKORDER
+DOC-00135,out_of_stock,MS6040043 qty 120 at UK-MK: PARTIAL
+DOC-00135,out_of_stock,MS7030029 qty 48 at UK-MK: BACKORDER
+DOC-00135,out_of_stock,MS5010155 qty 72 at UK-MK: BACKORDER
+DOC-00135,out_of_stock,MS4020080 qty 24 at UK-MK: BACKORDER
+DOC-00136,out_of_stock,MS5040079 qty 24 at UK-MK: BACKORDER
+DOC-00136,out_of_stock,MS1060019 qty 12 at UK-MK: PARTIAL
+DOC-00136,out_of_stock,MS7000122 qty 120 at UK-MK: BACKORDER
+DOC-00137,out_of_stock,MS8000149 qty 32 at UK-MK: BACKORDER
+DOC-00139,out_of_stock,MS6040043 qty 120 at UK-MK: PARTIAL
+DOC-00139,out_of_stock,MS5010155 qty 24 at UK-MK: BACKORDER
+DOC-00140,out_of_stock,MS7000022 qty 96 at UK-MK: PARTIAL
+DOC-00140,out_of_stock,MS1060019 qty 48 at UK-MK: PARTIAL
+DOC-00140,out_of_stock,MS4020080 qty 120 at UK-MK: BACKORDER
+DOC-00140,out_of_stock,MS7030029 qty 12 at UK-MK: BACKORDER
+DOC-00143,out_of_stock,MS1060019 qty 18 at UK-MK: PARTIAL
+DOC-00143,out_of_stock,MS4020362 qty 12 at UK-MK: PARTIAL
+DOC-00143,out_of_stock,MS7000122 qty 72 at UK-MK: BACKORDER
+DOC-00144,out_of_stock,MS1060019 qty 36 at UK-MK: PARTIAL
+DOC-00145,out_of_stock,MS8000149 qty 32 at UK-MK: BACKORDER
+DOC-00149,out_of_stock,MS6040043 qty 72 at UK-MK: PARTIAL
+DOC-00149,out_of_stock,MS7000122 qty 96 at UK-MK: BACKORDER
+DOC-00150,out_of_stock,MS4020362 qty 24 at UK-MK: PARTIAL
+DOC-00150,out_of_stock,MS7000122 qty 48 at UK-MK: BACKORDER
+DOC-00150,out_of_stock,MS4030052 qty 12 at UK-MK: PARTIAL
+DOC-00158,out_of_stock,MS3000078 qty 24 at EU-FR: PARTIAL
+DOC-00159,out_of_stock,MS7000489 qty 48 at US-NJ: BACKORDER
+DOC-00163,out_of_stock,MS6040043 qty 12 at UK-MK: PARTIAL
+DOC-00164,out_of_stock,MS6040043 qty 24 at UK-MK: PARTIAL
+DOC-00165,out_of_stock,MS5010155 qty 2 at UK-MK: BACKORDER
+DOC-00166,out_of_stock,MS3030152 qty 3 at EU-FR: BACKORDER
+DOC-00167,out_of_stock,MS5000033 qty 12 at UK-MK: PARTIAL
+DOC-00168,out_of_stock,MS5000033 qty 6 at UK-MK: PARTIAL
+DOC-00170,out_of_stock,MS3040044 qty 24 at AE-JA: BACKORDER
+DOC-00181,out_of_stock,MS4030052 qty 24 at AE-JA: PARTIAL

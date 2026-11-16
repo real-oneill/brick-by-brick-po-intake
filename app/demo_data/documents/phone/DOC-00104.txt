@@ -1,0 +1,19 @@
+CALL-ID 96968508 | 2026-09-08 11:25 UTC | inbound +44 20 7946 6008 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Ravi speaking, how can I help?
+[CALLER] Hi Ravi, uh, it's Tariq from Kensington Salon Supply, the Park Royal depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] No, not today, just pop it on the account please.
+[AGENT] Okay, go ahead.
+[CALLER] Twelve of the charcoal face wash in the 75 mil, uh, actually, make that six.
+[AGENT] Mm-hm, next?
+[CALLER] Thirty-six of the the hydra shampoo in the 250 mil, uh, actually, make that forty-eight.
+[AGENT] Okay.
+[CALLER] Eighteen of the bond rebuild mask in the 200 mil.
+[AGENT] Mm-hm, next?
+[CALLER] Six of the colour guard shampoo the litres.
+[AGENT] Mm-hm, next?
+[CALLER] Twenty-four of the curl defining cream in the 500 mil.
+[AGENT] Mm-hm, next?
+[CALLER] That's it. Can we get it by Sunday the 6?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

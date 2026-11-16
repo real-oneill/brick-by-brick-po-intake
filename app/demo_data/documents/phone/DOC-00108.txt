@@ -1,0 +1,23 @@
+CALL-ID 26081861 | 2026-09-08 08:06 UTC | inbound +44 20 7946 8639 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Ravi speaking, how can I help?
+[CALLER] Hi Ravi, uh, it's Tariq from Kensington Salons, the Manchester depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] No, not today, just pop it on the account please.
+[AGENT] Okay, go ahead.
+[CALLER] And, uh, twelve of the holiday vault set exclusive, if you do that?
+[AGENT] I'm not sure we carry that, I'll note it and check.
+[CALLER] Eighteen of the color guard shampoo in the 1 litre, uh, actually, make that twelve.
+[AGENT] Okay.
+[CALLER] Eighteen of the post-shave balm in the 75 mil.
+[AGENT] Okay.
+[CALLER] Twelve of the beard oil in the 30 mil.
+[AGENT] Okay.
+[CALLER] Twenty-four of the cedar shave cream in the 150 mil, uh, actually, make that thirty.
+[AGENT] Yep.
+[CALLER] And, uh, twelve of the mini lip trio gift, if you do that?
+[AGENT] I'm not sure we carry that, I'll note it and check.
+[CALLER] Six of the sea salt spray texture spray in the 150 mil, uh, actually, make that twelve.
+[AGENT] Mm-hm, next?
+[CALLER] That's it. Can we get it by Friday the eighteen?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!
