@@ -147,20 +147,10 @@ def review_status(orders, approved_df, rejected_df):
         if df is None or df.empty or not set(ORDER_KEYS).issubset(df.columns):
             return set()
         return {tuple(None if pd.isna(v) else v for v in row) for row in df[ORDER_KEYS].itertuples(index=False)}
-    # A mixed-status order may contain AUTO-approved READY lines while its
-    # exception lines still need a reviewer. Only a MANUAL decision handles
-    # that whole order; AUTO handles the order only when Gold says the entire
-    # order is READY.
-    if approved_df is not None and not approved_df.empty and 'approval_type' in approved_df:
-        manual_approved_keys = keys_from(approved_df[approved_df.approval_type.eq('MANUAL')])
-        auto_approved_keys = keys_from(approved_df[approved_df.approval_type.eq('AUTO')])
-    else:
-        manual_approved_keys, auto_approved_keys = keys_from(approved_df), set()
-    rejected_keys = keys_from(rejected_df)
+    approved_keys, rejected_keys = keys_from(approved_df), keys_from(rejected_df)
     def status_for(row):
         key = tuple(None if pd.isna(row[c]) else row[c] for c in ORDER_KEYS)
-        approved = key in manual_approved_keys or (row.get('status') == 'READY' and key in auto_approved_keys)
-        return 'Approved' if approved else 'Rejected' if key in rejected_keys else 'Pending'
+        return 'Approved' if key in approved_keys else 'Rejected' if key in rejected_keys else 'Pending'
     return orders.apply(status_for, axis=1)
 
 # Purely a display choice for orders that already passed every automated
@@ -178,12 +168,6 @@ def filtered_reasons(value, suppress=SUPPRESSED_WHEN_READY):
     return '; '.join(kept) if kept else None
 
 def ready_order_lines(lines, orders):
-    """Gold READY lines eligible for automatic inclusion.
-
-    This matches the dashboard's line-level readiness metric. A REVIEW or
-    FAILED line elsewhere in the same order does not block an independently
-    READY line, while the order itself remains in the exception queue.
-    """
-    statuses = lines.get('quality_status', pd.Series(index=lines.index, dtype='object'))
-    needs_review = lines.get('needs_review', pd.Series(True, index=lines.index)).fillna(True).astype(bool)
-    return lines.loc[statuses.eq('READY') & ~needs_review].copy()
+    """Every line belonging to a READY order: the set eligible for automatic inclusion."""
+    ready_keys = orders.loc[orders.status.eq('READY'), ORDER_KEYS]
+    return lines.merge(ready_keys, on=ORDER_KEYS, how='inner')
