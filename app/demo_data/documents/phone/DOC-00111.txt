@@ -1,0 +1,17 @@
+CALL-ID 41527727 | 2026-09-20 06:31 UTC | inbound +44 20 7946 5630 | ASR engine v3.2 (en-GB)
+
+[AGENT] Maison Solenne customer orders, Hannah speaking, how can I help?
+[CALLER] Hi Hannah, uh, it's Olu from Kensington Salon Supply, the Park Royal depot.
+[AGENT] Lovely, and do you have a PO number for me?
+[CALLER] Yeah it's, um, K S S seven six four two.
+[AGENT] Okay, go ahead.
+[CALLER] Twelve of the daily moisturiser spf 20 in the 75 mil, uh, actually, make that twenty-four.
+[AGENT] Okay.
+[CALLER] Twelve of the color guard shampoo the big ones.
+[AGENT] Mm-hm, next?
+[CALLER] Twenty-four of the scalp serum serum in the 50 mil.
+[AGENT] Okay.
+[CALLER] Thirty-six of the the hydra conditioner in the 250 mil.
+[AGENT] Yep.
+[CALLER] That's it. Can we get it by Thursday the one?
+[AGENT] I'll put that as the requested date. I'll read it back to you in an email confirmation. Cheers!

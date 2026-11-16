@@ -23,8 +23,12 @@ _LOCAL_EVENTS = []
 
 
 def is_local_demo():
-    """Local Streamlit runs use repository fixtures; deployed Apps stay live."""
-    return not os.environ.get('DATABRICKS_WAREHOUSE_ID') and not os.environ.get('DATABRICKS_HOST')
+    """Use the self-contained portfolio for local runs or the deployed demo."""
+    forced_demo = os.environ.get('SOLENNE_DEMO_MODE', '').strip().lower()
+    return forced_demo in {'1', 'true', 'yes'} or (
+        not os.environ.get('DATABRICKS_WAREHOUSE_ID') and
+        not os.environ.get('DATABRICKS_HOST')
+    )
 
 
 class StaleGoldError(RuntimeError):

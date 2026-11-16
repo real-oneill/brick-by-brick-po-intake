@@ -1,0 +1,97 @@
+{
+  "bestellung": {
+    "bestellnummer": "BH-5056217",
+    "kunde": "BEAUTY HAUS",
+    "kundennummer_lieferant": "200600",
+    "bestelldatum": "2026-09-23",
+    "lieferadresse": {
+      "lager": "Fulfillment Center Köln",
+      "anschrift": "Industriestraße 40, 50735 Köln",
+      "lagercode": "CGN"
+    },
+    "wunschliefertermin": "09.10.2026",
+    "waehrung": "EUR",
+    "positionen": [
+      {
+        "pos": 1,
+        "artikelnummer": "MS1850061",
+        "bezeichnung": "Solenne Paris Huile Précieuse Face Oil 30 ml",
+        "menge": 18,
+        "einheit": "ST",
+        "einzelpreis": 36.9
+      },
+      {
+        "pos": 2,
+        "artikelnummer": "MS7800986",
+        "bezeichnung": "Lune Rouge Lacquer Nail Colour 145 Bordeaux",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 6.05
+      },
+      {
+        "pos": 3,
+        "artikelnummer": "MS3010166",
+        "bezeichnung": "Atelier Noor Rose Ambrée Eau de Parfum 50 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 73.44
+      },
+      {
+        "pos": 4,
+        "artikelnummer": "MS3040237",
+        "bezeichnung": "Atelier Noor Musc Blanc Eau de Parfum 100 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 100.57
+      },
+      {
+        "pos": 5,
+        "artikelnummer": "MS4810990",
+        "bezeichnung": "Velour Cosmetics Velvet Matte Foundation 30 ml 5W Toffee",
+        "menge": 24,
+        "einheit": "ST",
+        "einzelpreis": 18.76
+      },
+      {
+        "pos": 6,
+        "artikelnummer": "MS6030079",
+        "bezeichnung": "Mistral Hair Sea Salt Texture Spray 150 ml",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 22.88
+      },
+      {
+        "pos": 7,
+        "artikelnummer": "MS1810090",
+        "bezeichnung": "Solenne Paris Crème Lumière Day Cream 15 ml",
+        "menge": 6,
+        "einheit": "ST",
+        "einzelpreis": 25.94
+      },
+      {
+        "pos": 8,
+        "artikelnummer": "MS2040026",
+        "bezeichnung": "Kōri Botanicals Hinoki Calming Toner 100 ml",
+        "menge": 18,
+        "einheit": "ST",
+        "einzelpreis": 18.3
+      },
+      {
+        "pos": 9,
+        "artikelnummer": "MS7000653",
+        "bezeichnung": "Lune Rouge Lacquer Nail Colour 130 Coral Reef",
+        "menge": 12,
+        "einheit": "ST",
+        "einzelpreis": 6.04
+      },
+      {
+        "pos": 10,
+        "artikelnummer": "MS4000134",
+        "bezeichnung": "Velour Cosmetics Satin Lip Colour 03 Petal",
+        "menge": 72,
+        "einheit": "ST",
+        "einzelpreis": 12.3
+      }
+    ]
+  }
+}

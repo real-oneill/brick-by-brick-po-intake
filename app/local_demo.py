@@ -9,7 +9,7 @@ from pathlib import Path
 import pandas as pd
 
 
-DATA_ROOT = Path(__file__).resolve().parents[1] / "data"
+DATA_ROOT = Path(__file__).resolve().parent / "demo_data"
 
 
 def _subset_sum(values, target, excluded=frozenset()):
