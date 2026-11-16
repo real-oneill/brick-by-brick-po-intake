@@ -43,6 +43,28 @@ def load_local_lines():
         return "FAILED" if key in failed_keys else "READY" if key in ready_keys else "REVIEW"
 
     raw["quality_status"] = raw.apply(status_for, axis=1)
+
+    # Stable presentation cases for the live demo. The underlying
+    # quality_status stays unchanged so the portfolio still reconciles to
+    # the dashboard (1,637 / 2,717 READY lines).
+    raw["display_quality_status"] = raw["quality_status"]
+    curated_patterns = {
+        ("DOC-00003", "4584495485"): ["READY"],
+        ("DOC-00099", "ANT/PO/26/0736"): ["READY"] * 4 + ["REVIEW"] * 9,
+        ("DOC-00008", "4593430858"): ["FAILED"] * 5 + ["REVIEW"] * 6 + ["READY"] * 7,
+    }
+    for (doc_id, po_number), pattern in curated_patterns.items():
+        indexes = raw.index[
+            raw["doc_id"].eq(doc_id) & raw["po_number"].astype(str).eq(po_number)
+        ].tolist()
+        if indexes:
+            if len(pattern) == 1:
+                pattern = pattern * len(indexes)
+            if len(pattern) != len(indexes):
+                raise RuntimeError(
+                    f"Curated demo case {doc_id} / {po_number} changed line count."
+                )
+            raw.loc[indexes, "display_quality_status"] = pattern
     raw = raw.merge(headers, on=["doc_id", "po_number"], how="left")
     raw = raw.merge(manifest[["doc_id", "channel", "relative_path"]], on="doc_id", how="left")
     raw["currency"] = raw["currency_x"].fillna(raw["currency_y"])
@@ -65,7 +87,7 @@ def load_local_lines():
     raw["proposed_atp_outcome"] = raw["expected_atp_outcome"]
     raw["proposed_ship_quantity"] = raw["expected_ship_qty"]
     raw["source_pointer"] = raw.apply(lambda row: f"{row.relative_path}, line {row.line_no}", axis=1)
-    raw["review_reasons"] = raw["quality_status"].map({
+    raw["review_reasons"] = raw["display_quality_status"].map({
         "READY": "",
         "REVIEW": "Ship-to unresolved; Document price differs from contract price",
         "FAILED": "SKU unresolved; Invalid or unconverted quantity",

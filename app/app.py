@@ -7,7 +7,8 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 from database import (load_lines, source_files, ensure_approval_tables, load_approved,
-    record_decision, gold_rows_for_order, check_not_stale, StaleGoldError, is_local_demo)
+    record_decision, gold_rows_for_order, check_not_stale, StaleGoldError, is_local_demo,
+    reset_demo_approvals)
 from logic import (orders_from_lines, select_order, ready_order_lines, line_identifier,
     row_hash, diff_editable_fields, portfolio_metrics, recommended_actions,
     EDITABLE_FIELDS)
@@ -65,7 +66,7 @@ if not st.session_state.get('workspace_entered', False):
     st.stop()
 
 def status_row_style(row):
-    status = row.get('status', row.get('quality_status', ''))
+    status = row.get('status', row.get('display_quality_status', row.get('quality_status', '')))
     styles = {'FAILED': 'background-color: #FCE8EB; color: #922B3E;',
               'REVIEW': 'background-color: #FFF7E2; color: #765719;',
               'READY': 'background-color: #EAF5EF; color: #285D43;'}
@@ -164,6 +165,12 @@ st.sidebar.caption('Gold source data · Read only')
 if st.sidebar.button('Refresh data'):
     for key in ['gold_lines', 'approved', 'approvals_ready', 'approvals_error', 'auto_included']:
         st.session_state.pop(key, None)
+    st.rerun()
+if is_local_demo() and st.sidebar.button('Reset approved queue'):
+    reset_demo_approvals()
+    for key in ['approved', 'approvals_ready', 'approvals_error', 'auto_included']:
+        st.session_state.pop(key, None)
+    st.toast('Approved queue restored to automatic READY orders.')
     st.rerun()
 
 st.title(page)
@@ -349,10 +356,11 @@ elif page == 'Order review':
             actions = recommended_actions(selected.review_reasons.dropna().tolist(), order.status)
             if actions:
                 st.info('**Recommended reviewer actions**\n\n' + '\n'.join(f'{i}. {action}' for i, action in enumerate(actions, 1)))
-            visible = ['quality_status','line_number','item_code','item_description','material_id','quantity_as_written','uom_as_written','quantity_each','expected_net_price','currency','proposed_atp_outcome','proposed_ship_quantity','overall_confidence','source_pointer']
+            status_column = 'display_quality_status' if 'display_quality_status' in selected else 'quality_status'
+            visible = [status_column,'line_number','item_code','item_description','material_id','quantity_as_written','uom_as_written','quantity_each','expected_net_price','currency','proposed_atp_outcome','proposed_ship_quantity','overall_confidence','source_pointer']
             visible = [x for x in visible if x in selected]
             st.subheader('Order lines')
-            names = {'quality_status':'Status', 'line_number':'Line', 'item_code':'Source item code',
+            names = {'quality_status':'Status', 'display_quality_status':'Status', 'line_number':'Line', 'item_code':'Source item code',
                 'item_description':'Product description', 'material_id':'Matched SKU',
                 'quantity_as_written':'Source quantity', 'uom_as_written':'Source unit',
                 'quantity_each':'Quantity (units)', 'expected_net_price':'Expected unit price',

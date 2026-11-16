@@ -129,6 +129,15 @@ def load_approved():
         return _LOCAL_APPROVED.copy()
     return query(f'SELECT * FROM {APPROVED_ORDERS}')
 
+
+def reset_demo_approvals():
+    """Clear only the self-contained demo's app-owned approval state."""
+    global _LOCAL_APPROVED
+    if not is_local_demo():
+        raise RuntimeError('Demo reset is disabled outside the self-contained demo.')
+    _LOCAL_APPROVED = pd.DataFrame()
+    _LOCAL_EVENTS.clear()
+
 def gold_rows_for_order(order):
     """Re-reads an order's lines straight from Gold, bypassing the session
     snapshot, so an approval can be checked for staleness before it is written."""
