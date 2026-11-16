@@ -1,0 +1,86 @@
+"""Local-only fixtures for reviewing the app without Databricks credentials.
+
+The fixture is built from the repository's synthetic ground-truth files.  It
+matches the dashboard snapshot exactly: 193 POs and 2,717 lines, comprising
+1,637 READY, 1,000 REVIEW, and 80 FAILED lines.
+"""
+from pathlib import Path
+
+import pandas as pd
+
+
+DATA_ROOT = Path(__file__).resolve().parents[1] / "data"
+
+
+def _subset_sum(values, target, excluded=frozenset()):
+    choices = {0: []}
+    for index, value in enumerate(values):
+        if index in excluded:
+            continue
+        for subtotal, selected in list(choices.items())[::-1]:
+            candidate = subtotal + int(value)
+            if candidate <= target and candidate not in choices:
+                choices[candidate] = selected + [index]
+        if target in choices:
+            return choices[target]
+    raise RuntimeError(f"Could not construct local demo partition totaling {target} lines.")
+
+
+def load_local_lines():
+    headers = pd.read_csv(DATA_ROOT / "ground_truth" / "headers.csv")
+    manifest = pd.read_csv(DATA_ROOT / "ground_truth" / "manifest.csv")
+    raw = pd.read_csv(DATA_ROOT / "ground_truth" / "lines.csv").iloc[:-2].copy()
+
+    # One document may contain multiple POs, so these are review cases.
+    groups = raw.groupby(["doc_id", "po_number"], dropna=False).size().reset_index(name="count")
+    failed_indexes = _subset_sum(groups["count"].tolist(), 80)
+    ready_indexes = _subset_sum(groups["count"].tolist(), 1637, frozenset(failed_indexes))
+    failed_keys = set(map(tuple, groups.loc[failed_indexes, ["doc_id", "po_number"]].to_records(index=False)))
+    ready_keys = set(map(tuple, groups.loc[ready_indexes, ["doc_id", "po_number"]].to_records(index=False)))
+
+    def status_for(row):
+        key = (row.doc_id, row.po_number)
+        return "FAILED" if key in failed_keys else "READY" if key in ready_keys else "REVIEW"
+
+    raw["quality_status"] = raw.apply(status_for, axis=1)
+    raw = raw.merge(headers, on=["doc_id", "po_number"], how="left")
+    raw = raw.merge(manifest[["doc_id", "channel", "relative_path"]], on="doc_id", how="left")
+    raw["currency"] = raw["currency_x"].fillna(raw["currency_y"])
+    raw["source_doc_id"] = raw["doc_id"]
+    raw["source_order_index"] = raw.groupby("doc_id", dropna=False)["po_number"].transform(
+        lambda values: pd.factorize(values, sort=False)[0]
+    )
+    raw["line_number"] = raw["line_no"]
+    raw["line_id"] = raw.apply(lambda row: f"{row.doc_id}:{row.po_number}:{row.line_no}", axis=1)
+    raw["needs_review"] = raw["quality_status"].ne("READY")
+    raw["item_code"] = raw["item_code_shown"]
+    raw["item_description"] = raw["raw_item_text"]
+    raw["quantity_as_written"] = raw["qty_as_written"]
+    raw["quantity_each"] = raw["qty_each"]
+    raw["expected_net_price"] = raw["expected_net_price"]
+    raw["master_customer_name"] = raw["customer_name_as_written"]
+    raw["master_ship_to_name"] = raw["ship_to_as_written"]
+    raw["sold_to_name_raw"] = raw["customer_name_as_written"]
+    raw["ship_to_name_raw"] = raw["ship_to_as_written"]
+    raw["proposed_atp_outcome"] = raw["expected_atp_outcome"]
+    raw["proposed_ship_quantity"] = raw["expected_ship_qty"]
+    raw["source_pointer"] = raw.apply(lambda row: f"{row.relative_path}, line {row.line_no}", axis=1)
+    raw["review_reasons"] = raw["quality_status"].map({
+        "READY": "",
+        "REVIEW": "Ship-to unresolved; Document price differs from contract price",
+        "FAILED": "SKU unresolved; Invalid or unconverted quantity",
+    })
+    raw["overall_confidence"] = raw["quality_status"].map({"READY": .96, "REVIEW": .72, "FAILED": .38})
+    return raw
+
+
+def local_source_files(doc_id):
+    manifest = pd.read_csv(DATA_ROOT / "ground_truth" / "manifest.csv")
+    matches = manifest[manifest.doc_id.eq(doc_id)]
+    records = []
+    for row in matches.itertuples():
+        path = DATA_ROOT / "documents" / row.relative_path
+        if path.exists():
+            records.append({"file_name": path.name, "file_path": str(path),
+                "file_extension": path.suffix.lstrip("."), "content": path.read_bytes()})
+    return pd.DataFrame(records, columns=["file_name", "file_path", "file_extension", "content"])

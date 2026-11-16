@@ -25,7 +25,16 @@ The app uses its own Databricks OAuth identity. Do not paste tokens in code or G
 
 ## Local run
 
-From app/: `python -m pip install -r requirements.txt`, configure Databricks SDK authentication plus DATABRICKS_WAREHOUSE_ID, then `streamlit run app.py`. Local testing needs authorized workspace access. A local run has no `X-Forwarded-Email` header, so reading Gold still works but Approve is blocked by design — test approvals in the deployed app.
+From the repository root:
+
+```bash
+python3 -m pip install -r app/requirements.txt
+python3 -m streamlit run app/app.py
+```
+
+When Databricks environment variables are absent, the app automatically uses the repository's synthetic ground-truth files. Enter any non-empty access code on the welcome screen. This local fixture matches the dashboard snapshot: 193 purchase orders and 2,717 lines, split into 1,637 READY, 1,000 REVIEW, and 80 FAILED lines (60.3% READY). Local approvals are kept only in memory and reset when the Streamlit server restarts.
+
+When `DATABRICKS_HOST` and `DATABRICKS_WAREHOUSE_ID` are present, the same code uses live Databricks tables instead. The deployed app remains the required place to verify Databricks permissions and writes to the separate approval tables.
 
 ## Approval workflow
 

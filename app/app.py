@@ -7,7 +7,7 @@ import pandas as pd
 import streamlit as st
 import altair as alt
 from database import (load_lines, source_files, ensure_approval_tables, load_approved,
-    record_decision, gold_rows_for_order, check_not_stale, StaleGoldError)
+    record_decision, gold_rows_for_order, check_not_stale, StaleGoldError, is_local_demo)
 from logic import (orders_from_lines, select_order, ready_order_lines, line_identifier,
     row_hash, diff_editable_fields, portfolio_metrics, recommended_actions, demo_cases,
     EDITABLE_FIELDS)
@@ -16,6 +16,8 @@ def current_actor():
     """The signed-in reviewer, from the identity Databricks forwards to the
     app. No fallback: a local `streamlit run` has no forwarded identity, and
     approvals must never be attributed to the app's own service principal."""
+    if is_local_demo():
+        return 'local-demo-reviewer'
     try:
         return st.context.headers.get('X-Forwarded-Email') or None
     except Exception:
@@ -26,8 +28,9 @@ st.markdown('''<style>
 .stApp{background:#f5f7fa} .block-container{padding-top:2rem;max-width:1500px}
 h1,h2,h3{color:#18334b} [data-testid="stMetric"]{background:white;padding:18px;border-radius:10px;border:1px solid #e3e9ef}
 [data-testid="stSidebar"]{background:#eaf0f5}
-[data-testid="InputInstructions"]{display:flex;align-items:center;justify-content:flex-end;height:100%;top:0;padding-top:0}
-[data-testid="stTextInput"] [data-baseweb="input"]{align-items:center}
+[data-testid="stTextInput"]{position:relative}
+[data-testid="stTextInput"] input{padding-right:175px}
+[data-testid="InputInstructions"]{position:absolute!important;right:48px;top:50%!important;transform:translateY(-50%);margin:0!important;padding:0!important;z-index:2;pointer-events:none}
 </style>''', unsafe_allow_html=True)
 
 # Databricks authenticates visitors before this presentation-only welcome screen.
@@ -192,6 +195,8 @@ if lines.empty:
     st.stop()
 orders = orders_from_lines(lines)
 metrics = portfolio_metrics(lines)
+if is_local_demo():
+    st.sidebar.caption('Local demo · repository ground truth')
 st.caption('Proposed sales orders · quantities in individual units · values in original currencies')
 
 if 'approvals_ready' not in st.session_state:
