@@ -9,7 +9,7 @@ import altair as alt
 from database import (load_lines, source_files, ensure_approval_tables, load_approved,
     record_decision, gold_rows_for_order, check_not_stale, StaleGoldError, is_local_demo)
 from logic import (orders_from_lines, select_order, ready_order_lines, line_identifier,
-    row_hash, diff_editable_fields, portfolio_metrics, recommended_actions, demo_cases,
+    row_hash, diff_editable_fields, portfolio_metrics, recommended_actions,
     EDITABLE_FIELDS)
 
 def current_actor():
@@ -28,9 +28,7 @@ st.markdown('''<style>
 .stApp{background:#f5f7fa} .block-container{padding-top:2rem;max-width:1500px}
 h1,h2,h3{color:#18334b} [data-testid="stMetric"]{background:white;padding:18px;border-radius:10px;border:1px solid #e3e9ef}
 [data-testid="stSidebar"]{background:#eaf0f5}
-[data-testid="stTextInput"]{position:relative}
-[data-testid="stTextInput"] input{padding-right:175px}
-[data-testid="InputInstructions"]{position:absolute!important;right:48px;top:50%!important;transform:translateY(-50%);margin:0!important;padding:0!important;z-index:2;pointer-events:none}
+[data-testid="InputInstructions"]{display:none!important}
 </style>''', unsafe_allow_html=True)
 
 # Databricks authenticates visitors before this presentation-only welcome screen.
@@ -245,9 +243,6 @@ if page == 'Overview':
     cols[4].metric('FAILED lines', f'{metrics["failed_lines"]:,}')
     cols[5].metric('READY percentage', f'{metrics["ready_line_share"]:.1%}')
     st.caption('These KPIs use the same definitions as the dashboard: distinct non-null PO numbers and line-level quality status. Live values may change after a pipeline refresh.')
-    with st.expander('Demo examples from the current Gold snapshot'):
-        st.caption('Use these document IDs during the demo. They are selected from live data on each refresh, so they stay relevant when pipeline results change.')
-        st.dataframe(demo_cases(orders), hide_index=True, use_container_width=True)
     left, right = st.columns(2)
     with left:
         st.subheader('Line quality')
@@ -277,8 +272,6 @@ elif page == 'Review queue':
     summary_cols[4].metric('FAILED lines', f'{metrics["failed_lines"]:,}')
     summary_cols[5].metric('READY percentage', f'{metrics["ready_line_share"]:.1%}')
     st.caption('Dashboard-aligned portfolio totals: distinct non-null PO numbers and line-level quality status. Filters below only narrow the queue table.')
-    with st.expander('Recommended demo documents'):
-        st.dataframe(demo_cases(orders), hide_index=True, use_container_width=True)
     st.caption('Prioritized by missing or low confidence, then by currency and known order value.')
     statuses = st.multiselect('Order status', ['FAILED','REVIEW','READY'], default=['FAILED','REVIEW'])
     queue = orders[orders.status.isin(statuses)].copy()
